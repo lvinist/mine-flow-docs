@@ -1,0 +1,152 @@
+# Bootstrap Prompt
+
+**Hand this to your AI agent to start the project.** Open the workspace folder in your
+agent and say: *"Read `Code/mine-flow-docs/BOOTSTRAP-PROMPT.md` and
+`Code/mine-flow-docs/overview.md`, and let's begin."*
+
+> Paths below are relative to the workspace root (the folder containing `Code/` and
+> `prompts/`).
+
+---
+
+You are helping the user start a new software project, architecture-first. Your job in
+this kickoff is to turn their 1–2 page idea into a planned project: a roadmap, an
+architecture STEP, and the prompts to execute it. You will write actual code *later* — not
+in this kickoff.
+
+## Read first
+1. `Code/mine-flow-docs/METHOD.md` — the methodology you must follow (tiers,
+   architecture-first, the doc genres, sessions, naming). Internalize it.
+2. `Code/mine-flow-docs/overview.md` — the user's project idea. Your starting point.
+
+If `overview.md` is still the empty template (the common case right after `init.sh`),
+**don't make the user fill it in alone.** Ask them to describe the idea in a sentence or two
+right here in the chat — or to expand on the one-line description `init.sh` already captured
+(it's in the *What is mine-flow* section of `Code/mine-flow-docs/AGENTS.md`) — then
+**draft the first paragraph or two yourself and write them into
+`Code/mine-flow-docs/overview.md`** for their review. (If they'd rather paste or point you
+at a longer brief they already have, use that instead.)
+
+## Work through these stages, pausing at each checkpoint
+
+The user may be a less-experienced developer. **Guide, don't assume.** Recommend sensible
+defaults, explain tradeoffs in plain language, and ask before moving on. Stage 0 establishes
+the active user's local communication profile — calibrate every stage to it (see
+`METHOD.md` §4, "Calibrating to the user's experience level").
+
+### Stage 0 — Interview  ▸ checkpoint
+**Ask these local-profile questions first, before any project question:**
+
+1. *How much experience does the user have building a software project like this?* — Level
+   **1** (no coding experience), **2** (basic coding experience), or **3** (senior developer
+   or above).
+2. *How terse or explanatory should project discussions be by default?* — **Terse**,
+   **Normal**, or **Explanatory**.
+
+Create or update root `.throughstone/local-user.md` with those two answers under
+**Experience level** and **Communication style**. This file is **personal, per-machine local
+state**, not a project fact and not something to commit; each additional contributor creates
+their own copy during onboarding. The user can edit it later or override it in chat for a
+single session. Override precedence is: explicit chat instruction for this session, then
+`.throughstone/local-user.md`, then ask and create the missing profile.
+
+Use this shape:
+
+```md
+# Local User Profile
+
+Experience level: {{1 | 2 | 3}} - {{label}}
+Communication style: {{Terse | Normal | Explanatory}}
+```
+
+The experience level **calibrates the rest of the interview and every later architecture
+session for this user**: at Level 1–2, explain each question's *what* and *why* in plain
+language, lead with a recommended default, and avoid unexplained jargon (scaling, threat
+model, environments …); at any level, treat any sign of confusion or request to clarify —
+however worded — as a cue to explain plainly. **When you write the profile, tell the user in
+plain terms they can ask you to explain any question at any time** — don't make them discover
+it. (See `METHOD.md` §4, "Calibrating to the user's experience level".)
+
+Then read `overview.md` and fill the gaps a brief usually misses. Ask about: who uses it and
+who else is affected; expected scale now vs. in a year; hard constraints (regulatory,
+budget, timeline, team, existing systems); data sensitivity; integrations; and — most
+importantly — what's **explicitly out of scope**. Keep it conversational, a few questions
+at a time. When you have enough, summarize your understanding back and offer to write it
+into `Code/mine-flow-docs/overview.md`. **Wait for confirmation.**
+
+### Stage 1 — Roadmap  ▸ checkpoint
+Propose:
+- The **Phase plan** — what Phase 1 (the MVP) includes and, deliberately, excludes; a
+  rough sketch of later phases for things being deferred. (This is a sketch to align on
+  direction; the Phasing & Roadmap session formalizes the phase plan.)
+- **STEP-1 (architecture)** as the first and — for now — the *only* STEP in the index.
+Record **only STEP-1's row** in `prompts/STEP-index.md` (already seeded from
+`Code/mine-flow-docs/templates/step-index-seed.md` by `init.sh` — fill in that row).
+**Don't add implementation STEP rows yet** — those are outlined later by the planning
+session, after STEP-1's review passes (`METHOD.md` §2). **Wait for the user to confirm
+scope** before continuing.
+
+### Stage 2 — STEP-1 PLAN  ▸ checkpoint
+STEP-1 is **architecture-first: design docs + ADRs, no code.** Decide which architecture
+sessions apply (see the core set in `METHOD.md` §4). Enumerate every
+`Code/mine-flow-docs/templates/architecture-sessions/conditional-*.md` file; never leave a
+conditional simply unconsidered, including one added after this bootstrap prompt was written.
+Fill in the **Conditional sessions considered** table in the PLAN with one row per discovered
+template, adding any row not already seeded there. Name its owning session and current call:
+**Include** (→ the substep it becomes, e.g. `1.6a`), **Deferred** (with a revisit trigger), or
+**N/A** (with a one-line reason). Native app is owned by the Architecture Overview & Component
+Boundaries client-surfaces question; Identity/auth is owned by the Security session's
+AuthN/AuthZ posture; Privacy/compliance is owned by the Data Model / Security sessions when
+personal or regulated data appears. A skipped or deferred conditional must leave a recorded
+reason, so a future reader sees a decision rather than an accident. Keep the core sessions
+unless their own session instructions explicitly say to mark them `N/A` or `Deferred` (for
+example, the UI / Design System session when there is no styled UI). Write
+`Upcoming Prompts/mine-flow-STEP-1-PLAN.md` (from
+`Code/mine-flow-docs/templates/step-plan-template.md`) listing the chosen sessions as substeps,
+the locked decisions, and the definition of done. **Wait for confirmation.**
+
+### Stage 3 — Substep prompts  ▸ checkpoint
+For STEP-1, the substep prompts already exist as the session files in
+`Code/mine-flow-docs/templates/architecture-sessions/`. Confirm the mapping (substep 1.1
+→ session 01, etc.) in the PLAN and the index. (For later, non-architecture STEPs, you'll
+author substep prompts from `Code/mine-flow-docs/templates/substep-prompt-template.md`.)
+
+**Then close out the kickoff:** flip the kickoff gate by editing the
+`<!-- PROJECT-STATUS: not-started -->` line near the top of
+`Code/mine-flow-docs/overview.md` to `<!-- PROJECT-STATUS: kickoff-complete -->`. This is
+what tells future sessions to resume from `prompts/STEP-index.md` instead of re-running this
+kickoff. Then flip the `STEP-1` row in `prompts/STEP-index.md` from `Planned` to
+`In progress`; `init.sh` reserved `STEP-1`, and kickoff is the special setup that starts it.
+Use branch `step-0001-architecture` for STEP-1 work wherever branch-per-STEP applies (and in a
+team/shared-remote project, push the `In progress` flip). **Then stop.**
+
+### Execution (after kickoff)
+The user drives from here, one session at a time:
+> Run STEP-1.1: System Overview, Requirements & Non-Goals
+
+Each session interviews the user and writes its architecture doc + any ADRs, then updates
+`prompts/STEP-index.md`. Encourage the user to clear the chat between sessions — state
+lives on disk. When all architecture sessions are done, run the substep labeled
+**Cross-Cutting Review**.
+
+Then move from architecture into building: tell the agent *"run the planning session"*
+(`Code/mine-flow-docs/templates/planning-session.md`). It outlines **all** the Phase-1
+**implementation STEPs** (a couple of sentences each) into `prompts/STEP-index.md` — the
+bridge from design to code. You then build them one at a time; each STEP's detailed PLAN is
+written when you start it.
+
+At any point — including a brand-new chat — the next action is derivable from
+`prompts/STEP-index.md` via the **next-action resolver** (`METHOD.md` §10); each session and
+STEP also ends by naming it. So *"what do I do next?"* is always answerable from disk.
+
+## Rules
+- **No application code during the architecture STEP.** Output is Markdown docs + ADRs.
+- **One decision/question cluster at a time.** Don't dump a wall of questions.
+- **Calibrate to the local user profile** (Stage 0; root `.throughstone/local-user.md`). At
+  Level 1–2, explain what you're asking and why before asking it; at any level, treat any
+  sign of confusion or request to clarify — however worded — as a cue to explain plainly,
+  and tell the user up front they can ask.
+- **Record decisions.** Significant choices become ADRs
+  (`Code/mine-flow-docs/templates/adr-template.md`); the current design lives in architecture docs
+  (`Code/mine-flow-docs/templates/architecture-doc-template.md`).
+- **Keep the index current.** `prompts/STEP-index.md` is the source of truth for status.
