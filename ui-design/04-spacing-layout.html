@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision 4: Spacing & Layout Options</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body { padding: 2rem; background: #fafaf9; color: #44403c; font-family: 'Inter', sans-serif; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; align-items: start; }
+        
+        .card { border: 1px solid #e7e5e4; background: white; border-radius: 4px; overflow: hidden; }
+        .card-header { border-bottom: 1px solid #e7e5e4; font-weight: 600; background-color: #fafaf9; color: #292524; font-size: 0.95em; }
+        
+        /* Shared components */
+        .brand { background-color: #166534; color: white; border: none; cursor: pointer; font-weight: 500; border-radius: 4px; }
+        .input { border: 1px solid #d6d3d1; border-radius: 4px; width: 100%; box-sizing: border-box; font-family: 'Inter', sans-serif; color: #292524; }
+        .label { display: block; font-size: 0.85em; font-weight: 500; color: #57534e; }
+        .table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+        .table th { text-align: left; border-bottom: 1px solid #e7e5e4; color: #78716c; font-weight: 500; }
+        .table td { border-bottom: 1px solid #f5f5f4; }
+        .mono { font-family: 'Roboto Mono', monospace; }
+        .success { color: #15803d; background-color: #dcfce7; font-size: 0.85em; font-weight: 500; border-radius: 4px; display: inline-block; }
+
+        /* Option 1: Standard (Comfortable) - 16px base padding, 8px gaps */
+        .opt-1 .card-header { padding: 1rem; }
+        .opt-1 .card-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+        .opt-1 .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        .opt-1 .input { padding: 0.75rem; font-size: 1rem; }
+        .opt-1 .brand { padding: 0.75rem 1rem; font-size: 1rem; }
+        .opt-1 .table th, .opt-1 .table td { padding: 0.75rem; }
+        .opt-1 .success { padding: 4px 8px; }
+
+        /* Option 2: Compact (Recommended for Data-Dense) - 12px base padding, 4px gaps */
+        .opt-2 .card-header { padding: 0.75rem; }
+        .opt-2 .card-body { padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+        .opt-2 .form-group { display: flex; flex-direction: column; gap: 0.25rem; }
+        .opt-2 .input { padding: 0.5rem; font-size: 0.9em; }
+        .opt-2 .brand { padding: 0.5rem 0.75rem; font-size: 0.9em; }
+        .opt-2 .table th, .opt-2 .table td { padding: 0.5rem; }
+        .opt-2 .success { padding: 2px 6px; }
+
+        /* Option 3: Ultra-Compact - 8px base padding, 2px gaps */
+        .opt-3 .card-header { padding: 0.5rem; font-size: 0.85em; }
+        .opt-3 .card-body { padding: 0.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+        .opt-3 .form-group { display: flex; flex-direction: column; gap: 0.15rem; }
+        .opt-3 .input { padding: 0.25rem; font-size: 0.85em; }
+        .opt-3 .brand { padding: 0.25rem 0.5rem; font-size: 0.85em; }
+        .opt-3 .table th, .opt-3 .table td { padding: 0.25rem; font-size: 0.85em; }
+        .opt-3 .success { padding: 1px 4px; font-size: 0.8em; }
+
+        .description { margin-bottom: 1rem; font-size: 0.9em; color: #555; line-height: 1.4; }
+    </style>
+</head>
+<body>
+    <h2>Decision 4: Spacing & Layout Density</h2>
+    <p style="max-width: 800px; line-height: 1.5; color: #555;">
+        You've established a "Data-Dense" principle, but we need to decide exactly how tight to pack the interface. This sets the base spacing unit (margins, paddings, and gaps) for the entire application.
+    </p>
+    
+    <div class="grid">
+        <!-- Option 1 -->
+        <div class="card opt-1">
+            <div class="card-header">Option 1: Comfortable (Standard)</div>
+            <div class="card-body">
+                <p class="description">Standard modern web spacing. Very easy to tap on mobile devices, but limits how much data fits on screen without scrolling.</p>
+                <div class="form-group">
+                    <label class="label">Cut Volume (m³)</label>
+                    <input class="input mono" type="text" value="1,450.00">
+                </div>
+                <table class="table">
+                    <tr><th>Area Zone</th><th>Status</th></tr>
+                    <tr><td>Alpha PIT</td><td><span class="success">Active</span></td></tr>
+                    <tr><td>Bravo PIT</td><td><span class="success">Active</span></td></tr>
+                </table>
+                <button class="brand">Save Entry</button>
+            </div>
+        </div>
+
+        <!-- Option 2 -->
+        <div class="card opt-2">
+            <div class="card-header">Option 2: Compact (Recommended)</div>
+            <div class="card-body">
+                <p class="description">Pulls elements tighter together, reducing padding and gaps. Fits about 30% more data on screen while remaining perfectly readable and tappable.</p>
+                <div class="form-group">
+                    <label class="label">Cut Volume (m³)</label>
+                    <input class="input mono" type="text" value="1,450.00">
+                </div>
+                <table class="table">
+                    <tr><th>Area Zone</th><th>Status</th></tr>
+                    <tr><td>Alpha PIT</td><td><span class="success">Active</span></td></tr>
+                    <tr><td>Bravo PIT</td><td><span class="success">Active</span></td></tr>
+                </table>
+                <button class="brand">Save Entry</button>
+            </div>
+        </div>
+
+        <!-- Option 3 -->
+        <div class="card opt-3">
+            <div class="card-header">Option 3: Ultra-Compact</div>
+            <div class="card-body">
+                <p class="description">Maximizes density to spreadsheet-like levels. Fits the most data, but small touch targets may be frustrating for field workers using their phones.</p>
+                <div class="form-group">
+                    <label class="label">Cut Volume (m³)</label>
+                    <input class="input mono" type="text" value="1,450.00">
+                </div>
+                <table class="table">
+                    <tr><th>Area Zone</th><th>Status</th></tr>
+                    <tr><td>Alpha PIT</td><td><span class="success">Active</span></td></tr>
+                    <tr><td>Bravo PIT</td><td><span class="success">Active</span></td></tr>
+                </table>
+                <button class="brand">Save Entry</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

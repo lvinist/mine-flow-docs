@@ -36,7 +36,42 @@
 # - medium: meaningful but bounded blast radius.
 # - low: local nuisance, cleanup, or small maintainability drag.
 
-risks: []
+risks:
+  - id: RISK-0001
+    status: open
+    title: "Deferred custom anti-DDoS infrastructure"
+    category: security
+    severity: medium
+    owner: "TBD"
+    opened: "2026-07-17"
+    source: "architecture/06-security-threat-model.md"
+    description: "Public endpoints launch without custom DDoS protection; relying on Supabase rate limits."
+    impact: "App availability could be degraded by heavy automated attacks."
+    mitigation: "Supabase framework-level request limits."
+    revisit_trigger: "Before public beta or if system experiences repeated noisy traffic."
+    refs:
+      - "architecture/06-security-threat-model.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0002
+    status: closed
+    title: "Unfixed non-fatal Flutter analyzer warnings and infos"
+    category: tech-debt
+    severity: low
+    owner: "Team"
+    opened: "2026-07-18"
+    source: "reports/2026-07-18-step-0010-check-in-report.md"
+    description: "92 non-fatal analyzer style warnings (such as prefer_const_constructors and deprecated withOpacity) exist in codebase."
+    impact: "Slight drag on lint hygiene; no functional impact."
+    mitigation: "Code compiles and tests pass (276/276)."
+    revisit_trigger: "Post-MVP polish pass."
+    refs:
+      - "reports/2026-07-18-step-0010-check-in-report.md"
+    closed:
+      date: "2026-07-19"
+      reason: "Fixed in STEP-11"
 
 # Example:
 # risks:

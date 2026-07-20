@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision 2: Color Options</title>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; padding: 2rem; background: #fafafa; color: #333; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { border: 1px solid #e5e5e5; overflow: hidden; background: white; }
+        .card-header { padding: 1rem; border-bottom: 1px solid #e5e5e5; font-weight: 600; }
+        .card-body { padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+        
+        /* Option 1: Slate & Blue */
+        .opt-1 .brand { background-color: #2563eb; color: white; } /* Blue-600 */
+        .opt-1 .brand-text { color: #2563eb; }
+        .opt-1 .gray-dark { color: #334155; } /* Slate-700 */
+        .opt-1 .gray-light { color: #64748b; } /* Slate-500 */
+        .opt-1 .bg-gray { background-color: #f8fafc; } /* Slate-50 */
+        .opt-1 .success { color: #16a34a; background-color: #dcfce7; padding: 2px 6px; font-size: 0.85em; font-weight: 500;}
+
+        /* Option 2: Monochrome & Zinc */
+        .opt-2 .brand { background-color: #18181b; color: white; } /* Zinc-900 */
+        .opt-2 .brand-text { color: #18181b; }
+        .opt-2 .gray-dark { color: #27272a; } /* Zinc-800 */
+        .opt-2 .gray-light { color: #71717a; } /* Zinc-500 */
+        .opt-2 .bg-gray { background-color: #fafafa; } /* Zinc-50 */
+        .opt-2 .success { color: #27272a; background-color: #e4e4e7; padding: 2px 6px; font-size: 0.85em; font-weight: 500;} /* Muted success */
+
+        /* Option 3: Forest & Stone */
+        .opt-3 .brand { background-color: #166534; color: white; } /* Green-800 */
+        .opt-3 .brand-text { color: #166534; }
+        .opt-3 .gray-dark { color: #44403c; } /* Stone-700 */
+        .opt-3 .gray-light { color: #78716c; } /* Stone-500 */
+        .opt-3 .bg-gray { background-color: #fafaf9; } /* Stone-50 */
+        .opt-3 .success { color: #15803d; background-color: #dcfce7; padding: 2px 6px; font-size: 0.85em; font-weight: 500;}
+
+        .btn { padding: 0.5rem 1rem; border: none; cursor: pointer; text-align: center; font-size: 0.9em; font-weight: 500;}
+        .metric { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0f0f0; padding-bottom: 0.5rem;}
+        .metric:last-child { border-bottom: none; }
+        .font-bold { font-weight: 600; }
+        
+        .description { margin-bottom: 1rem; font-size: 0.9em; color: #555; line-height: 1.4; }
+    </style>
+</head>
+<body>
+    <h2>Decision 2: Color</h2>
+    <p style="max-width: 800px; line-height: 1.5;">
+        Now that we are leaning into a Data-Dense & Minimalist feel, we need to choose the color palette. 
+        This decides our <strong>brand/primary color</strong> (used for buttons, links, and active states), 
+        our <strong>grayscale ramp</strong> (used for text, backgrounds, and borders), and our <strong>semantic colors</strong> (success/warning/error).
+    </p>
+    
+    <div class="grid">
+        <!-- Option 1 -->
+        <div class="card opt-1">
+            <div class="card-header bg-gray gray-dark">Option 1: Slate & Blue (Recommended)</div>
+            <div class="card-body">
+                <p class="description">A standard, professional blue primary with cool "slate" grays. Highly legible, familiar, and works well for data visualization. Keeps semantic colors standard (green for success).</p>
+                <div class="metric">
+                    <span class="gray-dark">GNSS RTK Base</span>
+                    <span class="success">Passed</span>
+                </div>
+                <div class="metric">
+                    <span class="gray-dark">Cut Volume</span>
+                    <span class="brand-text font-bold">1,450 m³</span>
+                </div>
+                <button class="btn brand">Sync Data</button>
+            </div>
+        </div>
+
+        <!-- Option 2 -->
+        <div class="card opt-2">
+            <div class="card-header bg-gray gray-dark">Option 2: Monochrome & Zinc</div>
+            <div class="card-body">
+                <p class="description">Ultra-minimalist. Uses black/dark gray as the primary color with neutral "zinc" grays. Minimizes color distraction completely, using muted grays even for success states.</p>
+                <div class="metric">
+                    <span class="gray-dark">GNSS RTK Base</span>
+                    <span class="success">Passed</span>
+                </div>
+                <div class="metric">
+                    <span class="gray-dark">Cut Volume</span>
+                    <span class="brand-text font-bold">1,450 m³</span>
+                </div>
+                <button class="btn brand">Sync Data</button>
+            </div>
+        </div>
+
+        <!-- Option 3 -->
+        <div class="card opt-3">
+            <div class="card-header bg-gray gray-dark">Option 3: Forest & Stone</div>
+            <div class="card-body">
+                <p class="description">A deep green primary with warm "stone" grays. Gives a subtle nod to the mining/earthworks domain while staying professional. Standard semantic colors.</p>
+                <div class="metric">
+                    <span class="gray-dark">GNSS RTK Base</span>
+                    <span class="success">Passed</span>
+                </div>
+                <div class="metric">
+                    <span class="gray-dark">Cut Volume</span>
+                    <span class="brand-text font-bold">1,450 m³</span>
+                </div>
+                <button class="btn brand">Sync Data</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

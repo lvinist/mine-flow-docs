@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision 5: Shape & Elevation Options</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { padding: 2rem; background: #fafaf9; color: #44403c; font-family: 'Inter', sans-serif; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; align-items: start; }
+        
+        .card-body { padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; background: white; margin-top: 1rem; }
+        
+        /* Shared components */
+        .brand { background-color: #166534; color: white; border: none; cursor: pointer; font-weight: 500; padding: 0.5rem 0.75rem; font-size: 0.9em; transition: opacity 0.2s; }
+        .brand:hover { opacity: 0.9; }
+        .input { width: 100%; box-sizing: border-box; font-family: 'Inter', sans-serif; padding: 0.5rem; font-size: 0.9em; background: white; color: #292524; outline: none; }
+        
+        /* Option 1: Sharp & Flat (Brutalist) - 0px radius, 1px solid borders, no shadow */
+        .opt-1 { border-radius: 0; border: 1px solid #d6d3d1; box-shadow: none; }
+        .opt-1 .brand { border-radius: 0; }
+        .opt-1 .input { border-radius: 0; border: 1px solid #d6d3d1; }
+        .opt-1 .input:focus { border-color: #166534; }
+        .opt-1 .badge { border-radius: 0; border: 1px solid #166534; background: transparent; color: #166534; padding: 2px 6px; font-size: 0.85em; font-weight: 500;}
+
+        /* Option 2: Rounded & Subtle (Recommended) - 4px radius, 1px light borders, very soft shadow */
+        .opt-2 { border-radius: 4px; border: 1px solid #e7e5e4; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .opt-2 .brand { border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+        .opt-2 .input { border-radius: 4px; border: 1px solid #d6d3d1; }
+        .opt-2 .input:focus { border-color: #166534; box-shadow: 0 0 0 1px #166534; }
+        .opt-2 .badge { border-radius: 4px; background: #dcfce7; color: #15803d; padding: 2px 6px; font-size: 0.85em; font-weight: 500;}
+
+        /* Option 3: Soft & Elevated - 12px radius, no borders, soft drop shadows */
+        .opt-3 { border-radius: 12px; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .opt-3 .brand { border-radius: 8px; box-shadow: 0 2px 8px rgba(22, 101, 52, 0.3); }
+        .opt-3 .input { border-radius: 8px; border: 1px solid transparent; background: #f5f5f4; }
+        .opt-3 .input:focus { background: white; box-shadow: 0 0 0 2px #166534; }
+        .opt-3 .badge { border-radius: 12px; background: #dcfce7; color: #15803d; padding: 2px 8px; font-size: 0.85em; font-weight: 500;}
+
+        .description { margin-bottom: 0.5rem; font-size: 0.9em; color: #555; line-height: 1.4; }
+    </style>
+</head>
+<body>
+    <h2 style="color: #292524;">Decision 5: Shape & Elevation</h2>
+    <p style="max-width: 800px; line-height: 1.5; color: #555;">
+        Now we define how UI elements are shaped—specifically, how rounded their corners are, and whether we use solid borders or drop shadows to separate them from the background.
+    </p>
+    
+    <div class="grid">
+        <!-- Option 1 -->
+        <div>
+            <p class="description"><strong>Option 1: Sharp & Flat</strong><br>Square corners (0px radius), strong borders, and zero shadows. Very industrial and purely functional.</p>
+            <div class="card-body opt-1">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e7e5e4; padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 600; color: #292524;">Alpha PIT Status</span>
+                    <span class="badge">Active</span>
+                </div>
+                <input class="input" type="text" placeholder="Search logs...">
+                <button class="brand">View Details</button>
+            </div>
+        </div>
+
+        <!-- Option 2 -->
+        <div>
+            <p class="description"><strong>Option 2: Rounded & Subtle (Recommended)</strong><br>Slightly rounded corners (4px radius), subtle borders, and very faint shadows. This perfectly matches the "modern admin dashboard" aesthetic.</p>
+            <div class="card-body opt-2">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e7e5e4; padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 600; color: #292524;">Alpha PIT Status</span>
+                    <span class="badge">Active</span>
+                </div>
+                <input class="input" type="text" placeholder="Search logs...">
+                <button class="brand">View Details</button>
+            </div>
+        </div>
+
+        <!-- Option 3 -->
+        <div>
+            <p class="description"><strong>Option 3: Soft & Elevated</strong><br>Highly rounded corners (12px radius), no borders, and pronounced drop shadows. Feels much more like a consumer app than an enterprise tool.</p>
+            <div class="card-body opt-3">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e7e5e4; padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 600; color: #292524;">Alpha PIT Status</span>
+                    <span class="badge">Active</span>
+                </div>
+                <input class="input" type="text" placeholder="Search logs...">
+                <button class="brand">View Details</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -32,7 +32,7 @@ AGENTS.md and follow it."*
 - **`kickoff-complete` → Resume mode.** Kickoff already happened. **Do not re-run kickoff.**
   Pick up the next action via the next-action resolver (`METHOD.md` §10): **run
   `./doctor.sh status` (or `Code/mine-flow-docs/scripts/status.sh`)** — it resolves §10 mechanically from disk and
-  prints where you are, the next action, and the check-in cadence. Read
+  prints where you are, the next action, and the check-in cadence. (Note: On Windows PowerShell, execute this using `& "C:\Program Files\Git\bin\sh.exe" .\doctor.sh status`). Read
   `prompts/STEP-index.md` to confirm (and for the sub-STEP detail the script doesn't carry —
   the in-flight PLAN in `Upcoming Prompts/`), then tell the user what's next. If the script
   isn't available (older project, no shell), fall back to reading the index and applying §10
@@ -138,7 +138,9 @@ durable content almost always belongs in `Code/mine-flow-docs/`.
   missing, ask the two local-profile questions from `BOOTSTRAP-PROMPT.md` Stage 0, create it,
   and continue. An explicit style request in chat overrides the profile for the current
   session only; edit `.throughstone/local-user.md` to change future defaults.
-- **Use judgment before creating a STEP.** For tiny, well-understood changes that do not affect
+- **Respect Windows PowerShell limitations.** When executing terminal commands on Windows, you MUST:
+  1. **Partition Changes**: Switch the drive letter first before using `cd` to change directories across partitions (e.g., `D:`, then `cd D:\path\to\directory`).
+  2. **Shell Scripts**: Run `.sh` scripts using: `& "C:\Program Files\Git\bin\sh.exe" .\script.sh`.
   architecture, public contracts, data model, security posture, deployment behavior, multiple
   repos, or accepted risk/debt, keep the record in the issue/PR/commit trail instead of adding
   process overhead.
