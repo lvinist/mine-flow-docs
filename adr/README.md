@@ -46,6 +46,7 @@ e.g. "tech lead", "consensus of maintainers", "ADR review on PR". -->
 | ADR-0005 | Role-Based Access Control via Supabase RLS | Accepted | 2026-07-18 |
 | ADR-0006 | Local Offline Storage — Hive over SQLite/sqflite | Accepted | 2026-07-18 |
 | ADR-0007 | Re-scope Phase 2 to Impeccable UI Rebuild | Accepted | 2026-07-21 |
+| ADR-0008 | Impeccable Bridge and UI Design Tokens | Accepted | 2026-07-22 |
 
 <!-- Example row shape (indented so it isn't picked up by the scan / `max + 1`; a real row
      starts at the line's left margin with no leading spaces):

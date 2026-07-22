@@ -407,7 +407,7 @@ machine by `Code/mine-flow-docs/scripts/setup-workspace.sh`.
 
 **Workspace-root hygiene:** besides the per-machine pointers/config, the repo folders, and
 the `Upcoming Prompts/` working folder, no other file should sit at the workspace root (the
-one-time `init.sh` may linger there until you delete it post-bootstrap — that's expected). If
+one-time `init.sh` may linger there until you delete it post-bootstrap — that's expected). `DESIGN.md` and `PRODUCT.md` are also explicitly allowed as they are unversioned input contracts for the Impeccable bridge. If
 any *other* file appears, ask whether it belongs in a repo (usually the docs hub) and move it.
 
 **Path conventions in docs.** Top-level agent-facing docs (`AGENTS.md`, `BOOTSTRAP-PROMPT.md`,

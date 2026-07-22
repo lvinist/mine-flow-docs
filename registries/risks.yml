@@ -73,6 +73,25 @@ risks:
       date: "2026-07-19"
       reason: "Fixed in STEP-11"
 
+  - id: RISK-0003
+    status: open
+    title: "Phase 2 UI spacing and color drift bugs deferred"
+    category: tech-debt
+    severity: low
+    owner: "Team"
+    opened: "2026-07-22"
+    source: "reports/2026-07-21-step-0028-check-in-report.md"
+    description: "STEP-28.1 UI audit identified spacing and color drift bugs across Phase 2 screens."
+    impact: "Minor visual inconsistencies."
+    mitigation: "To be fully resolved during the upcoming ForUI rebuild (STEP-30+)."
+    revisit_trigger: "STEP-30+ ForUI rebuild"
+    refs:
+      - "mine-flow-STEP-28.1-AUDIT.md"
+      - "prompts/STEP-index.md"
+    closed:
+      date:
+      reason:
+
 # Example:
 # risks:
 #   - id: RISK-0001
