@@ -52,3 +52,4 @@ e.g. "tech lead", "consensus of maintainers", "ADR review on PR". -->
      starts at the line's left margin with no leading spaces):
        | ADR-0001 | Use Postgres as the primary datastore | Accepted | 2026-01-15 |
 -->
+| ADR-0009 | UI Design System Drift | Accepted | 2026-07-28 |
