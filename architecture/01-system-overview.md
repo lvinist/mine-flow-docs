@@ -8,8 +8,8 @@
 > Defines what mine-flow is, who it's for, what it must do, what it deliberately does not do, and the constraints, assumptions, and risks shaping the design.
 
 ## Table of Contents
-- [1. Problem & Value](#1-problem--value)
-- [2. Users & Stakeholders](#2-users--stakeholders)
+- [1. Problem & Value](#1-problem-value)
+- [2. Users & Stakeholders](#2-users-stakeholders)
 - [3. Success Criteria](#3-success-criteria)
 - [4. Scope](#4-scope)
 - [5. Constraints](#5-constraints)

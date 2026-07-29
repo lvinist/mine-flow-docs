@@ -8,13 +8,13 @@
 > Defines the offline sync strategy, local storage, device capabilities, and distribution approach for the Flutter app.
 
 ## Table of Contents
-- [1. Platform Strategy & Targets](#1-platform-strategy--targets)
-- [2. Offline Capabilities & Syncing](#2-offline-capabilities--syncing)
-- [3. On-Device Storage & State](#3-on-device-storage--state)
+- [1. Platform Strategy & Targets](#1-platform-strategy-targets)
+- [2. Offline Capabilities & Syncing](#2-offline-capabilities-syncing)
+- [3. On-Device Storage & State](#3-on-device-storage-state)
 - [4. Push Notifications](#4-push-notifications)
 - [5. Device Permissions](#5-device-permissions)
 - [6. Mobile Device Security](#6-mobile-device-security)
-- [7. Distribution & Release](#7-distribution--release)
+- [7. Distribution & Release](#7-distribution-release)
 - [8. Device Performance](#8-device-performance)
 - [Decision Summary](#decision-summary)
 - [Open Questions](#open-questions)

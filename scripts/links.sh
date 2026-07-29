@@ -15,12 +15,12 @@ set -uo pipefail
 DOCS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 ROOT="$(cd "$DOCS_DIR/../.." && pwd)"
 
-if ! command -v python >/dev/null 2>&1; then
-  echo "links.sh: python is required to parse Markdown links" >&2
+if ! command -v python3 >/dev/null 2>&1; then
+  echo "links.sh: python3 is required to parse Markdown links" >&2
   exit 1
 fi
 
-python - "$ROOT" "$DOCS_DIR" <<'PY'
+python3 - "$ROOT" "$DOCS_DIR" <<'PY'
 import os
 import re
 import sys

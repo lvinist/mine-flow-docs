@@ -1,6 +1,6 @@
 # ADR-0010: Low-Battery Sync Rule
 
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-07-29
 
 ## Related documents
