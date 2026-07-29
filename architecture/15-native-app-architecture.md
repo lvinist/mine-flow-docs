@@ -1,8 +1,8 @@
 # Doc 15 — Native App Architecture
 
-**Version:** v0.1.0
+**Version:** v0.2.0
 **Status:** Draft        <!-- Draft (v0.x) → MVP (v1.x) → Stable (v2.x); see METHOD.md §6 -->
-**Last updated:** 2026-07-17 (STEP-1.3a)
+**Last updated:** 2026-07-29 (STEP-39.2)
 **Audience:** All contributors — this sets the specific capabilities, sync strategies, and security posture of the mobile (and desktop/web) client.
 
 > Defines the offline sync strategy, local storage, device capabilities, and distribution approach for the Flutter app.
@@ -59,7 +59,7 @@ Given the internal 1-month MVP timeline:
 ## 8. Device Performance
 To ensure adequate battery life for full field shifts:
 - Background syncing is strictly event-based (checking internet connection availability) and runs only when connectivity is established.
-- Syncing is explicitly **paused** if the device battery is low.
+- Syncing is explicitly **paused** for background/automatic operations if the device battery is low (OS Battery Saver ON OR raw battery <= 20%). Charging bypasses this. Manual syncs are still allowed.
 - Syncing primarily triggers when the app is actively open or recently closed, avoiding persistent background battery drain.
 - The Android APK size target should be kept small (e.g., < 50MB) to facilitate direct downloads over slow connections.
 
@@ -74,7 +74,7 @@ To ensure adequate battery life for full field shifts:
 | 5 | Device Permissions | Camera only | Allows photo attachments for logs; defers GPS to Phase 2 | Automated geolocation tagging |
 | 6 | Device Security | Rely on standard lock screen; no root block | Avoids complex security overhead for a fast internal MVP | Complete protection on stolen/rooted devices |
 | 7 | Android Distribution | Direct APK Download with in-app update prompt | Bypasses Google Play review delays and developer account requirements | Seamless, silent background auto-updates via Play Store |
-| 8 | Performance | Pause sync on low battery; event-based sync | Preserves foreman battery life for full shift | Immediate sync guarantees if battery is low or app is killed |
+| 8 | Performance | Pause background sync on low battery (<=20% or Saver ON); event-based sync | Preserves foreman battery life for full shift | Immediate background sync guarantees if battery is low or app is killed |
 
 ## Open Questions
 
@@ -87,3 +87,4 @@ To ensure adequate battery life for full field shifts:
 | Version | Date | STEP | Change |
 |---------|------|------|--------|
 | v0.1.0 | 2026-07-17 | STEP-1.3a | Initial draft from Native App Architecture session |
+| v0.2.0 | 2026-07-29 | STEP-39.2 | Defined precise low-battery sync state table rule (ADR-0010) |
