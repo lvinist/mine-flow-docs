@@ -74,7 +74,7 @@ risks:
       reason: "Fixed in STEP-11"
 
   - id: RISK-0003
-    status: open
+    status: closed
     title: "Phase 2 UI spacing and color drift bugs deferred"
     category: tech-debt
     severity: low
@@ -89,8 +89,8 @@ risks:
       - "mine-flow-STEP-28.1-AUDIT.md"
       - "prompts/STEP-index.md"
     closed:
-      date:
-      reason:
+      date: "2026-07-29"
+      reason: "UI drift formalized in ADR-0009; remaining items resolved in STEP-30+ ForUI rebuild."
 
 # Example:
 # risks:
