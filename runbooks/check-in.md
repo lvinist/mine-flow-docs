@@ -111,6 +111,11 @@ Beyond the architecture docs, sweep four things that rot just as quietly:
   still exists and still explains the risk. Close items that are mitigated, update stale rows,
   create missing source artifacts, and file follow-up STEPs for anything whose trigger has
   fired or whose severity is no longer acceptable.
+- **Implemented design review coverage** — for any UI-heavy STEP since the last check-in, confirm
+  whether `runbooks/impeccable-design-review.md` was run and whether its report under
+  `reports/design-reviews/` left any Blocking, Needs remediation, or Unverified result. Do not
+  substitute static source inspection for runtime visual evidence. File or retain the relevant
+  remediation STEP before declaring the UI work healthy.
 
 ### Security-review gate
 
