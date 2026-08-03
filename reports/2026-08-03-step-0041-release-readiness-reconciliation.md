@@ -20,9 +20,9 @@
 ### App↔Supabase Contract Baseline
 | Requirement | Evidence (Path / Command) | Status | Gap | Owner / Follow-up | Acceptance Evidence |
 |-------------|---------------------------|--------|-----|-------------------|---------------------|
-| Code-generated typed interfaces (Doc 11) | `lib/core/data/models/user_model.dart` shows manually written `fromJson`/`toJson`. No `lib/data/models/generated/` directory exists. | **Unverified** | Models are manually written instead of code-generated. | 41.2 / 41.4 | Code-generated models committed to the repository. |
-| Supabase CLI Project Config | Directory `supabase/` missing `config.toml`. | **Unverified** | No project reference configuration for Supabase CLI. | 41.2 | `supabase/config.toml` exists with valid project reference. |
-| CI Gate for Contract Staleness (Doc 12) | `.github/workflows/ci.yml` checked. Shows tests and build but no contract generation check. | **Unverified** | Missing step in CI to verify types against schema changes. | 41.2 / 41.4 | CI workflow includes a non-secret contract staleness check. |
+| Code-generated typed interfaces (Doc 11) | `dart run tool/check_supabase_contracts.dart` correctly identifies missing types. Live generation command documented in the script. Target location: `lib/core/data/models/generated/database.dart`. | **Unverified** | Live generation cannot be safely executed (missing non-production project reference). Deferred to STEP-42. | STEP-42 | Code-generated models committed to the repository. |
+| Supabase CLI Project Config | Directory `supabase/` missing `config.toml`. | **Unverified** | No project reference configuration for Supabase CLI. | STEP-42 | `supabase/config.toml` exists with valid project reference. |
+| CI Gate for Contract Staleness (Doc 12) | `.github/workflows/ci.yml` updated. `tool/check_supabase_contracts.dart` implemented and verified locally to detect staleness and missing types deterministically. | **Verified** | None. | N/A | CI workflow includes a non-secret contract staleness check. |
 | Versioned Database Migrations | `supabase/migrations/` contains 5 SQL files; `supabase/functions/` contains `create-user`. | **Verified** | None. | N/A | N/A |
 
 ### Localization Baseline

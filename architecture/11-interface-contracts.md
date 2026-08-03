@@ -1,8 +1,8 @@
 # Doc 11 — Interface Contracts
 
-**Version:** v0.1.0
+**Version:** v0.2.0
 **Status:** Draft
-**Last updated:** 2026-07-18 (STEP-1.11)
+**Last updated:** 2026-08-03 (STEP-41)
 **Audience:** All contributors — this sets the rules for how boundaries are specified and kept in sync.
 
 > Defines how the interfaces between the app and its external services (Supabase, Google Drive) are specified, generated, and versioned.
@@ -40,7 +40,7 @@
 
 ## 3. Artifact Locations
 
-- **Generated Dart Types:** The generated Supabase models will live directly in the Flutter app's codebase under `lib/data/models/generated/` (or similar standard Data layer path) to ensure they are checked into version control alongside the code that uses them.
+- **Generated Dart Types:** The generated Supabase models will live directly in the Flutter app's codebase under `lib/core/data/models/generated/` (aligned with the manual models path) to ensure they are checked into version control alongside the code that uses them.
 
 ## 4. Versioning & Compatibility
 
@@ -100,4 +100,5 @@ None.
 
 | Version | Date | STEP | Change |
 |---------|------|------|--------|
+| v0.2.0 | 2026-08-03 | STEP-41 | Updated generated models path to `lib/core/data/models/generated/` and established CI guard |
 | v0.1.0 | 2026-07-18 | STEP-1.11 | Initial draft from Interface Contracts session |
