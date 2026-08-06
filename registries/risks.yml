@@ -92,6 +92,29 @@ risks:
       date: "2026-07-29"
       reason: "UI drift formalized in ADR-0009; remaining items resolved in STEP-30+ ForUI rebuild."
 
+  - id: RISK-0004
+    status: open
+    title: "Full Indonesian localization migration incomplete"
+    category: tech-debt
+    severity: medium
+    owner: "TBD"
+    opened: "2026-08-06"
+    source: "reports/2026-08-03-step-0041-release-readiness-reconciliation.md"
+    description: >
+      All user-facing strings in presentation files are currently hardcoded
+      (Indonesian/English). The AppLocalizations scaffold (STEP-41.3) provides
+      the infrastructure and prevents new regressions in non-exempt files, but
+      the ~28 legacy presentation files remain on the exempt list.
+      Must be resolved before a public multi-language release.
+    impact: "Cannot easily add languages; technical debt accumulates."
+    mitigation: "CI guard prevents new hardcoded strings."
+    revisit_trigger: "Before any public multi-language release or when a new screen is added."
+    refs:
+      - "reports/2026-08-03-step-0041-release-readiness-reconciliation.md"
+    closed:
+      date:
+      reason:
+
 # Example:
 # risks:
 #   - id: RISK-0001

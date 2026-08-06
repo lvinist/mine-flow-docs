@@ -44,7 +44,7 @@
 - **Responsive Strategy:** Adaptive layouts. Web relies on standard breakpoints for sidebar expansion; Android locks to portrait mobile.
 - **Iconography:** **Lucide Icons** (via `forui` / Flutter lucide icons) for clean, consistent line-art icons.
 - **Accessibility:** Target **WCAG 2.1 AA** contrast supported out-of-the-box by ForUI Zinc theme. UI responds to OS text scaling and reduced motion preferences.
-- **Internationalization (i18n):** MVP ships **Indonesian (ID)** by default. All user-facing strings are routed through a localization layer from day one. No RTL support for MVP.
+- **Internationalization (i18n):** MVP ships **Indonesian (ID)** by default. Locale selection works, and an `AppLocalizations` delegate exists as a minimal scaffold at `lib/l10n/`, but full screen-by-screen string migration remains incomplete. No RTL support for MVP.
 - **Motion:** Snappy and subtle (150-200ms fades). No heavy physics or bouncy animations.
 
 ## 6. Implementation Stack
@@ -78,3 +78,4 @@
 | v0.1.0 | 2026-07-17 | STEP-1.7 | Initial draft from UI / Design System session |
 | v0.2.0 | 2026-07-22 | STEP-29.1 | Reconciled UI design system to specify ForUI package + FThemes.zinc (default, no brand override) replacing custom ThemeData |
 | v0.3.0 | 2026-07-29 | STEP-39.2 | Formalized UI drift: Approved Geist font and 5 visible mobile navigation items (ADR-0009) |
+| v1.x   | 2026-08-06 | STEP-41.3 | Established minimal l10n scaffold (l10n.yaml, ARB baseline, AppLocalizations delegate). Full string migration deferred to a future STEP. |
