@@ -62,6 +62,15 @@ Regeneration Command:
 Please regenerate the types before committing.
 ```
 
+## 41.2 Verification
+
+- **Code Review**: The `tool/check_supabase_contracts.dart` implementation is confirmed correct. It accurately checks the target path, properly diffs against `HEAD^` for shallow clones in CI, and provides appropriate docstrings/output. The `--project-id` flag used matches the current CLI standard for `gen types`.
+- **Focused Tests**: Created `test/tool/check_supabase_contracts_test.dart` which passes all three scenarios (passing, failing with unstaged type changes, and passing with synchronized changes).
+- **README Update**: Yes. A Contract Regeneration section was added detailing the regeneration command and CI enforcement.
+- **Doc 11 Update**: No. The document already accurately records the generation path, CI gate rules, and command.
+- **Contract Gate Status**: **Verified** (the guard itself is confirmed working with unit tests).
+- **Live Generation Status**: **Unverified** (Supabase CLI not installed locally; STEP-42 owner must provision a non-production project and run `supabase gen types dart`).
+
 ## Next-STEP Handoffs
-- **STEP-41.2**: Will verify/document the contract gate.
+- **STEP-41.2**: Completed.
 - **STEP-41.3**: Will create `l10n.yaml`, ARBs, and the l10n guard.
