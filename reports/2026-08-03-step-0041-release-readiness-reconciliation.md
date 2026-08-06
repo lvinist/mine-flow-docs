@@ -85,3 +85,25 @@ Please regenerate the types before committing.
 - **STEP-41.2**: Completed.
 - **STEP-41.3**: Completed.
 - **STEP-41.4**: Next.
+
+## STEP-41.4 Final Verification
+
+| Command | Working Dir | Exit Code | Result Summary |
+|---------|-------------|-----------|----------------|
+| `flutter pub get` | Code/mine-flow-app | 0 | Dependencies resolved |
+| `flutter gen-l10n` | Code/mine-flow-app | 0 | AppLocalizations generated |
+| `dart format --output=none ...` | Code/mine-flow-app | 0 | No formatting issues |
+| `flutter analyze` | Code/mine-flow-app | 0 | 0 issues |
+| `dart run tool/check_supabase_contracts.dart` | Code/mine-flow-app | 0 | WARNING + bypass (no generated file) |
+| `dart run tool/check_l10n_baseline.dart` | Code/mine-flow-app | 0 | OK |
+| `flutter test` | Code/mine-flow-app | 0 | 433 tests, 0 failures |
+| `flutter build apk --debug ...` | Code/mine-flow-app | Unverified | Requires staging secrets (STEP-42) |
+| `git diff --check` (app) | Code/mine-flow-app | 0 | Clean |
+| `git diff --check` (docs) | Code/mine-flow-docs | 0 | Clean |
+
+## Explicit Handoffs
+
+- **STEP-42 (Staging Environment & Promotion Pipeline):** Provision separate high-parity Supabase staging project; configure STAGING_SUPABASE_URL, STAGING_SUPABASE_ANON_KEY, STAGING_GOOGLE_DRIVE_CLIENT_ID as GitHub secrets; run supabase gen types dart --project-id $SUPABASE_PROJECT_ID > lib/core/data/models/generated/database.dart and commit the generated file; execute Android debug build smoke gate; verify staging deployment.
+- **STEP-43 (Security, Privacy & Release-Control Baseline):** RLS and authorization behavior verification; account lifecycle; privacy notice/retention; secrets posture; backup and restore fire-drill.
+- **STEP-44 (Release-Candidate E2E & Runtime Design Review):** Critical Android and web journey testing against staging; field-critical offline/sync behavior; runtime Impeccable responsive/accessible/localized UI review.
+- **Localization full migration:** All ~35 presentation files on the `_legacyExemptFiles` list require migration to `AppLocalizations`. This must be planned as a separate user-approved STEP before a public multi-language release. See risk register RISK-0004.
