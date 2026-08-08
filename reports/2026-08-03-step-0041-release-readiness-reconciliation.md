@@ -107,3 +107,41 @@ Please regenerate the types before committing.
 - **STEP-43 (Security, Privacy & Release-Control Baseline):** RLS and authorization behavior verification; account lifecycle; privacy notice/retention; secrets posture; backup and restore fire-drill.
 - **STEP-44 (Release-Candidate E2E & Runtime Design Review):** Critical Android and web journey testing against staging; field-critical offline/sync behavior; runtime Impeccable responsive/accessible/localized UI review.
 - **Localization full migration:** All ~35 presentation files on the `_legacyExemptFiles` list require migration to `AppLocalizations`. This must be planned as a separate user-approved STEP before a public multi-language release. See risk register RISK-0004.
+
+## STEP-41.5 Audit Fix — Closure
+
+**Date:** 2026-08-08
+**Audit source:** Post-implementation audit, Antigravity (Claude Sonnet 4.6 Thinking), 2026-08-08.
+
+### Fixes applied
+
+| Issue ID | Severity | File | Fix applied |
+|----------|----------|------|-------------|
+| ISSUE-4  | High     | `tool/check_l10n_baseline.dart`        | Regex rewritten as two alternates; double-quoted `Text("…")` now detected |
+| ISSUE-5  | Low      | `tool/check_l10n_baseline.dart`        | `path.contains(exempt)` removed; `endsWith` only |
+| ISSUE-6  | Low      | `tool/check_l10n_baseline.dart`        | Ghost script reference replaced with accurate maintenance instructions |
+| ISSUE-1  | Low      | `tool/check_supabase_contracts.dart`   | Porcelain parser hardened: `length < 4` guard + `.trim()` on extracted path |
+| ISSUE-8  | Medium   | `.github/workflows/ci.yml`             | `fetch-depth: 2` added to `test` job `Checkout` step |
+
+### Issues not fixed (accepted / deferred)
+
+| Issue ID | Reason |
+|----------|--------|
+| ISSUE-2 | Accepted gap: committed-but-unpushed migration changes not caught. Tracked in report; STEP-42 scope. |
+| ISSUE-3 | Resolved transitively by ISSUE-8 fix. |
+| ISSUE-7 | CI-mode contract test coverage: low priority, not blocking. Deferred. |
+| ISSUE-9 | `STAGING_*` secrets absent by design; STEP-42 provisions them. |
+| ISSUE-10 | Resolved with note in Doc 07 §5 |
+
+### 41.5 Verification gate
+
+| Command | Working Dir | Exit Code | Result Summary |
+|---------|-------------|-----------|----------------|
+| `flutter pub get` | `Code/mine-flow-app` | 0 | — |
+| `dart format --output=none ... lib/ test/ tool/` | `Code/mine-flow-app` | 0 | No issues |
+| `flutter analyze` | `Code/mine-flow-app` | 0 | 0 issues |
+| `dart run tool/check_supabase_contracts.dart` | `Code/mine-flow-app` | 0 | WARNING + bypass |
+| `dart run tool/check_l10n_baseline.dart` | `Code/mine-flow-app` | 0 | OK |
+| `flutter test test/tool/check_l10n_baseline_test.dart` | `Code/mine-flow-app` | 0 | 3 tests |
+| `flutter test test/tool/check_supabase_contracts_test.dart` | `Code/mine-flow-app` | 0 | 3 tests |
+| `flutter test` (full suite) | `Code/mine-flow-app` | 0 | 434 tests, 0 failures |

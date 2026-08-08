@@ -45,6 +45,9 @@
 - **Iconography:** **Lucide Icons** (via `forui` / Flutter lucide icons) for clean, consistent line-art icons.
 - **Accessibility:** Target **WCAG 2.1 AA** contrast supported out-of-the-box by ForUI Zinc theme. UI responds to OS text scaling and reduced motion preferences.
 - **Internationalization (i18n):** MVP ships **Indonesian (ID)** by default. Locale selection works, and an `AppLocalizations` delegate exists as a minimal scaffold at `lib/l10n/`, but full screen-by-screen string migration remains incomplete. No RTL support for MVP.
+> **Phase 3 status (STEP-41.3):** The `AppLocalizations` scaffold (`l10n.yaml`, baseline ARB
+> files, generated delegate) was established. Full migration of the ~27 legacy presentation
+> files is tracked as RISK-0004 and must be completed before a public multi-language release.
 - **Motion:** Snappy and subtle (150-200ms fades). No heavy physics or bouncy animations.
 
 ## 6. Implementation Stack
@@ -79,3 +82,4 @@
 | v0.2.0 | 2026-07-22 | STEP-29.1 | Reconciled UI design system to specify ForUI package + FThemes.zinc (default, no brand override) replacing custom ThemeData |
 | v0.3.0 | 2026-07-29 | STEP-39.2 | Formalized UI drift: Approved Geist font and 5 visible mobile navigation items (ADR-0009) |
 | v1.x   | 2026-08-06 | STEP-41.3 | Established minimal l10n scaffold (l10n.yaml, ARB baseline, AppLocalizations delegate). Full string migration deferred to a future STEP. |
+| v0.4.0 | 2026-08-08 | STEP-41.5 | Added Phase 3 localization scaffold status note (ISSUE-10 audit fix). |
