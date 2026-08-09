@@ -39,9 +39,18 @@ e.g. "tech lead", "consensus of maintainers", "ADR review on PR". -->
 
 | ADR | Title | Status | Date |
 |------|-------|--------|------|
-| _(add a row per ADR)_ | | | |
+| ADR-0001 | Use Flutter with Clean Architecture | Accepted | 2026-07-18 |
+| ADR-0002 | Use Supabase for Backend | Accepted | 2026-07-18 |
+| ADR-0003 | Use Google Drive for Geospatial File Storage | Accepted | 2026-07-18 |
+| ADR-0004 | Offline-First Sync with Last-Write-Wins | Accepted | 2026-07-18 |
+| ADR-0005 | Role-Based Access Control via Supabase RLS | Accepted | 2026-07-18 |
+| ADR-0006 | Local Offline Storage — Hive over SQLite/sqflite | Accepted | 2026-07-18 |
+| ADR-0007 | Re-scope Phase 2 to Impeccable UI Rebuild | Accepted | 2026-07-21 |
+| ADR-0008 | Impeccable Bridge and UI Design Tokens | Accepted | 2026-07-22 |
 
 <!-- Example row shape (indented so it isn't picked up by the scan / `max + 1`; a real row
      starts at the line's left margin with no leading spaces):
        | ADR-0001 | Use Postgres as the primary datastore | Accepted | 2026-01-15 |
 -->
+| ADR-0009 | UI Design System Drift | Accepted | 2026-07-28 |
+| ADR-0010 | Low-Battery Sync Rule | Accepted | 2026-07-29 |

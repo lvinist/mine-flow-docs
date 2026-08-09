@@ -24,6 +24,12 @@ repos:
     type: docs
     description: "prompts/STEP-index.md roadmap plus archived STEP plans and substep prompts; the build record."
 
+  # Application repos
+  - name: "mine-flow-app"
+    location: "Code/mine-flow-app/"
+    type: app
+    description: "Unified Flutter client app (Android + Web). Clean Architecture, BLoC state management, offline-first sync via Hive + Supabase. See ARCHITECTURE.md for internal design."
+
   # Service / app / library repos get added here as the architecture names them and they
   # are stamped from templates/repo-readme-template.md. Example:
   # - name: "mine-flow-api"

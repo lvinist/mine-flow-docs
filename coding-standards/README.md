@@ -42,13 +42,6 @@ the rest, and customize the contents to match your team.
 
 | Language | File | Status |
 |----------|------|--------|
-| Python | [`python.md`](python.md) | Default — customize |
-| TypeScript | [`typescript.md`](typescript.md) | Default — customize |
-| Go | [`go.md`](go.md) | Default — customize |
-| Rust | [`rust.md`](rust.md) | Default — customize |
 | Dart / Flutter | [`dart.md`](dart.md) | Default — customize |
-| Java | [`java.md`](java.md) | Default — customize |
-| C# | [`csharp.md`](csharp.md) | Default — customize |
 | SQL (cross-cutting) | [`sql.md`](sql.md) | Default — customize; secondary to the language docs |
 | Shell / Bash (cross-cutting) | [`shell.md`](shell.md) | Default — customize |
-| API design (cross-cutting) | [`api.md`](api.md) | Default — customize; keep only if the project exposes/consumes an HTTP API |
