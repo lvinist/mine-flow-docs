@@ -93,9 +93,14 @@ Tracked as **RISK-0005** (monitoring).
 | `flutter analyze` | 0 errors / 0 warnings (20 pre-existing infos) |
 | Guard: `check_supabase_contracts` | pass |
 | Guard: `check_l10n_baseline` | pass |
-| `flutter test` | **435/435 pass** |
+| `flutter test` | **434/434 pass** (re-run during 2026-08-25 housekeeping: all pass; an earlier draft of this report said 435 — the correct total on this tree is 434) |
 | `flutter build apk --debug` | exit 0 (187 MB artifact) |
 | Local toolchain | Flutter 3.47.1 / Dart 3.13.1 (CI pins 3.47.0) |
+
+Housekeeping re-verification (2026-08-25): `flutter pub get`, `flutter analyze`
+(0 issues), both guards, and the full test suite were re-executed locally with
+identical results (434/434). The APK build was not re-run (no Android/gradle
+changes since `1fe161a`; original exit 0 stands).
 
 ---
 
