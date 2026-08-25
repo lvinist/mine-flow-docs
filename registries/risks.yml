@@ -115,6 +115,134 @@ risks:
       date:
       reason:
 
+  - id: RISK-0005
+    status: open
+    title: "fl_chart upgraded to v1.2.0; chart API migration completed"
+    category: dependency
+    severity: low
+    owner: "TBD"
+    opened: "2026-08-13"
+    source: "reports/2026-08-13-flutter-dependency-ci-audit.md"
+    description: >
+      fl_chart migrated from exact-pin 0.69.2 to ^1.2.0 in STEP-43. v1.x is a
+      stable API milestone. Our code only used stable LineChart APIs; no deprecated
+      properties (tooltipBgColor, tooltipRoundedRadius) were in use. Migration was
+      clean. Monitor for any future breaking changes in v2.x.
+    impact: "Low. Chart migration completed cleanly. Future v2.x may require re-migration."
+    mitigation: "Analyzer-clean on Flutter 3.47 / Dart 3.12. Full test suite green."
+    revisit_trigger: "Before any fl_chart major version bump or when chart features are extended."
+    refs:
+      - "reports/2026-08-13-flutter-dependency-ci-audit.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0006
+    status: monitoring
+    title: "go_router upgraded from v15 to v17; route API changes audited"
+    category: dependency
+    severity: medium
+    owner: "TBD"
+    opened: "2026-08-13"
+    source: "reports/2026-08-13-flutter-dependency-ci-audit.md"
+    description: >
+      go_router upgraded from ^15.1.2 to ^17.3.0 (resolved 17.5.0) in STEP-43.
+      v16→v17 breaking changes were limited to ShellRoute observer notification
+      behavior (new notifyRootObserver property); no redirect API or
+      StatefulShellRoute changes. All router usages reviewed; flutter analyze clean.
+      Full E2E deep-link validation deferred to STEP-45.
+    impact: "Bounded to routing layer. Observer behavior may affect analytics if custom NavigatorObservers are added."
+    mitigation: "flutter analyze clean; unit/widget tests passing. No custom NavigatorObservers in codebase."
+    revisit_trigger: "STEP-45 E2E review; any navigation bug report after upgrade."
+    refs:
+      - "reports/2026-08-13-flutter-dependency-ci-audit.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0007
+    status: open
+    title: "Hive offline storage migrated to community fork hive_ce"
+    category: dependency
+    severity: medium
+    owner: "TBD"
+    opened: "2026-08-13"
+    source: "reports/2026-08-13-flutter-dependency-ci-audit.md"
+    description: >
+      Original hive/hive_flutter packages are unmaintained (last release 2022).
+      Migrated to hive_ce 2.19.3 / hive_ce_flutter 2.3.4 (community edition fork)
+      in STEP-43. 26 Dart files updated. API is identical (drop-in replacement).
+      hive_ce is actively maintained as of 2026 but is not Google/vendor-backed.
+      Long-term Dart SDK compatibility depends on community contributions.
+    impact: >
+      If hive_ce stops receiving updates, offline storage layer becomes a
+      migration target again. ADR-0001 selected Hive; migration to isar or
+      drift would require a separate STEP.
+    mitigation: "hive_ce actively maintained throughout 2026. API is stable and identical to hive v2."
+    revisit_trigger: "If hive_ce goes >6 months without a release, or Dart 4 breaks compatibility."
+    refs:
+      - "adr/ADR-0001-offline-storage-hive.md"
+      - "reports/2026-08-13-flutter-dependency-ci-audit.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0009
+    status: open
+    title: "Flutter 3.47 semantics regression #191095; forui pinned >=0.26 as mitigation"
+    category: dependency
+    severity: medium
+    owner: "TBD"
+    opened: "2026-08-25"
+    source: "reports/2026-08-13-flutter-dependency-ci-audit.md"
+    description: >
+      Flutter 3.47 ships an open regression (flutter/flutter#191095): focusing a
+      text field inside a MergeSemantics subtree throws the isMergedIntoParent
+      assertion in widget tests. forui <=0.25 triggers it (FTextField wraps
+      itself in MergeSemantics). Mitigated by pinning forui ^0.26.0, which
+      dropped the wrapper, plus a material-localizations scope workaround around
+      the inventory-entry unit dropdown (forui 0.26 injects a shadowing
+      Localizations fallback inside suffixBuilder). Upstream fix PR
+      flutter/flutter#191587 not merged as of 2026-08-25.
+    impact: >
+      Until upstream fixes it, any new text-field-in-merged-subtree UI must use
+      forui 0.26 patterns; plain Material TextField tests are unaffected unless
+      placed under MergeSemantics.
+    mitigation: "forui ^0.26.0 pin; documented finder migration (EditableText); localizations-scope wrapper."
+    revisit_trigger: "When flutter/flutter#191587 merges and a fixed stable ships: retest, consider dropping workarounds."
+    refs:
+      - "https://github.com/flutter/flutter/issues/191095"
+      - "reports/2026-08-13-flutter-dependency-ci-audit.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0008
+    status: monitoring
+    title: "flutter_secure_storage upgraded from v9 directly to v11 (skipped v10 migration)"
+    category: dependency
+    severity: medium
+    owner: "TBD"
+    opened: "2026-08-13"
+    source: "reports/2026-08-13-flutter-dependency-ci-audit.md"
+    description: >
+      flutter_secure_storage upgraded from ^9.2.4 directly to ^11.0.0 in STEP-43.
+      v11 removed encryptedSharedPreferences from AndroidOptions (hardware Keystore
+      is always used at minSdk 23+) and removed other deprecated encryption
+      algorithms. Normally requires staged v9→v10→v11 upgrade because v10 runs a
+      one-time key migration. This skip was accepted because the app is in
+      development with no real device data. minSdk raised to 23 per v11 requirement.
+      If the app is ever deployed to real users on v9.x keys, a staged rollout
+      must be performed before upgrading to v11 to avoid silent data loss.
+    impact: "Silent unreadability of previously stored secure data if real users existed on v9. Dev-only: no impact."
+    mitigation: "Dev/CI environment only as of STEP-43. minSdk = 23 explicit in build.gradle.kts. See RISK-0008."
+    revisit_trigger: "Before any production release if there are existing users on v9 keys."
+    refs:
+      - "reports/2026-08-13-flutter-dependency-ci-audit.md"
+    closed:
+      date:
+      reason:
+
 # Example:
 # risks:
 #   - id: RISK-0001
