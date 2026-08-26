@@ -39,14 +39,19 @@ security_reviews:
     name: "Security Baseline"
     cadence: "Strongly recommended before first release; optional earlier; re-check during S2 or after repo/CI/hosting changes."
     last_run:
-      date:
-      report:
-      reviewed_commit:
-      sloc_at_review:
-      commits_since_previous:
-      sloc_delta_since_previous:
-      notes:
-    next_due:
+      date: "2026-08-26"
+      report: "reports/security/2026-08-26-step-0044-s0-security-baseline-report.md"
+      reviewed_commit: "5536191 (mine-flow-app master)"
+      sloc_at_review: "~11,000 Dart LOC (lib/)"
+      commits_since_previous: "N/A — first S0"
+      sloc_delta_since_previous: "N/A — first S0"
+      notes: >
+        First S0 baseline. Run as STEP-44. No previous S0 to compare against.
+        RLS audit clean (all 9 tables covered). Three new risks added:
+        RISK-0011 (privacy notice absent), RISK-0012 (no auto backups on free tier),
+        RISK-0013 (ops cluster: branch protection, secret scanning, Dependabot, monitoring).
+        .env.example confirmed present (created in STEP-42).
+    next_due: "Before production release or after any major CI/hosting/ownership change"
   S1:
     name: "Security Sweep"
     cadence: "Default: consider an S1 Security Sweep quarterly and after security triggers; check-ins evaluate whether cadence or triggers make a separate Security Review STEP useful; customize per project."
