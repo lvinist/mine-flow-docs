@@ -54,3 +54,4 @@ e.g. "tech lead", "consensus of maintainers", "ADR review on PR". -->
 -->
 | ADR-0009 | UI Design System Drift | Accepted | 2026-07-28 |
 | ADR-0010 | Low-Battery Sync Rule | Accepted | 2026-07-29 |
+| ADR-0011 | Staging Promotion Pipeline | Accepted | 2026-08-09 |

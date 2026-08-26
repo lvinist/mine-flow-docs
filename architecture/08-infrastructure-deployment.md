@@ -1,8 +1,8 @@
 # Doc 08 — Infrastructure & Deployment
 
-**Version:** v0.1.0
-**Status:** Draft
-**Last updated:** 2026-07-17 (STEP-1.8)
+**Version:** v0.2.0
+**Status:** Active
+**Last updated:** 2026-08-09 (STEP-42.7)
 **Audience:** Developers, Operations, Project Managers
 
 > Defines where the system runs, how code is deployed, and how it recovers from failure.
@@ -16,10 +16,13 @@
 
 ## 2. Build & Deploy Pipeline
 
-Code becomes a running version via automated **GitHub Actions**:
-- **Web App:** On every push to the main branch, a GitHub Action compiles the Flutter Web app and deploys it automatically to GitHub Pages.
-- **Android APK:** A GitHub Action builds the APK and attaches it as a downloadable release artifact for field crews.
-- **Rollback:** Achieved simply by reverting a bad commit and allowing the CI pipeline to redeploy the previous stable state, or running a previous successful GitHub Action build.
+Code becomes a running version via automated **GitHub Actions** (`.github/workflows/ci.yml`; implemented in STEP-42):
+
+- **Test gate (`test`):** On every push/PR — formatting, analyze, contract & l10n guards, full test suite.
+- **Android APK (`build-android`):** Builds the debug APK as a smoke check; uploaded as a CI artifact.
+- **Staging web (`deploy-staging`):** On push to `master`: `test` → `build-android` → `deploy-staging` builds Flutter Web with staging secrets and deploys to `gh-pages-staging` (staging Pages slot under `/staging/`); a debug APK artifact is re-published as `staging-apk-<sha>` with 14-day retention.
+- **Production (`deploy-production`):** On GitHub Release publish: deploys Flutter Web release build to `gh-pages` and attaches the signed APK to the Release. Runs in the `production` Actions environment and **requires reviewer approval** before deploying.
+- **Rollback:** Web: re-run the last passing workflow run (staging) or re-publish the previous Release tag (production, triggers redeploy); APK: download/re-publish artifacts. See Doc 09 §5 and `runbooks/staging-provision.md`.
 
 ## 3. Infrastructure as Code
 
@@ -77,3 +80,4 @@ We leverage the offline caches on mobile devices as a secondary safety net along
 |---------|------|------|--------|
 | v0.1.0 | 2026-07-17 | STEP-1.8 | Initial draft from Infrastructure & Deployment session |
 | v0.1.1 | 2026-07-18 | STEP-1.14 | Included Supabase Edge Functions for privileged operations |
+| v0.2.0 | 2026-08-09 | STEP-42.7 | Status Active; §2 pipeline concrete: four-job CI (`test`, `build-android`, `deploy-staging` on `master` push, `deploy-production` on Release with manual approval gate); rollback pointers |

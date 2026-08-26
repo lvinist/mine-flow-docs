@@ -243,6 +243,27 @@ risks:
       date:
       reason:
 
+  - id: RISK-0010
+    status: open
+    title: "Staging Supabase project provisioned via ClickOps only"
+    category: operations
+    severity: low
+    owner: "TBD"
+    opened: "2026-08-09"
+    source: "runbooks/staging-provision.md"
+    description: >-
+      Staging Supabase project linked and seeded via CLI commands documented in the
+      runbook; no IaC. If the project is deleted, manual reprovisioning is required.
+    impact: "Reprovisioning requires following the runbook manually; no single-command restore."
+    mitigation: "runbooks/staging-provision.md documents all steps reproducibly."
+    revisit_trigger: "If staging project is deleted or must be fully reprovisioned."
+    refs:
+      - "runbooks/staging-provision.md"
+      - "adr/ADR-0011-staging-promotion-pipeline.md"
+    closed:
+      date:
+      reason:
+
 # Example:
 # risks:
 #   - id: RISK-0001

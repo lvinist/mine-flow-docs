@@ -1,8 +1,8 @@
 # Doc 09 — Environments
 
-**Version:** v0.1.0
-**Status:** Draft
-**Last updated:** 2026-07-18 (STEP-1.9)
+**Version:** v0.2.0
+**Status:** Active
+**Last updated:** 2026-08-09 (STEP-42.7)
 **Audience:** Developers, Operations
 
 > Defines the environments (Local, Staging, Production), how configuration differs, and how code is promoted between them.
@@ -34,12 +34,24 @@ Secrets (e.g., Supabase API keys) will be managed differently across environment
 
 ## 4. Promotion Flow
 
-Code promotion follows a simple, automated path managed by GitHub Actions:
+Code promotion follows a simple, automated path managed by GitHub Actions (implemented in STEP-42; see `.github/workflows/ci.yml`):
 
-1. **Local to Staging:** Merging or pushing code to the `main` branch automatically triggers a build and deployment to the Staging environment.
-2. **Staging to Production:** Creating a "Release" (tagging a version) in GitHub manually triggers a deployment of that exact codebase to the Production environment. This provides a deliberate checkpoint before updating the live app.
+1. **Local to Staging:** Pushing or merging code to the `master` branch automatically triggers the `deploy-staging` CI job, which builds Flutter Web with staging secrets and deploys it to the staging GitHub Pages slot (`gh-pages-staging`, served under `/staging/`). It also publishes a `staging-apk-<sha>` debug-APK artifact (14-day retention).
+2. **Staging to Production:** Publishing a GitHub Release triggers the `deploy-production` CI job, which builds and deploys to the production Pages slot and attaches a signed release APK to the Release. The job runs in the `production` Actions environment with a **required reviewer approval gate** — the run blocks until explicitly approved.
 
-## 5. Access Control
+Both jobs are defined as GitHub Actions **environments** rather than per-environment branches (ADR-0011).
+
+## 5. Rollback Procedures
+
+| Surface | Procedure |
+|---------|-----------|
+| Staging web | Re-run the last passing `deploy-staging` workflow run in GitHub Actions — it rebuilds that commit and republishes `gh-pages-staging`. |
+| Android APK (staging) | Download the `staging-apk-<sha>` artifact from the last passing run (14-day retention). |
+| Production | Re-publish the previous GitHub Release tag — this re-triggers `deploy-production` with the previous build; approve the required-reviewer gate. |
+
+Full detail: `runbooks/staging-provision.md`; production promotion checklist: `runbooks/release-procedure.md`.
+
+## 6. Access Control
 
 As a solo-developer project, access control is strictly centralized:
 - **Developer:** Retains full deployment rights, infrastructure configuration access, and database viewing rights across Local, Staging, and Production.
@@ -67,3 +79,4 @@ As a solo-developer project, access control is strictly centralized:
 | Version | Date | STEP | Change |
 |---------|------|------|--------|
 | v0.1.0 | 2026-07-18 | STEP-1.9 | Initial draft from Environments session |
+| v0.2.0 | 2026-08-09 | STEP-42.7 | Status Active; §4 promotion flow concrete (`deploy-staging` on `master` push, `deploy-production` on Release with approval gate); added §5 Rollback Procedures; ADR-0011 |
