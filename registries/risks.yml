@@ -264,6 +264,93 @@ risks:
       date:
       reason:
 
+  - id: RISK-0011
+    status: open
+    title: "In-app Privacy Notice absent from first-login flow"
+    category: privacy
+    severity: high
+    owner: "TBD"
+    opened: "2026-08-26"
+    source: "reports/security/2026-08-26-step-0044-s0-security-baseline-report.md"
+    description: >
+      Doc 17 §3 requires a lightweight internal "Terms of Use & Privacy Notice"
+      displayed to users on first login. No such notice is implemented in the
+      Flutter app as of STEP-44. Zero matches for privacy/terms/privasi patterns
+      across all Dart presentation files.
+    impact: >
+      Users are not informed how their data (including National ID and date of
+      birth) is collected and used before first use, contrary to the UU PDP
+      lawful-basis posture recorded in Doc 17.
+    mitigation: "Tracked as pre-release gate; no current mitigation in app."
+    revisit_trigger: "Before production release — must be implemented as a pre-release gate."
+    refs:
+      - "architecture/17-privacy-compliance.md"
+      - "reports/security/2026-08-26-step-0044-s0-security-baseline-report.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0012
+    status: open
+    title: "Supabase free-tier: no automatic daily backups; restore not fire-drilled"
+    category: operations
+    severity: high
+    owner: "TBD"
+    opened: "2026-08-26"
+    source: "reports/security/2026-08-26-step-0044-s0-security-baseline-report.md"
+    description: >
+      The Supabase project is on the free tier, which does not include automatic
+      daily backups or point-in-time recovery (PITR). A manual backup/restore
+      procedure is documented in the S0 report (§Backup), but a live restore
+      fire-drill has not been performed (no production data exists yet as of STEP-44).
+    impact: >
+      In the event of accidental data deletion or corruption before a manual
+      backup is taken, data loss would be unrecoverable. Acceptable pre-production
+      but must be addressed before real operational data is loaded.
+    mitigation: >
+      Manual snapshot procedure documented in S0 report. Must upgrade to a paid
+      Supabase plan (Pro or higher) before production use to enable automatic
+      daily backups and PITR, or establish a scheduled manual backup job.
+    revisit_trigger: "Before first production data load; before production Supabase project is provisioned."
+    refs:
+      - "reports/security/2026-08-26-step-0044-s0-security-baseline-report.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0013
+    status: open
+    title: "S0 baseline operations cluster: branch protection, secret scanning, Dependabot, monitoring"
+    category: operations
+    severity: medium
+    owner: "TBD"
+    opened: "2026-08-26"
+    source: "reports/security/2026-08-26-step-0044-s0-security-baseline-report.md"
+    description: >
+      Four related S0 checklist items could not be verified locally (require GitHub
+      UI access) or are deferred for the internal MVP stage:
+      (1) Branch protection / required-status-checks rules not confirmed in GitHub settings.
+      (2) GitHub secret scanning / push protection not confirmed enabled.
+      (3) GitHub Dependabot alerts not confirmed enabled.
+      (4) No custom security monitoring beyond Supabase Auth logs.
+      Also: third-party CI actions pinned by tag (not SHA digest); formal security
+      ownership not assigned beyond Project Manager / Site Supervisor.
+    impact: >
+      Without branch protection a bad push to master bypasses CI. Without secret
+      scanning a leaked key may not be caught automatically. Without Dependabot a
+      vulnerable dependency could go unnoticed. Without monitoring, anomalous
+      access patterns are invisible.
+    mitigation: >
+      Single-developer project at pre-production stage; risk is bounded.
+      Check-in cadence and STEP-43 manual dependency review provide partial coverage.
+      Supabase Auth logs visible in dashboard.
+    revisit_trigger: "Before production release; before external contributors; at next S1 sweep."
+    refs:
+      - "reports/security/2026-08-26-step-0044-s0-security-baseline-report.md"
+    closed:
+      date:
+      reason:
+
 # Example:
 # risks:
 #   - id: RISK-0001
