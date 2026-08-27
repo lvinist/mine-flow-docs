@@ -57,6 +57,6 @@ e.g. "tech lead", "consensus of maintainers", "ADR review on PR". -->
 | ADR-0011 | Staging Promotion Pipeline | Accepted | 2026-08-09 |
 | ADR-0012 | Volume & Land-Clearing Metrics Correction | Accepted | 2026-08-27 |
 | ADR-0013 | Report Type Expansion and Reports Entry | Accepted | 2026-08-27 |
-| ADR-0014 | Persist CRS Identifier on Cut/Fill Records | Accepted | 2026-08-27 |
-| ADR-0015 | Separate Plan/Actual Date and Zone on Land Clearing | Accepted | 2026-08-27 |
+| ADR-0014 | Persist CRS Identifier on Benchmark Records | Accepted | 2026-08-27 |
+| ADR-0015 | Shared Date/Zone on the Land-Clearing Form | Accepted | 2026-08-27 |
 | ADR-0016 | Lucide Icon Migration | Accepted | 2026-08-27 |

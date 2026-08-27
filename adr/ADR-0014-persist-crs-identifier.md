@@ -1,4 +1,4 @@
-# ADR-0014: Persist CRS Identifier on Cut/Fill Records
+# ADR-0014: Persist CRS Identifier on Benchmark Records
 
 **Status:** Accepted
 **Date:** 2026-08-27
@@ -8,22 +8,25 @@
 - prompts/003-release-readiness-integration-scale/step-0046/mine-flow-STEP-46.3-FINDINGS.md (CF-033)
 
 ## Context
-STEP-46.3 (CF-033) found the cut/fill form lets the operator pick a CRS (UTM
-zone / datum) for their Northing/Easting coordinates, but the selected CRS is
-never persisted — the schema has no `crs_identifier` column, so the survey data
-is not reproducible (coordinates without a coordinate reference system are
-ambiguous).
+STEP-46.3 (CF-033) found the benchmark form lets the operator pick a CRS (UTM
+zone) for their Northing/Easting coordinates, but the selection lives only in
+transient form state and is never persisted. The `Benchmark` entity has no CRS
+field, so on edit the lat/lon are re-derived from a hardcoded default
+(`UTM Zone 51S`) instead of the CRS the surveyor actually used — silently
+rewriting coordinates. A UTM N/E pair without its zone is ambiguous.
 
 ## Decision
-1. **Add a `crs_identifier` column** to `cut_fill_records` (migration) and thread
-   it through the model, entity, form state, and sync contract.
+1. **Persist `crsIdentifier` on the `Benchmark` entity** (default `UTM Zone 51S`
+   for new records), thread it through `BenchmarkModel` (snake_case `crs_identifier`
+   for Supabase JSON + `crsIdentifier` for Hive), seed it on edit, and store it
+   on save so reopening re-derives lat/lon from the stored CRS.
 
 ## Consequences
-- **Implementation status: decision locked, implementation pending.** This is a
-  schema change requiring a Supabase migration plus a contract update; it is
-  intentionally sequenced separately from the UI remediation already landed in
-  STEP-46.4, to avoid breaking the Supabase contract guard mid-step.
-- Existing rows will need a default/backfill value (e.g. the project default CRS)
-  or the column is nullable with a fallback at read time.
-- The benchmark form already persists CRS; this aligns cut/fill with that
-  precedent.
+- Implemented in the entity, model (JSON + Hive), and `BenchmarkBloc`
+  (`_onEditBenchmark` reads the stored CRS; `_onSubmitBenchmark` persists it).
+- **Open follow-up:** the `benchmarks` table is absent from the committed
+  Supabase schema (`supabase/migrations` and `supabase/types/database.ts`), so
+  the remote column `crs_identifier` is not yet migrated. The model already
+  emits `crs_identifier` in `toJson()`, so the column only needs the table's
+  migration to be reconciled (a separate gap, tracked separately from CF-033).
+- Local (Hive) records round-trip the CRS correctly today.
