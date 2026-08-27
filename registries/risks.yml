@@ -351,6 +351,36 @@ risks:
       date:
       reason:
 
+  - id: RISK-0014
+    status: open
+    title: "Reporting datasource still on legacy cut/fill volume columns and net = cut − fill"
+    category: tech-debt
+    severity: medium
+    owner: "TBD"
+    opened: "2026-08-27"
+    source: "adr/ADR-0012-volume-and-land-clearing-metrics.md"
+    description: >
+      STEP-46.4 corrected the earthworks volume semantics per ADR-0012 (bank-equivalent
+      net via VolumeNormalizer; BCM/LCM relabelled) in the entity, blocs, dashboard and
+      summary cards. The reporting export path was not aligned: `reporting_remote_datasource.dart`
+      still queries the legacy `cut_volume_m3`/`fill_volume_m3` columns and computes
+      `net_volume_m3 = cut − fill`, the very formula ADR-0012 rejected as meaningless.
+    impact: >
+      Generated cut/fill PDF reports use the old, incorrect net-volume basis while the
+      in-app dashboard/summary use the corrected one, so a report and the screen it was
+      generated from can disagree on the headline volume.
+    mitigation: >
+      In-app surfaces (the primary MVP path) are corrected. Report generation is a
+      secondary path; align it with the entity's `bcm_volume`/`lcm_volume` columns and
+      the VolumeNormalizer net in a follow-up STEP before reports are relied upon.
+    revisit_trigger: "Before cut/fill PDF reports are used operationally; next reporting STEP."
+    refs:
+      - "adr/ADR-0012-volume-and-land-clearing-metrics.md"
+      - "prompts/003-release-readiness-integration-scale/step-0046/mine-flow-STEP-46.3-FINDINGS.md"
+    closed:
+      date:
+      reason:
+
 # Example:
 # risks:
 #   - id: RISK-0001
