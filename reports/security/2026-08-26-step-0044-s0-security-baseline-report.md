@@ -43,7 +43,7 @@
 | Area skipped | Reason | Owner | Revisit trigger |
 |---|---|---|---|
 | S2 deep structured audit | Project not yet in production use; S0 sufficient pre-staging | Team | Before public launch or sensitive production use |
-| Live RLS behavior test (via Supabase dashboard) | No live staging credentials available in local environment; static review performed | STEP-45 owner | STEP-45 E2E test pass against staging |
+| Live RLS behavior test (via integration tests) | Unverified (STEP-45.12): test written (`rls_authorization_journey_test.dart`) but skipped because per-role staging credentials (`TEST_FOREMAN_EMAIL`, etc.) were not provided. Cannot verify full matrix (users, zones, attendance_records, etc.) for foreman/supervisor roles. | STEP-45 owner | Test passes when staging credentials are supplied |
 | External penetration test | Overkill for 100-user internal tool MVP | TBD | Before external/public launch if ever applicable |
 
 ---
