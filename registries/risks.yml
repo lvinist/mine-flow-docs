@@ -138,8 +138,8 @@ risks:
       reason:
 
   - id: RISK-0006
-    status: monitoring
-    title: "go_router upgraded from v15 to v17; route API changes audited"
+    status: open
+    title: "go_router upgraded from v15 to v17; route API changes audited (E2E unverified)"
     category: dependency
     severity: medium
     owner: "TBD"
@@ -150,12 +150,15 @@ risks:
       v16→v17 breaking changes were limited to ShellRoute observer notification
       behavior (new notifyRootObserver property); no redirect API or
       StatefulShellRoute changes. All router usages reviewed; flutter analyze clean.
-      Full E2E deep-link validation deferred to STEP-45.
-    impact: "Bounded to routing layer. Observer behavior may affect analytics if custom NavigatorObservers are added."
-    mitigation: "flutter analyze clean; unit/widget tests passing. No custom NavigatorObservers in codebase."
-    revisit_trigger: "STEP-45 E2E review; any navigation bug report after upgrade."
+      Full E2E deep-link validation was attempted in STEP-45.13 but remains unverified
+      because staging credentials are absent in the test environment (auth-guarded routes
+      need a session).
+    impact: "Bounded to routing layer. Deep links to authenticated routes may fail or drop shell context if regressions exist."
+    mitigation: "Integration test stub created in STEP-45.13; will skip until creds are provided."
+    revisit_trigger: "Before production release, when staging credentials are available."
     refs:
       - "reports/2026-08-13-flutter-dependency-ci-audit.md"
+      - "Upcoming Prompts/mine-flow-STEP-45.13-PROMPT.md"
     closed:
       date:
       reason:
