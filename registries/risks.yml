@@ -404,3 +404,94 @@ risks:
 #     closed:
 #       date:
 #       reason:
+
+  - id: RISK-0015
+    status: monitoring
+    title: "LoginPage light-mode fidelity on device (NR-002)"
+    category: tech-debt
+    severity: low
+    owner: "TBD"
+    opened: "2026-08-27"
+    source: "reports/2026-08-27-step-0045-runtime-design-review.md"
+    description: "STEP-46 finding NR-002 requires confirmation that the login card follows the theme in light mode on a real device. Unverified in STEP-45 due to missing staging credentials."
+    impact: "Potential visual mismatch on device."
+    mitigation: "Carried forward to be verified on device."
+    revisit_trigger: "When staging credentials and physical device/emulator testing are available."
+    refs:
+      - "reports/2026-08-27-step-0045-runtime-design-review.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0016
+    status: monitoring
+    title: "Sidebar active-state on group routes on web (NR-003)"
+    category: tech-debt
+    severity: medium
+    owner: "TBD"
+    opened: "2026-08-27"
+    source: "reports/2026-08-27-step-0045-runtime-design-review.md"
+    description: "STEP-46 finding NR-003 requires navigating to authenticated routes on web to confirm sidebar item highlights. Unverified in STEP-45 due to missing staging credentials."
+    impact: "Web navigation state might not highlight correctly."
+    mitigation: "Carried forward."
+    revisit_trigger: "When staging credentials and web testing are available."
+    refs:
+      - "reports/2026-08-27-step-0045-runtime-design-review.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0017
+    status: monitoring
+    title: "UploadFilePage real Drive upload abandon/cancel (NR-004)"
+    category: tech-debt
+    severity: medium
+    owner: "TBD"
+    opened: "2026-08-27"
+    source: "Upcoming Prompts/mine-flow-STEP-45.8-FINDINGS.md"
+    description: "STEP-46 finding NR-004 requires testing real Drive upload and abandon behavior. Unverified in STEP-45 due to missing Google Drive service-account credentials."
+    impact: "User cancellation might not be handled smoothly during real uploads."
+    mitigation: "Carried forward."
+    revisit_trigger: "When staging Google Drive credentials are available."
+    refs:
+      - "Upcoming Prompts/mine-flow-STEP-45.8-FINDINGS.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0018
+    status: monitoring
+    title: "UploadFilePage large-file OOM threshold (NR-005)"
+    category: tech-debt
+    severity: medium
+    owner: "TBD"
+    opened: "2026-08-27"
+    source: "Upcoming Prompts/mine-flow-STEP-45.8-FINDINGS.md"
+    description: "STEP-46 finding NR-005 requires finding the practical large-file ceiling on device. Unverified in STEP-45 due to missing Google Drive credentials. The CF-078 limit of 50MB is retained."
+    impact: "App could OOM on lower-end devices if the 50MB limit is too high."
+    mitigation: "Retained 50MB limit."
+    revisit_trigger: "When staging Google Drive credentials and real device testing are available."
+    refs:
+      - "Upcoming Prompts/mine-flow-STEP-45.8-FINDINGS.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0019
+    status: monitoring
+    title: "BenchmarkForm deep-link / route-registration (NR-006)"
+    category: tech-debt
+    severity: medium
+    owner: "TBD"
+    opened: "2026-08-27"
+    source: "Upcoming Prompts/mine-flow-STEP-45.7-PROMPT.md"
+    description: "STEP-46 finding NR-006 requires deep-linking to /operations/benchmark-db/form on web to ensure shell persistence. Test skipped in STEP-45 due to missing staging credentials."
+    impact: "Direct links to the form on web might drop the app shell."
+    mitigation: "Carried forward."
+    revisit_trigger: "When staging credentials and web E2E testing are available."
+    refs:
+      - "reports/2026-08-27-step-0045-findings-reconciliation.md"
+    closed:
+      date:
+      reason:
+
