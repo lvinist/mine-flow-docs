@@ -1,8 +1,8 @@
 # 12. Test Strategy
 
-**Version:** 1.1
+**Version:** 1.2
 **Status:** Approved
-**Last updated:** 2026-08-27
+**Last updated:** 2026-08-29
 
 - **Test tiers**: Follow a standard Test Pyramid. Unit tests (many, fast), integration tests (some, mocking the backend), and E2E tests (few, testing the real flow).
 - **Coverage priorities**: Heavy focus on data entry validation, state management (BLoC), and role-based access control (RLS equivalents on the client). Less focus on UI layout code and third-party libraries.
@@ -24,6 +24,7 @@
 |---------|------|--------|---------|
 | 1.0 | 2026-07-18 | Initial Architecture | Created initial Test Strategy |
 | 1.1 | 2026-08-27 | Antigravity | Expanded E2E tier (Tier-1/2) and added dual-platform CI gate (ADR-0017) |
+| 1.2 | 2026-08-29 | Antigravity | Clarified Chrome E2E execution via flutter drive (STEP-47.8) |
 
 ## Details
 
@@ -49,13 +50,13 @@ To prevent tests from mutating shared state and causing flaky failures:
 - Unit and integration tests will intercept and mock backend calls. No real database network requests are made.
 
 ### 5. System / End-to-End Tests
-Since the project is built in a monorepo-style single Flutter app, the E2E tests live directly inside the app repository using the `integration_test` package. To avoid polluting production data, these tests run against a distinctly provisioned Supabase Test environment on both Chrome and a Pixel 6a Android emulator.
+Since the project is built in a monorepo-style single Flutter app, the E2E tests live directly inside the app repository using the `integration_test` package. To avoid polluting production data, these tests run against a distinctly provisioned Supabase Test environment on both Chrome (executed via `flutter drive` and chromedriver) and a Pixel 6a Android emulator.
 
 ### 6. CI Gates
 The following checks run on merge requests. A failure in any of these gates blocks the merge:
 - Code Formatting & Linting (`dart format` / `flutter analyze`).
-- Unit & Integration Test Suite.
-- Dual-Platform E2E Tests (Chrome and Pixel 6a).
+- Unit & Integration Test Suite (`flutter test`).
+- Dual-Platform E2E Tests (Chrome via `flutter drive` and Pixel 6a via `flutter test`).
 - Build Check (ensuring the app compiles).
 
 ### 7. Performance / Load Testing
