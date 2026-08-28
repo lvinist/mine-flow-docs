@@ -139,14 +139,14 @@ risks:
 
   - id: RISK-0006
     status: open
-    title: "go_router upgraded from v15 to v17; route API changes audited (E2E unverified)"
+    title: "go_router upgraded to v18; route API changes audited (E2E unverified)"
     category: dependency
     severity: medium
     owner: "TBD"
     opened: "2026-08-13"
     source: "reports/2026-08-13-flutter-dependency-ci-audit.md"
     description: >
-      go_router upgraded from ^15.1.2 to ^17.3.0 (resolved 17.5.0) in STEP-43.
+      go_router upgraded from ^15.1.2 to ^17.3.0 (resolved 17.5.0) in STEP-43, and to ^18.0.0 in STEP-47.1.
       v16→v17 breaking changes were limited to ShellRoute observer notification
       behavior (new notifyRootObserver property); no redirect API or
       StatefulShellRoute changes. All router usages reviewed; flutter analyze clean.
@@ -238,10 +238,14 @@ risks:
       If the app is ever deployed to real users on v9.x keys, a staged rollout
       must be performed before upgrading to v11 to avoid silent data loss.
     impact: "Silent unreadability of previously stored secure data if real users existed on v9. Dev-only: no impact."
-    mitigation: "Dev/CI environment only as of STEP-43. minSdk = 23 explicit in build.gradle.kts. See RISK-0008."
+    mitigation: >
+      Dev/CI environment only as of STEP-43. minSdk = 23 explicit in build.gradle.kts.
+      (Update STEP-47.1: flutter_secure_storage_windows upgraded 4.0.0 → 4.2.2 / win32 6.x.
+      This explicitly alters only the Windows-desktop storage surface; the Android Keystore posture is unaffected).
     revisit_trigger: "Before any production release if there are existing users on v9 keys."
     refs:
       - "reports/2026-08-13-flutter-dependency-ci-audit.md"
+      - "Upcoming Prompts/mine-flow-STEP-47.1-PROMPT.md"
     closed:
       date:
       reason:
@@ -495,3 +499,23 @@ risks:
       date:
       reason:
 
+  - id: RISK-0020
+    status: open
+    title: "Transitive dependencies pinned behind by Flutter SDK"
+    category: tech-debt
+    severity: low
+    owner: "TBD"
+    opened: "2026-08-29"
+    source: "Upcoming Prompts/mine-flow-STEP-47.1-PROMPT.md"
+    description: >
+      During the major version sweep in STEP-47.1, several transitive packages (archive, qr,
+      package_config, material_color_utilities, and analyzer/test family) remained on older versions
+      because they are pinned by the Flutter SDK's own constraints. This is expected and harmless.
+    impact: "Minor version debt in transitive layer; no functional impact."
+    mitigation: "Wait for future Flutter SDK releases which will naturally bump these constraints."
+    revisit_trigger: "When upgrading Flutter SDK in the future."
+    refs:
+      - "Upcoming Prompts/mine-flow-STEP-47.1-PROMPT.md"
+    closed:
+      date:
+      reason:
