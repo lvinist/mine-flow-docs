@@ -60,3 +60,4 @@ e.g. "tech lead", "consensus of maintainers", "ADR review on PR". -->
 | ADR-0014 | Persist CRS Identifier on Benchmark Records | Accepted | 2026-08-27 |
 | ADR-0015 | Shared Date/Zone on the Land-Clearing Form | Accepted | 2026-08-27 |
 | ADR-0016 | Lucide Icon Migration | Accepted | 2026-08-27 |
+| ADR-0017 | Expanded Dual-Platform E2E Test Tier | Accepted | 2026-08-27 |
