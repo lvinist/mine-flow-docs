@@ -43,7 +43,7 @@
 | Area skipped | Reason | Owner | Revisit trigger |
 |---|---|---|---|
 | S2 deep structured audit | Project not yet in production use; S0 sufficient pre-staging | Team | Before public launch or sensitive production use |
-| Live RLS behavior test (via integration tests) | Unverified (STEP-45.12): test written (`rls_authorization_journey_test.dart`) but skipped because per-role staging credentials (`TEST_FOREMAN_EMAIL`, etc.) were not provided. Cannot verify full matrix (users, zones, attendance_records, etc.) for foreman/supervisor roles. | STEP-45 owner | Test passes when staging credentials are supplied |
+| Live RLS behavior test (via integration tests) | Verified (STEP-48.12): test executed (`rls_authorization_journey_test.dart`) against staging. Matrix is partial: supervisor and foreman legs verified with positive assertion of policy refusal (e.g., foreman INSERT into zones refused with 42501). Crew leg unverified because `TEST_CREW_*` credentials are absent. | STEP-48 owner | Test crew leg when crew credentials are supplied |
 | External penetration test | Overkill for 100-user internal tool MVP | TBD | Before external/public launch if ever applicable |
 
 ---

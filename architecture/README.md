@@ -23,19 +23,22 @@ Most of these are produced by the **architecture sessions** during STEP-1
 
 | # | Doc | Version | Status |
 |---|-----|---------|--------|
-| 01 | [System Overview](01-system-overview.md) | v0.1.0 | Draft |
-| 02 | [Phasing & Roadmap](02-phasing-roadmap.md) | v0.1.0 | Draft |
+| 01 | [System Overview](01-system-overview.md) | v0.2.0 | Draft |
+| 02 | [Phasing & Roadmap](02-phasing-roadmap.md) | v0.2.0 | Draft |
 | 03 | [Architecture Overview](03-architecture-overview.md) | v0.1.0 | Draft |
-| 04 | [Data Model](04-data-model.md) | v0.1.1 | Draft |
+| 04 | [Data Model](04-data-model.md) | v0.1.3 | Draft |
 | 05 | [Scaling & Performance](05-scaling-performance.md) | v0.1.0 | Draft |
-| 06 | [Security & Threat Model](06-security-threat-model.md) | v0.1.0 | Draft |
-| 07 | [UI / Design System](07-ui-design-system.md) | v0.1.0 | Draft |
-| 08 | [Infrastructure & Deployment](08-infrastructure-deployment.md) | v0.1.1 | Draft |
-| 09 | [Environments](09-environments.md) | v0.1.0 | Draft |
+| 06 | [Security & Threat Model](06-security-threat-model.md) | v0.2.0 | Draft |
+| 07 | [UI / Design System](07-ui-design-system.md) | v0.4.0 | Draft |
+| 08 | [Infrastructure & Deployment](08-infrastructure-deployment.md) | v0.2.0 | Active |
+| 09 | [Environments](09-environments.md) | v0.4.0 | Active |
 | 10 | [Observability](10-observability.md) | v0.1.0 | Draft |
-| 11 | [Interface Contracts](11-interface-contracts.md) | v0.1.0 | Draft |
-| 12 | [Test Strategy](12-test-strategy.md) | v1.0 | Approved |
+| 11 | [Interface Contracts](11-interface-contracts.md) | v0.2.0 | Draft |
+| 12 | [Test Strategy](12-test-strategy.md) | 1.2 | Approved |
 | 13 | [Glossary](13-glossary.md) | v0.1.0 | Draft |
-| 15 | [Native App Architecture](15-native-app-architecture.md) | v0.1.0 | Draft |
+| 15 | [Native App Architecture](15-native-app-architecture.md) | v0.2.0 | Draft |
 | 16 | [Identity & Auth](16-identity-auth.md) | v0.1.1 | Draft |
 | 17 | [Privacy & Compliance](17-privacy-compliance.md) | v0.1.0 | Draft |
+
+<!-- Reconciled against the docs on disk at STEP-50 (2026-08-29 check-in). Each doc's own
+     header remains authoritative; re-run the comparison at the next check-in. -->

@@ -1,8 +1,8 @@
 # Doc 04 — Data Model, Ownership & Retention
 
-**Version:** v0.1.0
+**Version:** v0.1.3
 **Status:** Draft <!-- Draft (v0.x) → MVP (v1.x) → Stable (v2.x); see METHOD.md §6 -->
-**Last updated:** 2026-07-17 (STEP-1.4)
+**Last updated:** 2026-07-21 (STEP-1.4; header version reconciled at STEP-50)
 **Audience:** All contributors — this sets the entities, relationships, ownership, and retention rules.
 
 > Defines the core entities, who owns them, how they are stored, and rules for retention and data sensitivity.

@@ -20,6 +20,15 @@ if ! command -v python3 >/dev/null 2>&1; then
   exit 1
 fi
 
+# Windows (MSYS / git-bash): `pwd` yields an MSYS path like /d/AppDev/proj, which a NATIVE
+# Windows python resolves to D:\d\AppDev\proj — a path that does not exist. rglob then finds
+# nothing and the checker reports a false "0 scoped local link(s) resolve" PASS. Hand python
+# native paths so the scan actually covers the docs hub.
+if command -v cygpath >/dev/null 2>&1; then
+  ROOT="$(cygpath -m "$ROOT")"
+  DOCS_DIR="$(cygpath -m "$DOCS_DIR")"
+fi
+
 python3 - "$ROOT" "$DOCS_DIR" <<'PY'
 import os
 import re
