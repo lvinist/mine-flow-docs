@@ -159,6 +159,7 @@ risks:
     refs:
       - "reports/2026-08-13-flutter-dependency-ci-audit.md"
       - "Upcoming Prompts/mine-flow-STEP-45.13-PROMPT.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.11-FINDINGS.md"
     closed:
       date:
       reason:
@@ -234,7 +235,7 @@ risks:
       is always used at minSdk 23+) and removed other deprecated encryption
       algorithms. Normally requires staged v9→v10→v11 upgrade because v10 runs a
       one-time key migration. This skip was accepted because the app is in
-      development with no real device data. minSdk raised to 23 per v11 requirement.
+      development with no real device data. minSdk raised to 23 per v11 requirement. Session restore correctly verified against a live backend in STEP-48.3.
       If the app is ever deployed to real users on v9.x keys, a staged rollout
       must be performed before upgrading to v11 to avoid silent data loss.
     impact: "Silent unreadability of previously stored secure data if real users existed on v9. Dev-only: no impact."
@@ -260,7 +261,7 @@ risks:
     source: "runbooks/staging-provision.md"
     description: >-
       Staging Supabase project linked and seeded via CLI commands documented in the
-      runbook; no IaC. If the project is deleted, manual reprovisioning is required.
+      runbook; no IaC. If the project is deleted, manual reprovisioning is required. Pre-flight gate (STEP-48.0) verified staging project remains intact.
     impact: "Reprovisioning requires following the runbook manually; no single-command restore."
     mitigation: "runbooks/staging-provision.md documents all steps reproducibly."
     revisit_trigger: "If staging project is deleted or must be fully reprovisioned."
@@ -283,7 +284,7 @@ risks:
       Doc 17 §3 requires a lightweight internal "Terms of Use & Privacy Notice"
       displayed to users on first login. No such notice is implemented in the
       Flutter app as of STEP-44. Zero matches for privacy/terms/privasi patterns
-      across all Dart presentation files.
+      across all Dart presentation files. Confirmed still absent at runtime in STEP-48.13.
     impact: >
       Users are not informed how their data (including National ID and date of
       birth) is collected and used before first use, contrary to the UU PDP
@@ -371,7 +372,7 @@ risks:
       net via VolumeNormalizer; BCM/LCM relabelled) in the entity, blocs, dashboard and
       summary cards. The reporting export path was not aligned: `reporting_remote_datasource.dart`
       still queries the legacy `cut_volume_m3`/`fill_volume_m3` columns and computes
-      `net_volume_m3 = cut − fill`, the very formula ADR-0012 rejected as meaningless.
+      `net_volume_m3 = cut − fill`, the very formula ADR-0012 rejected as meaningless. Verified still true at runtime in STEP-48.5 and STEP-48.8; deliberately deferred to reporting STEP.
     impact: >
       Generated cut/fill PDF reports use the old, incorrect net-volume basis while the
       in-app dashboard/summary use the corrected one, so a report and the screen it was
@@ -453,7 +454,7 @@ risks:
     owner: "TBD"
     opened: "2026-08-27"
     source: "Upcoming Prompts/mine-flow-STEP-45.8-FINDINGS.md"
-    description: "STEP-46 finding NR-004 requires testing real Drive upload and abandon behavior. Unverified in STEP-45 due to missing Google Drive service-account credentials."
+    description: "STEP-46 finding NR-004 requires testing real Drive upload and abandon behavior. Unverified in STEP-45. In STEP-48, explicitly scoped out by decision D2 despite credentials being available."
     impact: "User cancellation might not be handled smoothly during real uploads."
     mitigation: "Carried forward."
     revisit_trigger: "When staging Google Drive credentials are available."
@@ -471,7 +472,7 @@ risks:
     owner: "TBD"
     opened: "2026-08-27"
     source: "Upcoming Prompts/mine-flow-STEP-45.8-FINDINGS.md"
-    description: "STEP-46 finding NR-005 requires finding the practical large-file ceiling on device. Unverified in STEP-45 due to missing Google Drive credentials. The CF-078 limit of 50MB is retained."
+    description: "STEP-46 finding NR-005 requires finding the practical large-file ceiling on device. Unverified in STEP-45. In STEP-48, explicitly scoped out by decision D2 despite credentials being available. The CF-078 limit of 50MB is retained."
     impact: "App could OOM on lower-end devices if the 50MB limit is too high."
     mitigation: "Retained 50MB limit."
     revisit_trigger: "When staging Google Drive credentials and real device testing are available."
@@ -489,7 +490,7 @@ risks:
     owner: "TBD"
     opened: "2026-08-27"
     source: "Upcoming Prompts/mine-flow-STEP-45.7-PROMPT.md"
-    description: "STEP-46 finding NR-006 requires deep-linking to /operations/benchmark-db/form on web to ensure shell persistence. Test skipped in STEP-45 due to missing staging credentials."
+    description: "STEP-46 finding NR-006 requires deep-linking to /operations/benchmark-db/form on web to ensure shell persistence. Test skipped in STEP-45. In STEP-48.7, confirmed that in-process deep-linking works, but true cold-start browser load remains unverified due to flutter drive harness limitations."
     impact: "Direct links to the form on web might drop the app shell."
     mitigation: "Carried forward."
     revisit_trigger: "When staging credentials and web E2E testing are available."
@@ -516,6 +517,60 @@ risks:
     revisit_trigger: "When upgrading Flutter SDK in the future."
     refs:
       - "Upcoming Prompts/mine-flow-STEP-47.1-PROMPT.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0021
+    status: open
+    title: "Partial RLS matrix and cross-role isolation unverified"
+    category: security
+    severity: medium
+    owner: "TBD"
+    opened: "2026-08-30"
+    source: "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.12-FINDINGS.md"
+    description: "The crew leg of the RLS matrix is unrunnable because although the account exists, TEST_CREW_* secrets are missing from GitHub."
+    impact: "Cross-role data isolation remains partially unverified."
+    mitigation: "Carried forward to a future STEP."
+    revisit_trigger: "When TEST_CREW_EMAIL and TEST_CREW_PASSWORD are provisioned in GitHub repository secrets."
+    refs:
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.12-FINDINGS.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0022
+    status: open
+    title: "Benchmark journey deferred against staging (missing table)"
+    category: tech-debt
+    severity: medium
+    owner: "TBD"
+    opened: "2026-08-30"
+    source: "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.7-FINDINGS.md"
+    description: "The benchmarks table does not exist in the Staging database. Migration was never authored in STEP-36.1."
+    impact: "Benchmark workflows crash against the staging API, preventing E2E testing."
+    mitigation: "Carried forward to a future STEP to properly apply migrations."
+    revisit_trigger: "When the benchmarks table migration is created and applied to Staging."
+    refs:
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.7-FINDINGS.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0023
+    status: open
+    title: "Accessibility (screen-reader) unverified"
+    category: tech-debt
+    severity: medium
+    owner: "TBD"
+    opened: "2026-08-30"
+    source: "reports/2026-08-30-step-0048-runtime-design-review.md"
+    description: "Accessibility (focus, semantics, screen-reader experience) was marked Unverified in STEP-48.13 runtime design review because screenshots cannot prove screen-reader behavior."
+    impact: "Potential a11y gaps in critical user flows."
+    mitigation: "Carried forward to a future STEP."
+    revisit_trigger: "When manual accessibility testing or a suitable harness is available."
+    refs:
+      - "reports/2026-08-30-step-0048-runtime-design-review.md"
     closed:
       date:
       reason:
