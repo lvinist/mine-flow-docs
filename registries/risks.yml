@@ -369,10 +369,11 @@ risks:
     source: "adr/ADR-0012-volume-and-land-clearing-metrics.md"
     description: >
       STEP-46.4 corrected the earthworks volume semantics per ADR-0012 (bank-equivalent
-      net via VolumeNormalizer; BCM/LCM relabelled) in the entity, blocs, dashboard and
-      summary cards. The reporting export path was not aligned: `reporting_remote_datasource.dart`
-      still queries the legacy `cut_volume_m3`/`fill_volume_m3` columns and computes
-      `net_volume_m3 = cut − fill`, the very formula ADR-0012 rejected as meaningless. Verified still true at runtime in STEP-48.5 and STEP-48.8; deliberately deferred to reporting STEP.
+        net via VolumeNormalizer; BCM/LCM relabelled) in the entity, blocs, dashboard and
+        summary cards. The reporting export path was not aligned: eporting_remote_datasource.dart
+        still queries the legacy cut_volume_m3/ill_volume_m3 columns and computes
+        
+et_volume_m3 = cut − fill, the very formula ADR-0012 rejected as meaningless. Runtime verified (STEP-48.18): the query executes but falls back to 0.0 for missing volumes, leading to silent zero-volume reports. Highly misleading, recommend pulling forward as release blocker.
     impact: >
       Generated cut/fill PDF reports use the old, incorrect net-volume basis while the
       in-app dashboard/summary use the corrected one, so a report and the screen it was
@@ -574,3 +575,4 @@ risks:
     closed:
       date:
       reason:
+
