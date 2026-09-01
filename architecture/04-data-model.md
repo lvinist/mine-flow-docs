@@ -1,8 +1,8 @@
 # Doc 04 — Data Model, Ownership & Retention
 
-**Version:** v0.1.3
+**Version:** v0.1.5
 **Status:** Draft <!-- Draft (v0.x) → MVP (v1.x) → Stable (v2.x); see METHOD.md §6 -->
-**Last updated:** 2026-07-21 (STEP-1.4; header version reconciled at STEP-50)
+**Last updated:** 2026-09-01 (STEP-48.20)
 **Audience:** All contributors — this sets the entities, relationships, ownership, and retention rules.
 
 > Defines the core entities, who owns them, how they are stored, and rules for retention and data sensitivity.
@@ -20,7 +20,8 @@ The following are the core entities (nouns) and their relationships:
 - **LandClearingRecord:** Area cleared. (Many-to-One with Zone)
 - **InventoryItem:** Materials, equipment, or consumables tracked on site.
 - **GeospatialFile:** Metadata (Drive link, location, acquisition time) of survey files. (Many-to-One with Zone)
-- **Benchmark:** Survey control points with known coordinates and elevations. Fields include: `id` (UUID Primary Key), `bm_id` (Text natural identifier), `northing`, `easting`, `ortho_height`, `code`, `orde`, `geom` (PostGIS geometry), `latitude`, `longitude`, `ellips_height`, and `status`. Designed to support offline creation in the field via the UUID key.
+- **Benchmark:** Survey control points with known coordinates and elevations. Fields include: `id` (UUID Primary Key), `site_id`, `bm_id` (unique per site natural identifier), `northing`, `easting`, `ortho_height`, `code`, `orde`, `geom` (nullable JSON value; PostGIS is not enabled), `latitude`, `longitude`, `crs_identifier`, `ellips_height`, `status`, and soft-delete/timestamp fields. Designed to support offline creation in the field via the UUID key.
+- **TimelineMilestone:** A planned-versus-actual work target for a site and optionally a zone. Fields include: `id`, `site_id`, `zone_id`, `title`, `description`, `category`, `target_value`, `actual_value`, `target_date`, `start_date`, `end_date`, `status`, and soft-delete/timestamp fields. `target_date` and `start_date`/`end_date` keep planning dates distinct from actual progress, consistent with ADR-0015's plan/actual separation.
 
 _Identifiers:_ All entities use UUIDs (Universally Unique Identifiers) as primary keys to prevent conflicts during offline data creation.
 _Multi-tenancy:_ All operational entities include a `site_id` column to support Phase 2 multi-site capability, even though Phase 1 only provisions a single site.
@@ -50,7 +51,7 @@ PostgreSQL provides robust relational mapping which makes report generation and 
 | User Passwords                                   | Security                              | Kept until user deletes account                        | Handled automatically by Supabase Auth                                                 |
 | Standard Logs & Checks                           | Internal                              | Indefinite (with audit trail: active, edited, deleted) | Soft deletion via UI (keeps history of original, edited, and deleted states for audit) |
 
-_Audit Trail:_ All operational data supports soft deletion and edit tracking. The system maintains a history of edits (original, edited, deleted) with timestamps. By default, the app shows the latest version, but detail views display the full audit trail.
+_Audit Trail:_ All operational data supports soft deletion and edit tracking. The system maintains a history of edits (original, edited, deleted) with timestamps. By default, the app shows the latest version, but detail views display the full audit trail. Clients supply `updated_at` explicitly on every write so offline-first last-write-wins synchronization can order edits across devices; the `update_updated_at_column` trigger fills the stamp only when a write omits it (server-side backstop) and must never overwrite a client-supplied value (STEP-48.20, migration 20260901000001).
 
 ## 5. Consistency & Evolution
 
@@ -83,3 +84,5 @@ _Audit Trail:_ All operational data supports soft deletion and edit tracking. Th
 | v0.1.1  | 2026-07-18 | STEP-1.14 | Explicitly added site_id to Entity Model                                                                                                |
 | v0.1.2  | 2026-07-18 | STEP-8.1  | Enhanced GeospatialFile entity with mime_type, file_size_bytes, latitude, longitude, notes, drive_link and allowed file type constraint |
 | v0.1.3  | 2026-07-21 | STEP-1.4  | Added Benchmark entity and marked as internal confidential |
+| v0.1.4  | 2026-08-31 | STEP-48.17 | Added the TimelineMilestone entity and reconciled Benchmark's applied schema, including CRS persistence, soft-delete timestamps, and JSONB geom because PostGIS is not enabled |
+| v0.1.5  | 2026-09-01 | STEP-48.20 | Recorded the client-supplied `updated_at` contract that offline-first LWW sync depends on; `update_updated_at_column` now fills only missing stamps (migration 20260901000001) instead of overwriting every write |

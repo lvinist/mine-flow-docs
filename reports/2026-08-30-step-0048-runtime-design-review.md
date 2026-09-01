@@ -60,3 +60,8 @@
 **Closure rule:** Route RISK-0011, NR-002, NR-003 status to 48.14.
 
 **Next action from disk:** Run substep 48.14.
+
+**Risk Recommendations for 48.14:**
+- RISK-0011 (Privacy Notice): Close-or-rejustify recommendation: Rejustify and keep open as a pre-release gate, since it is still absent.
+- RISK-0015 (NR-002 Light Mode Login): Close-or-rejustify recommendation: Close, verified by visual evidence that the theme is respected.
+- RISK-0016 (NR-003 Sidebar active state): Close-or-rejustify recommendation: Close, verified by visual evidence that correct routes highlight the sidebar.
