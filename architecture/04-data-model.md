@@ -86,3 +86,4 @@ _Audit Trail:_ All operational data supports soft deletion and edit tracking. Th
 | v0.1.3  | 2026-07-21 | STEP-1.4  | Added Benchmark entity and marked as internal confidential |
 | v0.1.4  | 2026-08-31 | STEP-48.17 | Added the TimelineMilestone entity and reconciled Benchmark's applied schema, including CRS persistence, soft-delete timestamps, and JSONB geom because PostGIS is not enabled |
 | v0.1.5  | 2026-09-01 | STEP-48.20 | Recorded the client-supplied `updated_at` contract that offline-first LWW sync depends on; `update_updated_at_column` now fills only missing stamps (migration 20260901000001) instead of overwriting every write |
+| v0.1.6  | 2026-09-02 | STEP-48.21 | Added the `notes` column to `cut_fill_records`, `land_clearing_records`, and `inventory_items` (migration `20260902000001`): the tracking forms collect and serialize notes but the columns never existed — every notes-bearing save failed with PGRST204 and silently never persisted |
