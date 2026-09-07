@@ -360,32 +360,35 @@ risks:
       reason:
 
   - id: RISK-0014
-    status: open
-    title: "Reporting datasource still on legacy cut/fill volume columns and net = cut − fill"
+    status: mitigated
+    title: "Reporting datasource cut/fill mapping and net-volume semantics"
     category: tech-debt
     severity: medium
-    owner: "TBD"
+    owner: "STEP-48.27"
     opened: "2026-08-27"
     source: "adr/ADR-0012-volume-and-land-clearing-metrics.md"
-    description: >
-      STEP-46.4 corrected the earthworks volume semantics per ADR-0012 (bank-equivalent
-        net via VolumeNormalizer; BCM/LCM relabelled) in the entity, blocs, dashboard and
-        summary cards. The reporting export path was not aligned: eporting_remote_datasource.dart
-        still queries the legacy cut_volume_m3/ill_volume_m3 columns and computes
-        
-et_volume_m3 = cut − fill, the very formula ADR-0012 rejected as meaningless. Runtime verified (STEP-48.18): the query executes but falls back to 0.0 for missing volumes, leading to silent zero-volume reports. Highly misleading, recommend pulling forward as release blocker.
-    impact: >
-      Generated cut/fill PDF reports use the old, incorrect net-volume basis while the
-      in-app dashboard/summary use the corrected one, so a report and the screen it was
-      generated from can disagree on the headline volume.
-    mitigation: >
-      In-app surfaces (the primary MVP path) are corrected. Report generation is a
-      secondary path; align it with the entity's `bcm_volume`/`lcm_volume` columns and
-      the VolumeNormalizer net in a follow-up STEP before reports are relied upon.
-    revisit_trigger: "Before cut/fill PDF reports are used operationally; next reporting STEP."
+    description: >-
+      STEP-46.4 corrected earthworks semantics per ADR-0012 in the entity, blocs,
+      dashboard, and summary cards. STEP-48.27 corrected the reporting export path:
+      `reporting_remote_datasource.dart` now reads `bcm_volume`/`lcm_volume` and emits
+      report-facing `cut_volume_m3`/`fill_volume_m3`/`net_volume_m3` keys at an explicit
+      presentation-map boundary; `net_volume_m3` uses `VolumeNormalizer.bankEquivalent`
+      rather than `cut - fill`. This working-tree state is not yet committed/pushed;
+      PDF generation has not yet been regenerated against the fix. STEP-48.18's runtime
+      evidence observed the old query falling back to 0.0 for missing volumes, leading to
+      silent zero-volume reports; that release-blocking evidence is retained here as history.
+    impact: >-
+      Before STEP-48.27, generated cut/fill PDF reports could disagree with the corrected
+      in-app dashboard. The source-path defect is now addressed, but release evidence still
+      needs a committed build and a PDF regression check.
+    mitigation: >-
+      Keep the 48.27 change through the app commit/push lane; before operational PDF use,
+      regenerate a report and verify its headline against the bank-equivalent mapping.
+    revisit_trigger: "After 48.27 is committed/pushed and a PDF regression check runs, before cut/fill PDF reports are used operationally."
     refs:
       - "adr/ADR-0012-volume-and-land-clearing-metrics.md"
-      - "prompts/003-release-readiness-integration-scale/step-0046/mine-flow-STEP-46.3-FINDINGS.md"
+      - "reports/2026-09-05-step-45-47-implementation-audit.md"
+      - "Upcoming Prompts/mine-flow-STEP-48.27-FINDINGS.md"
     closed:
       date:
       reason:

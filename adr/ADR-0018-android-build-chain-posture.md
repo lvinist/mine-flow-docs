@@ -5,7 +5,7 @@
 
 ## Related documents
 - architecture/09-environments.md
-- ADR-0017-release-readiness-evidence
+- [ADR-0017: Expanded Dual-Platform E2E Test Tier](ADR-0017-expanded-e2e-tier.md)
 
 ## Context
 The project's local Android build and CI `e2e-android` job failed under AGP 9.1.0. The root cause was that AGP 9 rejects the unconditional `apply plugin: 'kotlin-android'` block. Two legacy plugins (`package_info_plus` 9.0.1, `file_picker` 11.0.3) did exactly that.
