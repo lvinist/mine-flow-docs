@@ -1,8 +1,8 @@
 # Doc 08 — Infrastructure & Deployment
 
-**Version:** v0.2.0
+**Version:** v0.2.1
 **Status:** Active
-**Last updated:** 2026-08-09 (STEP-42.7)
+**Last updated:** 2026-09-08 (STEP-50.1)
 **Audience:** Developers, Operations, Project Managers
 
 > Defines where the system runs, how code is deployed, and how it recovers from failure.
@@ -20,7 +20,8 @@ Code becomes a running version via automated **GitHub Actions** (`.github/workfl
 
 - **Test gate (`test`):** On every push/PR — formatting, analyze, contract & l10n guards, full test suite.
 - **Android APK (`build-android`):** Builds the debug APK as a smoke check; uploaded as a CI artifact.
-- **Staging web (`deploy-staging`):** On push to `master`: `test` → `build-android` → `deploy-staging` builds Flutter Web with staging secrets and deploys to `gh-pages-staging` (staging Pages slot under `/staging/`); a debug APK artifact is re-published as `staging-apk-<sha>` with 14-day retention.
+- **E2E Web (`e2e-web`) / E2E Android (`e2e-android`):** Dual-platform integration-test gate added in STEP-45 (ADR-0017): `flutter drive` + chromedriver on web, emulator-driven APK runs on Android, with execution-proof guards that fail on zero-executed tests.
+- **Staging web (`deploy-staging`):** On push to `master`: `test` → `build-android` + `e2e-web` + `e2e-android` → `deploy-staging` builds Flutter Web with staging secrets and deploys it to `gh-pages-staging` (staging Pages slot under `/staging/`); a debug APK artifact is re-published as `staging-apk-<sha>` with 14-day retention.
 - **Production (`deploy-production`):** On GitHub Release publish: deploys Flutter Web release build to `gh-pages` and attaches the signed APK to the Release. Runs in the `production` Actions environment and **requires reviewer approval** before deploying.
 - **Rollback:** Web: re-run the last passing workflow run (staging) or re-publish the previous Release tag (production, triggers redeploy); APK: download/re-publish artifacts. See Doc 09 §5 and `runbooks/staging-provision.md`.
 
@@ -80,4 +81,5 @@ We leverage the offline caches on mobile devices as a secondary safety net along
 |---------|------|------|--------|
 | v0.1.0 | 2026-07-17 | STEP-1.8 | Initial draft from Infrastructure & Deployment session |
 | v0.1.1 | 2026-07-18 | STEP-1.14 | Included Supabase Edge Functions for privileged operations |
+| v0.2.1 | 2026-09-08 | STEP-50.1 | §2 pipeline reconciled with the real CI: added the STEP-45 `e2e-web`/`e2e-android` gate jobs (ADR-0017) to the `deploy-staging` `needs:` chain |
 | v0.2.0 | 2026-08-09 | STEP-42.7 | Status Active; §2 pipeline concrete: four-job CI (`test`, `build-android`, `deploy-staging` on `master` push, `deploy-production` on Release with manual approval gate); rollback pointers |

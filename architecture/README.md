@@ -30,15 +30,16 @@ Most of these are produced by the **architecture sessions** during STEP-1
 | 05 | [Scaling & Performance](05-scaling-performance.md) | v0.1.0 | Draft |
 | 06 | [Security & Threat Model](06-security-threat-model.md) | v0.2.0 | Draft |
 | 07 | [UI / Design System](07-ui-design-system.md) | v0.4.0 | Draft |
-| 08 | [Infrastructure & Deployment](08-infrastructure-deployment.md) | v0.2.0 | Active |
+| 08 | [Infrastructure & Deployment](08-infrastructure-deployment.md) | v0.2.1 | Active |
 | 09 | [Environments](09-environments.md) | v0.5.0 | Active |
 | 10 | [Observability](10-observability.md) | v0.1.0 | Draft |
-| 11 | [Interface Contracts](11-interface-contracts.md) | v0.2.0 | Draft |
+| 11 | [Interface Contracts](11-interface-contracts.md) | v0.3.0 | Draft |
 | 12 | [Test Strategy](12-test-strategy.md) | 1.3 | Approved |
-| 13 | [Glossary](13-glossary.md) | v0.1.0 | Draft |
-| 15 | [Native App Architecture](15-native-app-architecture.md) | v0.2.0 | Draft |
+| 13 | [Glossary](13-glossary.md) | v0.1.1 | Draft |
+| 15 | [Native App Architecture](15-native-app-architecture.md) | v0.2.1 | Draft |
 | 16 | [Identity & Auth](16-identity-auth.md) | v0.1.1 | Draft |
 | 17 | [Privacy & Compliance](17-privacy-compliance.md) | v0.1.0 | Draft |
 
-<!-- Reconciled against the docs on disk at STEP-50 (2026-08-29 check-in). Each doc's own
-     header remains authoritative; re-run the comparison at the next check-in. -->
+<!-- Reconciled against the docs on disk at STEP-50.1 (2026-09-08 check-in): all 16 docs
+     present, versions/statuses match each doc's own header. Each doc's own header remains
+     authoritative; re-run the comparison at the next check-in. -->

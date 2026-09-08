@@ -1,8 +1,8 @@
 # Doc 15 — Native App Architecture
 
-**Version:** v0.2.0
+**Version:** v0.2.1
 **Status:** Draft        <!-- Draft (v0.x) → MVP (v1.x) → Stable (v2.x); see METHOD.md §6 -->
-**Last updated:** 2026-07-29 (STEP-39.2)
+**Last updated:** 2026-09-08 (STEP-50.1)
 **Audience:** All contributors — this sets the specific capabilities, sync strategies, and security posture of the mobile (and desktop/web) client.
 
 > Defines the offline sync strategy, local storage, device capabilities, and distribution approach for the Flutter app.
@@ -80,11 +80,12 @@ To ensure adequate battery life for full field shifts:
 
 | ID | Question | Owner | Feeds into |
 |----|----------|-------|------------|
-| OQ-2 | Specific local DB technology selection (SQLite vs. Hive/Isar) | STEP 2+ | Implementation |
+| OQ-2 | Specific local DB technology selection (SQLite vs. Hive/Isar) | Resolved — ADR-0006 selected Hive (2026-07-18); migrated to the `hive_ce` community fork in STEP-43 (RISK-0007) | — |
 
 ## Version Log
 
 | Version | Date | STEP | Change |
 |---------|------|------|--------|
 | v0.1.0 | 2026-07-17 | STEP-1.3a | Initial draft from Native App Architecture session |
+| v0.2.1 | 2026-09-08 | STEP-50.1 | OQ-2 marked resolved: ADR-0006 selected Hive; STEP-43 migrated it to `hive_ce` (RISK-0007) |
 | v0.2.0 | 2026-07-29 | STEP-39.2 | Defined precise low-battery sync state table rule (ADR-0010) |
