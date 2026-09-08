@@ -1,8 +1,8 @@
 # Doc 09 — Environments
 
-**Version:** v0.4.0
+**Version:** v0.5.0
 **Status:** Active
-**Last updated:** 2026-08-29 (STEP-47.8)
+**Last updated:** 2026-09-08 (STEP-48.15)
 **Audience:** Developers, Operations
 
 > Defines the environments (Local, Staging, Production), how configuration differs, and how code is promoted between them.
@@ -37,7 +37,7 @@ Secrets (e.g., Supabase API keys) will be managed differently across environment
 
 Code promotion follows a simple, automated path managed by GitHub Actions (implemented in STEP-42; see `.github/workflows/ci.yml`):
 
-1. **Local to Staging:** Pushing or merging code to the `master` branch automatically triggers the `deploy-staging` CI job, which builds Flutter Web with staging secrets and deploys it to the staging GitHub Pages slot (`gh-pages-staging`, served under `/staging/`). It also publishes a `staging-apk-<sha>` debug-APK artifact (14-day retention). Both require the dual-platform `e2e-web` and `e2e-android` CI gates to pass. (Note: Web E2E runs via `flutter drive` + chromedriver, not `flutter test -d chrome`). **Crucially, a green E2E gate currently proves only that the test harness executes** — the emulator boots, the APK installs, and the harness runs. The actual 14 staging journeys remain Deferred to STEP-48 and are skipped on CI due to missing credentials.
+1. **Local to Staging:** Pushing or merging code to the `master` branch automatically triggers the `deploy-staging` CI job, which builds Flutter Web with staging secrets and deploys it to the staging GitHub Pages slot (`gh-pages-staging`, served under `/staging/`). It also publishes a `staging-apk-<sha>` debug-APK artifact (14-day retention). Both require the dual-platform `e2e-web` and `e2e-android` CI gates to pass. Web E2E runs via `flutter drive` + chromedriver, not `flutter test -d chrome`. The authoritative branch-head gate for STEP-48 is run `34225431645` on `d53fb7e`: `test` and `build-android` succeeded; Android executed 24 tests with 2 named skips and web executed all 16 loop files with 22 execution markers. The gate's five `test`-job skips are fixture-only guard tests because captured CI logs are workspace evidence, not repository fixtures. This proves the staged journey harness executed successfully against staging, but it does not prove every optional path: Drive upload/cancellation/large-file behavior remains Deferred by decision D2 (RISK-0017/RISK-0018), the crew RLS leg remains skipped for absent `TEST_CREW_*` secrets (RISK-0021), and screenshot artifacts remain unavailable despite a green capture harness (RISK-0023/design-review follow-up). True cold-start browser deep-link behavior remains unverified (RISK-0019).
 2. **Staging to Production:** Publishing a GitHub Release triggers the `deploy-production` CI job, which builds and deploys to the production Pages slot and attaches a signed release APK to the Release. The job runs in the `production` Actions environment with a **required reviewer approval gate** — the run blocks until explicitly approved.
 
 Both jobs are defined as GitHub Actions **environments** rather than per-environment branches (ADR-0011).
@@ -83,3 +83,4 @@ As a solo-developer project, access control is strictly centralized:
 | v0.2.0 | 2026-08-09 | STEP-42.7 | Status Active; §4 promotion flow concrete (`deploy-staging` on `master` push, `deploy-production` on Release with approval gate); added §5 Rollback Procedures; ADR-0011 |
 | v0.3.0 | 2026-08-27 | STEP-45.15 | Updated promotion flow with dual-platform E2E gate evidence (ADR-0017) |
 | v0.4.0 | 2026-08-29 | STEP-47.8 | §3 parity details added (JDK 17, Flutter 3.47.1, AGP 9.1.0, PUB_CACHE); §4 promotion flow clarified (`flutter drive` E2E, journeys deferred) |
+| v0.5.0 | 2026-09-08 | STEP-48.15 | Replaced the harness-only staging-gate statement with the verified STEP-48 branch-head evidence and explicit remaining boundaries: D2 Drive deferral, crew RLS credential gap, unavailable screenshot artifacts, and unverified cold-start web deep links |

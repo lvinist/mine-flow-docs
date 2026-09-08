@@ -11,6 +11,17 @@
 > This report records runtime design evidence. A static code inspection, passing analyzer, or
 > widget test alone is not visual verification.
 
+> **Amendment (STEP-48.15 close, 2026-09-08):** Branch-head run `34225431645` proved the
+> committed screenshot set under `reports/design-review/step-0048/` is **1×1 placeholder output**
+> (Android captured 1 of 24 cells fail-safe; the web artifacts are 68-byte placeholders), so every
+> "Verified" verdict below that rests on those PNGs is **retracted** — the capture harness exists
+> and executes green, but no valid visual artifact has been produced. NR-002 (RISK-0015) and
+> NR-003 (RISK-0016) are therefore returned to `monitoring`, and the review's coverage claim
+> narrows to: *harness exists, artifacts not yet produced*. See
+> `prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md` §0.5
+> item 5 and RISK-0023. The "Automated gate" row stands: the capture test executed and passed in
+> the branch-head run.
+
 ## Review coverage
 
 | Surface / workflow | Role / fixture | Platform and viewport | States exercised | Evidence | Result |

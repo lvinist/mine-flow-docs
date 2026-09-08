@@ -138,7 +138,7 @@ risks:
       reason:
 
   - id: RISK-0006
-    status: open
+    status: closed
     title: "go_router upgraded to v18; route API changes audited (E2E unverified)"
     category: dependency
     severity: medium
@@ -150,19 +150,20 @@ risks:
       v16→v17 breaking changes were limited to ShellRoute observer notification
       behavior (new notifyRootObserver property); no redirect API or
       StatefulShellRoute changes. All router usages reviewed; flutter analyze clean.
-      Full E2E deep-link validation was attempted in STEP-45.13 but remains unverified
-      because staging credentials are absent in the test environment (auth-guarded routes
-      need a session).
-    impact: "Bounded to routing layer. Deep links to authenticated routes may fail or drop shell context if regressions exist."
-    mitigation: "Integration test stub created in STEP-45.13; will skip until creds are provided."
-    revisit_trigger: "Before production release, when staging credentials are available."
+      STEP-48.26 run 34225431645 executed the in-process route matrix and upload-route
+      availability checks successfully. True browser cold-start/reload behavior remains
+      outside this harness and is tracked separately by RISK-0019.
+    impact: "Bounded to routing layer. True browser cold-start deep links remain unverified."
+    mitigation: "Integration route matrix and auth-guard checks passed in STEP-48.26; cold-start coverage remains separately tracked."
+    revisit_trigger: "When a cold-start browser deep-link harness is available."
     refs:
       - "reports/2026-08-13-flutter-dependency-ci-audit.md"
-      - "Upcoming Prompts/mine-flow-STEP-45.13-PROMPT.md"
+      - "prompts/003-release-readiness-integration-scale/step-0045/mine-flow-STEP-45.13-PROMPT.md"
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.11-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
     closed:
-      date:
-      reason:
+      date: "2026-09-08"
+      reason: "In-process route matrix, shell persistence, and auth redirects passed in STEP-48.26; true cold-start browser behavior remains separately open as RISK-0019."
 
   - id: RISK-0007
     status: open
@@ -373,22 +374,23 @@ risks:
       `reporting_remote_datasource.dart` now reads `bcm_volume`/`lcm_volume` and emits
       report-facing `cut_volume_m3`/`fill_volume_m3`/`net_volume_m3` keys at an explicit
       presentation-map boundary; `net_volume_m3` uses `VolumeNormalizer.bankEquivalent`
-      rather than `cut - fill`. This working-tree state is not yet committed/pushed;
-      PDF generation has not yet been regenerated against the fix. STEP-48.18's runtime
-      evidence observed the old query falling back to 0.0 for missing volumes, leading to
-      silent zero-volume reports; that release-blocking evidence is retained here as history.
+      rather than `cut - fill`. The source-path correction is committed in the STEP-48
+      branch and confirmed by branch-head run 34225431645; a dedicated PDF regeneration
+      check has not yet been recorded. STEP-48.18's runtime evidence observed the old query
+      falling back to 0.0 for missing volumes, leading to silent zero-volume reports; that
+      release-blocking evidence is retained here as history.
     impact: >-
       Before STEP-48.27, generated cut/fill PDF reports could disagree with the corrected
-      in-app dashboard. The source-path defect is now addressed, but release evidence still
-      needs a committed build and a PDF regression check.
+      in-app dashboard. The source-path defect is addressed and the branch-head journey is
+      green, but release evidence still needs a dedicated PDF regeneration check.
     mitigation: >-
       Keep the 48.27 change through the app commit/push lane; before operational PDF use,
       regenerate a report and verify its headline against the bank-equivalent mapping.
-    revisit_trigger: "After 48.27 is committed/pushed and a PDF regression check runs, before cut/fill PDF reports are used operationally."
+    revisit_trigger: "Before operational PDF use, regenerate a report and verify its headline against the bank-equivalent mapping."
     refs:
       - "adr/ADR-0012-volume-and-land-clearing-metrics.md"
       - "reports/2026-09-05-step-45-47-implementation-audit.md"
-      - "Upcoming Prompts/mine-flow-STEP-48.27-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.27-FINDINGS.md"
     closed:
       date:
       reason:
@@ -422,12 +424,14 @@ risks:
     owner: "TBD"
     opened: "2026-08-27"
     source: "reports/2026-08-27-step-0045-runtime-design-review.md"
-    description: "STEP-46 finding NR-002 requires confirmation that the login card follows the theme in light mode on a real device. Unverified in STEP-45 due to missing staging credentials."
+    description: "STEP-46 finding NR-002 required confirmation that the login card follows the theme in light mode on a real device. The STEP-48.13 close claimed verification via `login-phone-light-en.png`, but the branch-head evidence (STEP-48.26 §0.5 item 5) proved the committed design-review PNGs are 1×1 placeholder output, so that verification is retracted; the capture harness runs green but no valid visual artifact exists."
     impact: "Potential visual mismatch on device."
-    mitigation: "Carried forward to be verified on device."
-    revisit_trigger: "When staging credentials and physical device/emulator testing are available."
+    mitigation: "Design-review capture harness executes green in branch-head run 34225431645, but its screenshot artifacts are placeholders; visual verification still requires a valid capture run."
+    revisit_trigger: "When a valid screenshot capture run produces real artifacts."
     refs:
-      - "reports/2026-08-27-step-0045-runtime-design-review.md"
+      - "reports/2026-08-30-step-0048-runtime-design-review.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.13-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
     closed:
       date:
       reason:
@@ -440,12 +444,14 @@ risks:
     owner: "TBD"
     opened: "2026-08-27"
     source: "reports/2026-08-27-step-0045-runtime-design-review.md"
-    description: "STEP-46 finding NR-003 requires navigating to authenticated routes on web to confirm sidebar item highlights. Unverified in STEP-45 due to missing staging credentials."
+    description: "STEP-46 finding NR-003 required web confirmation that group-route navigation highlights the correct sidebar item. The STEP-48.13 close claimed verification via the design-review screenshots, but the branch-head evidence (STEP-48.26 §0.5 item 5) proved the committed design-review PNGs are 1×1 placeholder output, so that visual verification is retracted."
     impact: "Web navigation state might not highlight correctly."
-    mitigation: "Carried forward."
-    revisit_trigger: "When staging credentials and web testing are available."
+    mitigation: "Design-review capture harness executes green in branch-head run 34225431645, but its screenshot artifacts are placeholders; visual verification still requires a valid capture run."
+    revisit_trigger: "When a valid screenshot capture run produces real artifacts."
     refs:
-      - "reports/2026-08-27-step-0045-runtime-design-review.md"
+      - "reports/2026-08-30-step-0048-runtime-design-review.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.13-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
     closed:
       date:
       reason:
@@ -457,13 +463,14 @@ risks:
     severity: medium
     owner: "TBD"
     opened: "2026-08-27"
-    source: "Upcoming Prompts/mine-flow-STEP-45.8-FINDINGS.md"
-    description: "STEP-46 finding NR-004 requires testing real Drive upload and abandon behavior. Unverified in STEP-45. In STEP-48, explicitly scoped out by decision D2 despite credentials being available."
+    source: "prompts/003-release-readiness-integration-scale/step-0045/mine-flow-STEP-45.8-FINDINGS.md"
+    description: "STEP-46 finding NR-004 requires testing real Drive upload and abandon behavior. STEP-48 deliberately leaves this out of scope by decision D2 despite credentials being available."
     impact: "User cancellation might not be handled smoothly during real uploads."
-    mitigation: "Carried forward."
-    revisit_trigger: "When staging Google Drive credentials are available."
+    mitigation: "Explicitly deferred by D2; the route renders an unavailable state without throwing when Drive is not configured."
+    revisit_trigger: "When a future STEP explicitly authorizes real Drive upload and cancellation testing."
     refs:
-      - "Upcoming Prompts/mine-flow-STEP-45.8-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.14-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
     closed:
       date:
       reason:
@@ -475,13 +482,14 @@ risks:
     severity: medium
     owner: "TBD"
     opened: "2026-08-27"
-    source: "Upcoming Prompts/mine-flow-STEP-45.8-FINDINGS.md"
-    description: "STEP-46 finding NR-005 requires finding the practical large-file ceiling on device. Unverified in STEP-45. In STEP-48, explicitly scoped out by decision D2 despite credentials being available. The CF-078 limit of 50MB is retained."
+    source: "prompts/003-release-readiness-integration-scale/step-0045/mine-flow-STEP-45.8-FINDINGS.md"
+    description: "STEP-46 finding NR-005 requires finding the practical large-file ceiling on device. STEP-48 deliberately leaves real Drive upload and ceiling testing out of scope by decision D2; the CF-078 50MB validation remains retained in application tests."
     impact: "App could OOM on lower-end devices if the 50MB limit is too high."
-    mitigation: "Retained 50MB limit."
-    revisit_trigger: "When staging Google Drive credentials and real device testing are available."
+    mitigation: "Retained and unit-tested 50MB limit; real Drive ceiling testing is explicitly deferred."
+    revisit_trigger: "When a future STEP explicitly authorizes real Drive upload and device ceiling testing."
     refs:
-      - "Upcoming Prompts/mine-flow-STEP-45.8-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.14-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
     closed:
       date:
       reason:
@@ -493,7 +501,7 @@ risks:
     severity: medium
     owner: "TBD"
     opened: "2026-08-27"
-    source: "Upcoming Prompts/mine-flow-STEP-45.7-PROMPT.md"
+    source: "prompts/003-release-readiness-integration-scale/step-0045/mine-flow-STEP-45.7-PROMPT.md"
     description: "STEP-46 finding NR-006 requires deep-linking to /operations/benchmark-db/form on web to ensure shell persistence. Test skipped in STEP-45. In STEP-48.7, confirmed that in-process deep-linking works, but true cold-start browser load remains unverified due to flutter drive harness limitations."
     impact: "Direct links to the form on web might drop the app shell."
     mitigation: "Carried forward."
@@ -511,7 +519,7 @@ risks:
     severity: low
     owner: "TBD"
     opened: "2026-08-29"
-    source: "Upcoming Prompts/mine-flow-STEP-47.1-PROMPT.md"
+    source: "prompts/003-release-readiness-integration-scale/step-0047/mine-flow-STEP-47.1-PROMPT.md"
     description: >
       During the major version sweep in STEP-47.1, several transitive packages (archive, qr,
       package_config, material_color_utilities, and analyzer/test family) remained on older versions
@@ -551,15 +559,17 @@ risks:
     owner: "TBD"
     opened: "2026-08-30"
     source: "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.7-FINDINGS.md"
-    description: "The benchmarks table does not exist in the Staging database. Migration was never authored in STEP-36.1."
-    impact: "Benchmark workflows crash against the staging API, preventing E2E testing."
-    mitigation: "Carried forward to a future STEP to properly apply migrations."
-    revisit_trigger: "When the benchmarks table migration is created and applied to Staging."
+    description: "The benchmarks table was absent from staging during the original STEP-48.7 run. STEP-48.17 applied the migration and STEP-48.26 run 34225431645 executed the benchmark journey successfully; true browser cold-start deep-link behavior remains separately tracked by RISK-0019."
+    impact: "Benchmark workflows previously crashed against the staging API; that staging-schema blocker is resolved."
+    mitigation: "Benchmark migration applied and journey executed successfully in STEP-48.26."
+    revisit_trigger: "When the benchmark schema or workflow contract changes."
     refs:
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.7-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.17-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
     closed:
-      date:
-      reason:
+      date: "2026-09-08"
+      reason: "Staging schema and benchmark journey verified in STEP-48.26; cold-start web deep-link is a separate RISK-0019 boundary."
 
   - id: RISK-0023
     status: open
@@ -568,13 +578,15 @@ risks:
     severity: medium
     owner: "TBD"
     opened: "2026-08-30"
-    source: "reports/2026-08-30-step-0048-runtime-design-review.md"
-    description: "Accessibility (focus, semantics, screen-reader experience) was marked Unverified in STEP-48.13 runtime design review because screenshots cannot prove screen-reader behavior."
-    impact: "Potential a11y gaps in critical user flows."
-    mitigation: "Carried forward to a future STEP."
-    revisit_trigger: "When manual accessibility testing or a suitable harness is available."
+    source: "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.13-FINDINGS.md"
+    description: "Valid screenshot-backed runtime design-review artifacts remain unavailable: the capture harness executed, but the committed PNG set is 1×1 placeholder output and the latest Android run uploaded no screenshots. Screen-reader behavior is also unverified because screenshots and this harness cannot prove it."
+    impact: "Visual review cannot be independently re-reviewed from valid artifacts, and accessibility gaps may remain in critical flows."
+    mitigation: "Keep the design-review harness and report limitations explicit; obtain real screenshot artifacts and manual or suitable automated screen-reader evidence in a follow-up."
+    revisit_trigger: "When a valid screenshot capture run and accessibility test method are available."
     refs:
       - "reports/2026-08-30-step-0048-runtime-design-review.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.13-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
     closed:
       date:
       reason:

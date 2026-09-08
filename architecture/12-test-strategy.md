@@ -1,8 +1,8 @@
 # 12. Test Strategy
 
-**Version:** 1.2
+**Version:** 1.3
 **Status:** Approved
-**Last updated:** 2026-08-29
+**Last updated:** 2026-09-08 (STEP-48.15)
 
 - **Test tiers**: Follow a standard Test Pyramid. Unit tests (many, fast), integration tests (some, mocking the backend), and E2E tests (few, testing the real flow).
 - **Coverage priorities**: Heavy focus on data entry validation, state management (BLoC), and role-based access control (RLS equivalents on the client). Less focus on UI layout code and third-party libraries.
@@ -25,6 +25,7 @@
 | 1.0 | 2026-07-18 | Initial Architecture | Created initial Test Strategy |
 | 1.1 | 2026-08-27 | Antigravity | Expanded E2E tier (Tier-1/2) and added dual-platform CI gate (ADR-0017) |
 | 1.2 | 2026-08-29 | Antigravity | Clarified Chrome E2E execution via flutter drive (STEP-47.8) |
+| 1.3 | 2026-09-08 | STEP-48.15 | Recorded the branch-head E2E execution evidence, per-platform counts, zero-executed guards, and explicit exclusions/limitations |
 
 ## Details
 
@@ -51,6 +52,8 @@ To prevent tests from mutating shared state and causing flaky failures:
 
 ### 5. System / End-to-End Tests
 Since the project is built in a monorepo-style single Flutter app, the E2E tests live directly inside the app repository using the `integration_test` package. To avoid polluting production data, these tests run against a distinctly provisioned Supabase Test environment on both Chrome (executed via `flutter drive` and chromedriver) and a Pixel 6a Android emulator.
+
+The STEP-48 branch-head gate (run `34225431645`, commit `d53fb7e`) confirms the execution contract in vivo: `e2e-android` completed with 24 passed and 2 named skips, and `e2e-web` completed all 16 loop files with 22 execution markers and 3 named skips. The gate's zero-executed guards reject all-skipped Android and web aggregates. These counts prove the exercised journey bodies ran against staging; they do not close deliberately excluded Drive behavior, the credential-gated crew RLS leg, screenshot-backed design-review coverage, or true cold-start browser reload behavior.
 
 ### 6. CI Gates
 The following checks run on merge requests. A failure in any of these gates blocks the merge:

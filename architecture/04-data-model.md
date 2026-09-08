@@ -1,8 +1,8 @@
 # Doc 04 — Data Model, Ownership & Retention
 
-**Version:** v0.1.5
+**Version:** v0.1.7
 **Status:** Draft <!-- Draft (v0.x) → MVP (v1.x) → Stable (v2.x); see METHOD.md §6 -->
-**Last updated:** 2026-09-01 (STEP-48.20)
+**Last updated:** 2026-09-05 (STEP-48.23)
 **Audience:** All contributors — this sets the entities, relationships, ownership, and retention rules.
 
 > Defines the core entities, who owns them, how they are stored, and rules for retention and data sensitivity.
@@ -56,6 +56,7 @@ _Audit Trail:_ All operational data supports soft deletion and edit tracking. Th
 ## 5. Consistency & Evolution
 
 - **Consistency:** Eventual consistency (timestamp-based last-write-wins). Since foremen operate offline in the field, local changes are synced back to Supabase when connectivity returns. Timestamps ensure the most recent offline edit is the final state.
+- **Client write-path status contract (daily_logs):** the auto-draft save is the draft path and never demotes a row that has already left `draft`. When the row is already cached, the stored status is `max(incoming, cached)` — a late autosave persists its field edits without changing status; with no cached row the legacy draft force-write applies (the submit flow's own first write, promoted by the immediately following submit). The form bloc additionally drops auto-save events while a submit is in flight (`isSubmitting`/`isSubmitted`), because bloc events are processed concurrently and a debounced save can otherwise race the submit handler. Motivated by the web autosave-vs-submit race that flipped `submitted` rows back to `draft` on the daily-log journey read-back (STEP-48.23 re-run 5, 2026-09-05). LWW participation is unchanged: every writer still stamps its own `updated_at` (see v0.1.5).
 - **Evolution:** Schema changes will be managed through Supabase database migrations, allowing tables to evolve without data loss.
 
 ## Decision Summary
@@ -87,3 +88,4 @@ _Audit Trail:_ All operational data supports soft deletion and edit tracking. Th
 | v0.1.4  | 2026-08-31 | STEP-48.17 | Added the TimelineMilestone entity and reconciled Benchmark's applied schema, including CRS persistence, soft-delete timestamps, and JSONB geom because PostGIS is not enabled |
 | v0.1.5  | 2026-09-01 | STEP-48.20 | Recorded the client-supplied `updated_at` contract that offline-first LWW sync depends on; `update_updated_at_column` now fills only missing stamps (migration 20260901000001) instead of overwriting every write |
 | v0.1.6  | 2026-09-02 | STEP-48.21 | Added the `notes` column to `cut_fill_records`, `land_clearing_records`, and `inventory_items` (migration `20260902000001`): the tracking forms collect and serialize notes but the columns never existed — every notes-bearing save failed with PGRST204 and silently never persisted |
+| v0.1.7  | 2026-09-05 | STEP-48.23 | Recorded the daily-log client write-path status contract: the auto-draft save never demotes a row that has left `draft` (stored status `max(incoming, cached)` when the row is cached) and the form bloc drops auto-save events while a submit is in flight — closing the web autosave-vs-submit concurrency race that flipped `submitted` rows back to `draft` on the journey read-back |
