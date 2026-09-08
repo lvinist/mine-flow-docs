@@ -1,9 +1,9 @@
 # mine-flow — STEP-0050 Check-In Report
 
 **Date:** 2026-09-08
-**Check-in STEP:** STEP-50 (substep 50.1 — doc drift, conditional coverage, risks & security gate)
+**Check-in STEP:** STEP-50 (substeps 50.1 + 50.2 — full runbook: doc drift, conditional coverage, risks, security gate, full test suite)
 **Report path:** `reports/2026-09-08-step-0050-check-in-report.md`
-**Reviewed commit(s):** mine-flow-app@`d10253d` (master), mine-flow-docs@`c1824ca` (main), prompts@`6946493` (main at review start)
+**Reviewed commit(s):** mine-flow-app@`d10253d` (master), mine-flow-docs@`c1824ca` (main), prompts@`6946493` (main at review start); substep 50.2 executed at mine-flow-app@`b9bcce5`, mine-flow-docs@`ec05cc3`, prompts@`bd0606e`
 **Runbook:** `runbooks/check-in.md`
 
 > Note: the STEP-50 PLAN (authored 2026-08-29) predicted the report filename
@@ -119,7 +119,7 @@ capability; no incident. Per the runbook, S0/S1/S2 are not run inside a check-in
 
 | Repo / suite | Command | Result | Notes |
 |--------------|---------|--------|-------|
-| mine-flow-app | `flutter test` | **Pending — substep 50.2** | Full suite is 50.2's deliverable (PLAN gates Part 2 on Part 1). Known flake to diagnose, not wave through: `test/integration/attendance_daily_log_sync_test.dart` (Hive `setUpAll`) fails intermittently full-suite, green isolated (seen again at the STEP-48.15 close). |
+| mine-flow-app | `flutter test` | **Passed — 553/553, 0 failed, 0 skipped (elapsed 01:40)** at branch head `b9bcce5` on `step-0050-phase3-check-in` (substep 50.2, run 2026-09-08; Flutter 3.47.1 stable) | Durable record: `reports/test-results/2026-09-08-step-0050-full-suite-test-results.md`. Known flake `test/integration/attendance_daily_log_sync_test.dart` (Hive `setUpAll`, order-dependent) **did not reproduce** — green in the full suite this run, consistent with the STEP-47.9/48.15 diagnosis (flake, not regression). Local-vs-CI count difference (553 local vs 548+5 skips in branch-head CI run 34225431645) verified in source: the 5 CI-only skips are guard-fixture tests that self-skip when captured CI logs are absent locally. No failure to dispose; no finding opened |
 
 ## Carry-Forward
 
@@ -130,9 +130,9 @@ capability; no incident. Per the runbook, S0/S1/S2 are not run inside a check-in
 | STEP-51 UI debt (CF-087 remainder, 46.4 test debt) | follow-up STEP | — (unassigned) | Already reserved (`e2d2087`); PLAN in `Upcoming Prompts/` (authored with the 2026-09-05 audit's remediation routing) |
 | RISK-0011 privacy notice | risk (high, pre-release gate) | User | Decide when to schedule implementation |
 | RISK-0013 GitHub-settings items | risk (Unverified locally — no `gh` CLI) | User | Install `gh` or verify in GitHub UI; fold into STEP-52 |
-| Workspace-root evidence logs (~130 files) | hygiene | User/next session | Clean up at STEP-50 close, preserving the four `step4826_r7_*` logs cited by the archived 48.15 record (or relocate under a repo and update citations) |
+| Workspace-root evidence logs (~130 files) | hygiene | User/next session | **Done at STEP-50 close (50.2)**: transient debris deleted; four `step4826_r7_*` logs retained in place (cited by archived 48.15/48.26), `step4824_web_loop.sh` retained (cited by archived 48.24) |
 | STEP-48 user-side staging hygiene (PAT revocation; 10 `name='150'` inventory rows; placeholder PNGs → RISK-0024) | handoff | User | Named in 48.15's handoff section; PAT revocation recommended now that the gate is green |
-| Substep 50.2 full `flutter test` | substep | Hermes | Run after this substep (fresh chat per convention) |
+| Substep 50.2 full `flutter test` | substep | Hermes | **Done 2026-09-08**: 553/553 at `b9bcce5`; durable record `reports/test-results/2026-09-08-step-0050-full-suite-test-results.md` |
 
 ## Summary
 
@@ -149,5 +149,10 @@ registered with owners; no new bug-class drift was found. Next check-in: ~10–2
 (target around STEP-60–70, or earlier if a production-release decision changes the risk
 picture).
 
-*Part 2 (substep 50.2 — full `flutter test` run and its disposition) appends to the Tests
-section above when it runs.*
+*Substep 50.2 (full `flutter test` run) completed 2026-09-08: 553/553 green at branch
+head `b9bcce5`, known Hive flake silent — see the Tests section above and
+`reports/test-results/2026-09-08-step-0050-full-suite-test-results.md`. The workspace-root
+hygiene item below was executed at STEP-50 close: ~130 debris files removed, with the four
+`step4826_r7_*` logs retained in place (cited by the archived 48.15/48.26 records) plus
+`step4824_web_loop.sh` (cited by the archived 48.24 record), and the cited helper scripts
+under `.scratch-tmp/`/`.step48-work/` left intact.*
