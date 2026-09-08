@@ -191,6 +191,9 @@ risks:
     closed:
       date:
       reason:
+    # STEP-50.1 (2026-09-08): revisit trigger FIRED — last stable hive_ce release 2.19.3
+    # was published 2026-02-03 (~7 months ago; pre-releases are not releases). Maintenance
+    # health also rated moderate (single maintainer). Follow-up: STEP-53.
 
   - id: RISK-0009
     status: open
@@ -221,6 +224,9 @@ risks:
     closed:
       date:
       reason:
+    # STEP-50.1 (2026-09-08): upstream PR flutter/flutter#191587 MERGED to flutter master
+    # 2026-09-03, but no stable release containing it has shipped yet (local 3.47.1 is
+    # 2026-08-19). Trigger half-fired; retest when the next stable lands. Follow-up: STEP-53.
 
   - id: RISK-0008
     status: monitoring
@@ -552,7 +558,7 @@ risks:
       reason:
 
   - id: RISK-0022
-    status: open
+    status: closed
     title: "Benchmark journey deferred against staging (missing table)"
     category: tech-debt
     severity: medium
@@ -586,6 +592,30 @@ risks:
     refs:
       - "reports/2026-08-30-step-0048-runtime-design-review.md"
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.13-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0024
+    status: open
+    title: "Committed design-review PNGs are 1×1 placeholders"
+    category: tech-debt
+    severity: low
+    owner: "TBD"
+    opened: "2026-09-08"
+    source: "reports/2026-08-30-step-0048-runtime-design-review.md"
+    description: >
+      73 artifacts under reports/design-review/step-0048/ are 1×1 placeholder
+      output (web artifacts are 68-byte placeholders; Android captured 1 of 24
+      cells fail-safe). They are flagged invalid in RISK-0023 but remain committed
+      in the docs tree. They must not be mistaken for visual evidence; they stay
+      until a valid capture run replaces them, then should be cleaned up.
+    impact: "Placeholder files could be misread as review artifacts by a future reader or agent."
+    mitigation: "RISK-0023 and the design-review report's retraction amendment explicitly flag them as invalid; no verdict rests on them."
+    revisit_trigger: "When a valid screenshot capture run produces real artifacts (replace or delete the placeholders), or when the design-review report is superseded."
+    refs:
+      - "reports/2026-08-30-step-0048-runtime-design-review.md"
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
     closed:
       date:

@@ -1,8 +1,8 @@
 # Doc 13 — Glossary
 
-**Version:** v0.1.0
+**Version:** v0.1.1
 **Status:** Draft        <!-- Draft (v0.x) → MVP (v1.x) → Stable (v2.x); see METHOD.md §6 -->
-**Last updated:** 2026-07-18 (STEP-1.13)
+**Last updated:** 2026-09-08 (STEP-50.1)
 **Audience:** All contributors — to ensure consistent vocabulary across codebase and docs.
 
 > Defines the precise meaning of the project's key terms, acronyms, and naming conventions.
@@ -14,6 +14,8 @@
 | **Attendance Record** | A daily entry logging whether a specific user (crew member or foreman) was present for work on a given day. | |
 | **Crew Member** | An on-the-ground worker who logs their own attendance, views assigned tasks, and records daily work entries. | |
 | **Cut/Fill Record** | A measurement representing the volume of earth removed (cut) or added (fill) within a specific Zone. | |
+| **Benchmark** | A survey reference measurement (with an optional CRS identifier and geometry) used to anchor site progress data. | Introduced in STEP-25; schema reconciled in STEP-48.17. |
+| **Timeline Milestone** | A planned-vs-actual site activity checkpoint (title, category, target/actual values and dates) shown on the Work Timeline. | Table added in STEP-48.17. |
 | **Daily Log** | A structured daily progress report submitted by a foreman to capture work completed, site conditions, and general notes. | |
 | **Data Bucket** | A searchable file registry within the app that holds metadata (such as location and time) for heavy geospatial files (.shp, .tiff), linking directly to where the files are stored on Google Drive. | Not to be confused with an AWS S3 Bucket or raw object store. |
 | **Equipment Check** | A standard operating procedure (SOP) checklist completed before and after work to record the physical condition of survey tools (like drones or RTK units). | |
@@ -34,6 +36,8 @@
 | **RLS** | Row Level Security | Supabase feature used to restrict access based on user role. |
 | **SOP** | Standard Operating Procedure | Defined rules/checklists for things like equipment checks. |
 | **UUID** | Universally Unique Identifier | Used for database keys to prevent offline sync collisions. |
+| **BCM / LCM** | Bank / Loose Cubic Metres | Volume bases for the same material; per ADR-0012 the dashboard headline is a swell-factor-derived bank-equivalent figure, never a raw sum or difference of the two. |
+| **LWW** | Last-Write-Wins | Timestamp-based conflict resolution for offline-first sync; every writer stamps `updated_at` explicitly (Doc 04 §4). |
 
 ## 3. Naming Conventions
 
@@ -58,4 +62,5 @@
 
 | Version | Date | STEP | Change |
 |---------|------|------|--------|
+| v0.1.1 | 2026-09-08 | STEP-50.1 | Added Benchmark, Timeline Milestone, BCM/LCM and LWW — terms the code has used since STEP-25/48 without glossary entries |
 | v0.1.0 | 2026-07-18 | STEP-1.13 | Initial draft |
