@@ -1,8 +1,8 @@
 # Doc 16 — Identity & Auth
 
-**Version:** v0.1.0
+**Version:** v0.1.1
 **Status:** Draft        <!-- Draft (v0.x) → MVP (v1.x) → Stable (v2.x); see METHOD.md §6 -->
-**Last updated:** 2026-07-17 (STEP-1.6a)
+**Last updated:** 2026-07-18 (STEP-1.14; header version reconciled at STEP-50)
 **Audience:** All contributors — this sets the authentication methods and authorization roles for the system.
 
 > Defines how users authenticate, what authorization roles exist, and how access is enforced.

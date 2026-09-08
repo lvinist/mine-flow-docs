@@ -1,8 +1,8 @@
 # Doc 02 — Phasing & Roadmap
 
-**Version:** v0.1.0
+**Version:** v0.2.0
 **Status:** Draft        <!-- Draft (v0.x) → MVP (v1.x) → Stable (v2.x); see METHOD.md §6 -->
-**Last updated:** 2026-07-17 (STEP-1.2)
+**Last updated:** 2026-07-21 (ADR-0007; header version reconciled at STEP-50)
 **Audience:** All contributors — defines what ships when, and what the MVP architecture must not block.
 
 > Splits the work into phases — what the first shippable version includes, what's deliberately deferred, and the architectural constraints future phases impose on the MVP.

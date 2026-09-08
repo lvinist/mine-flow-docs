@@ -16,6 +16,7 @@
 #   7. (multi-repo only) No stray files at the workspace root
 #   8. Architecture-session template numbers match the STEP-index seed
 #   9. Conditional-session templates expose the metadata generic review gates require
+#  10. Registry YAML parses and contains no control-byte/CR corruption
 #
 # Usage:  from anywhere — Code/<project>-docs/scripts/check.sh
 # Exit:   non-zero if any hard check FAILs; warnings alone do not fail the run.
@@ -380,6 +381,82 @@ else
     pass "all ${#conditional_templates[@]} conditional template(s) expose applicability, invocation, output, next action, and complete late-follow-up bookkeeping"
   else
     hint "copy an existing conditional template's contract: explicit applicability, 'Run it by name', Output, Next, and both STEP-1 / late-follow-up PLAN, architecture-index, and active-substep bookkeeping. See METHOD.md §4."
+  fi
+fi
+
+# --- 10. Registry YAML parse and byte hygiene ---------------------------------
+hdr "10. Registry YAML parses and has no control-byte/CR corruption"
+registry_ok=1
+registry_files=("$DOCS_DIR"/registries/*.yml)
+if [ ${#registry_files[@]} -eq 0 ]; then
+  pass "no registries/*.yml files (nothing to check)"
+else
+  if ! command -v python >/dev/null 2>&1; then
+    warn "python is unavailable — registry YAML check skipped"
+    hint "install Python with PyYAML so registry syntax and byte hygiene are checked"
+  else
+    for registry in "${registry_files[@]}"; do
+      registry_name="${registry#$DOCS_DIR/}"
+      registry_native="$registry"
+      if command -v cygpath >/dev/null 2>&1; then
+        registry_native="$(cygpath -m "$registry")"
+      fi
+      REGISTRY_PATH="$registry_native" python - <<'PY'
+import os
+from pathlib import Path
+
+raw = os.environ["REGISTRY_PATH"]
+if len(raw) >= 3 and raw[1:3] == ":\\":
+    path = Path(raw)
+else:
+    path = Path(raw.replace("\\\\", "/"))
+data = path.read_bytes()
+if b"\x0c" in data:
+    raise SystemExit("contains 0x0c form-feed byte")
+if any(byte == 0x0d and (index + 1 == len(data) or data[index + 1] != 0x0a) for index, byte in enumerate(data)):
+    raise SystemExit("contains a lone CR byte")
+try:
+    import yaml
+except ImportError:
+    raise SystemExit(2)
+yaml.safe_load(data)
+PY
+      status=$?
+      if [ "$status" -eq 0 ]; then
+        :
+      elif [ "$status" -eq 2 ]; then
+        warn "$registry_name could not be checked: PyYAML is unavailable"
+        hint "install PyYAML; registry parsing is visible as a warning rather than a silent pass"
+      else
+        error_line="$(REGISTRY_PATH="$registry_native" python - <<'PY' 2>&1
+import os
+from pathlib import Path
+import yaml
+try:
+    raw = os.environ["REGISTRY_PATH"]
+    if len(raw) >= 3 and raw[1:3] == ":\\":
+        path = Path(raw)
+    else:
+        path = Path(raw.replace("\\\\", "/"))
+    data = path.read_bytes()
+    if b"\x0c" in data:
+        raise ValueError("contains 0x0c form-feed byte")
+    if any(byte == 0x0d and (index + 1 == len(data) or data[index + 1] != 0x0a) for index, byte in enumerate(data)):
+        raise ValueError("contains a lone CR byte")
+    yaml.safe_load(data)
+except Exception as error:
+    print(str(error).splitlines()[0])
+PY
+)"
+        fail "$registry_name is invalid or has unsafe bytes: ${error_line:-parser failed}"
+        registry_ok=0
+      fi
+    done
+    if [ "$registry_ok" -eq 1 ]; then
+      pass "all ${#registry_files[@]} registry YAML file(s) parse and contain no control-byte/CR corruption"
+    else
+      hint "repair the reported registry byte/syntax errors and keep registries parseable under yaml.safe_load"
+    fi
   fi
 fi
 

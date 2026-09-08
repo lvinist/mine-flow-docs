@@ -1,8 +1,8 @@
 # Doc 07 — UI / Design System
 
-**Version:** v0.3.0
+**Version:** v0.4.0
 **Status:** Draft        <!-- Draft (v0.x) → MVP (v1.x) → Stable (v2.x); see METHOD.md §6 -->
-**Last updated:** 2026-07-29 (STEP-39.2)
+**Last updated:** 2026-08-08 (STEP-41.5; header version reconciled at STEP-50)
 **Audience:** All contributors — this sets the visual foundations, reusable UI components, and navigation patterns across all clients.
 
 > Defines the core design system, component guidelines, and platform navigation patterns for the mine-flow application.
@@ -81,5 +81,5 @@
 | v0.1.0 | 2026-07-17 | STEP-1.7 | Initial draft from UI / Design System session |
 | v0.2.0 | 2026-07-22 | STEP-29.1 | Reconciled UI design system to specify ForUI package + FThemes.zinc (default, no brand override) replacing custom ThemeData |
 | v0.3.0 | 2026-07-29 | STEP-39.2 | Formalized UI drift: Approved Geist font and 5 visible mobile navigation items (ADR-0009) |
-| v1.x   | 2026-08-06 | STEP-41.3 | Established minimal l10n scaffold (l10n.yaml, ARB baseline, AppLocalizations delegate). Full string migration deferred to a future STEP. |
+| v0.3.1 | 2026-08-06 | STEP-41.3 | Established minimal l10n scaffold (l10n.yaml, ARB baseline, AppLocalizations delegate). Full string migration deferred to a future STEP. |
 | v0.4.0 | 2026-08-08 | STEP-41.5 | Added Phase 3 localization scaffold status note (ISSUE-10 audit fix). |
