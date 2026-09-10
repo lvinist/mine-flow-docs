@@ -97,20 +97,22 @@ risks:
     title: "Full Indonesian localization migration incomplete"
     category: tech-debt
     severity: medium
-    owner: "TBD"
+    owner: "Team"
     opened: "2026-08-06"
     source: "reports/2026-08-03-step-0041-release-readiness-reconciliation.md"
     description: >
-      All user-facing strings in presentation files are currently hardcoded
-      (Indonesian/English). The AppLocalizations scaffold (STEP-41.3) provides
-      the infrastructure and prevents new regressions in non-exempt files, but
-      the ~28 legacy presentation files remain on the exempt list.
-      Must be resolved before a public multi-language release.
+      The AppLocalizations scaffold prevents new regressions in non-exempt files,
+      but legacy presentation files remain exempt. STEP-54 confirmed that
+      Dashboard, Notifications, Settings, and Login contain no AppLocalizations
+      usage and that runtime locale-switch behavior remains unverified.
     impact: "Cannot easily add languages; technical debt accumulates."
-    mitigation: "CI guard prevents new hardcoded strings."
-    revisit_trigger: "Before any public multi-language release or when a new screen is added."
+    mitigation: >
+      CI prevents new hardcoded-string regressions. STEP-55 must not expand the
+      exempt list and must exercise live locale switching for rebuilt surfaces.
+    revisit_trigger: "When STEP-55 touches an exempt presentation file; hard gate before any public multi-language release."
     refs:
       - "reports/2026-08-03-step-0041-release-readiness-reconciliation.md"
+      - "reports/2026-09-11-step-54-master-polish-spec.md"
     closed:
       date:
       reason:
@@ -299,23 +301,26 @@ risks:
     title: "In-app Privacy Notice absent from first-login flow"
     category: privacy
     severity: high
-    owner: "TBD"
+    owner: "STEP-55.10"
     opened: "2026-08-26"
     source: "reports/security/2026-08-26-step-0044-s0-security-baseline-report.md"
     description: >
       Doc 17 §3 requires a lightweight internal "Terms of Use & Privacy Notice"
-      displayed to users on first login. No such notice is implemented in the
-      Flutter app as of STEP-44. Zero matches for privacy/terms/privasi patterns
-      across all Dart presentation files. Confirmed still absent at runtime in STEP-48.13.
+      displayed on first login. STEP-54 confirmed its continued absence through
+      source inspection, Web runtime captures, an Android login capture, and the
+      accessibility tree.
     impact: >
       Users are not informed how their data (including National ID and date of
       birth) is collected and used before first use, contrary to the UU PDP
       lawful-basis posture recorded in Doc 17.
-    mitigation: "Tracked as pre-release gate; no current mitigation in app."
-    revisit_trigger: "Before production release — must be implemented as a pre-release gate."
+    mitigation: >
+      Treat as a release gate. STEP-55.10 must add approved notice content,
+      explicit acknowledgement, persisted consent state, and dashboard gating.
+    revisit_trigger: "Before production or external-user release; close only after the first-login notice and acknowledgement flow is implemented and verified."
     refs:
       - "architecture/17-privacy-compliance.md"
       - "reports/security/2026-08-26-step-0044-s0-security-baseline-report.md"
+      - "reports/2026-09-11-step-54-master-polish-spec.md"
     closed:
       date:
       reason:
@@ -443,17 +448,18 @@ risks:
     title: "LoginPage light-mode fidelity on device (NR-002)"
     category: tech-debt
     severity: low
-    owner: "TBD"
+    owner: "STEP-55.11"
     opened: "2026-08-27"
     source: "reports/2026-08-27-step-0045-runtime-design-review.md"
     description: "STEP-46 finding NR-002 required confirmation that the login card follows the theme in light mode on a real device. The STEP-48.13 close claimed verification via `login-phone-light-en.png`, but the branch-head evidence (STEP-48.26 §0.5 item 5) proved the committed design-review PNGs are 1×1 placeholder output, so that verification is retracted; the capture harness runs green but no valid visual artifact exists."
     impact: "Potential visual mismatch on device."
-    mitigation: "Design-review capture harness executes green in branch-head run 34225431645, but its screenshot artifacts are placeholders; visual verification still requires a valid capture run."
-    revisit_trigger: "When a valid screenshot capture run produces real artifacts."
+    mitigation: "STEP-54 produced valid Web light/dark captures; Android light-mode fidelity still requires a non-placeholder capture on the target device profile."
+    revisit_trigger: "During STEP-55.11, capture Login in light mode on Pixel_6a or a physical Android device and review the non-placeholder artifact."
     refs:
       - "reports/2026-08-30-step-0048-runtime-design-review.md"
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.13-FINDINGS.md"
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
+      - "reports/2026-09-11-step-54-master-polish-spec.md"
     closed:
       date:
       reason:
@@ -463,36 +469,38 @@ risks:
     title: "Sidebar active-state on group routes on web (NR-003)"
     category: tech-debt
     severity: medium
-    owner: "TBD"
+    owner: "STEP-55.10"
     opened: "2026-08-27"
     source: "reports/2026-08-27-step-0045-runtime-design-review.md"
     description: "STEP-46 finding NR-003 required web confirmation that group-route navigation highlights the correct sidebar item. The STEP-48.13 close claimed verification via the design-review screenshots, but the branch-head evidence (STEP-48.26 §0.5 item 5) proved the committed design-review PNGs are 1×1 placeholder output, so that visual verification is retracted."
     impact: "Web navigation state might not highlight correctly."
-    mitigation: "Design-review capture harness executes green in branch-head run 34225431645, but its screenshot artifacts are placeholders; visual verification still requires a valid capture run."
-    revisit_trigger: "When a valid screenshot capture run produces real artifacts."
+    mitigation: "STEP-54 supplied valid shell captures but did not verify active-state behavior on nested feature-group routes."
+    revisit_trigger: "After STEP-55.10 shell changes, directly visit nested routes in each desktop sidebar group and verify visible and accessible active state."
     refs:
       - "reports/2026-08-30-step-0048-runtime-design-review.md"
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.13-FINDINGS.md"
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
+      - "reports/2026-09-11-step-54-master-polish-spec.md"
     closed:
       date:
       reason:
 
   - id: RISK-0017
-    status: monitoring
-    title: "UploadFilePage real Drive upload abandon/cancel (NR-004)"
+    status: open
+    title: "Data Bucket upload cancellation and real Drive abandon behavior"
     category: tech-debt
     severity: medium
-    owner: "TBD"
+    owner: "STEP-55.9"
     opened: "2026-08-27"
     source: "prompts/003-release-readiness-integration-scale/step-0045/mine-flow-STEP-45.8-FINDINGS.md"
-    description: "STEP-46 finding NR-004 requires testing real Drive upload and abandon behavior. STEP-48 deliberately leaves this out of scope by decision D2 despite credentials being available."
+    description: "Upload reports progress but disables Back while uploading and provides no explicit cancellation action. Real Drive cancellation/abandon behavior remains unverified."
     impact: "User cancellation might not be handled smoothly during real uploads."
-    mitigation: "Explicitly deferred by D2; the route renders an unavailable state without throwing when Drive is not configured."
-    revisit_trigger: "When a future STEP explicitly authorizes real Drive upload and cancellation testing."
+    mitigation: "Preserve retry without reselection. STEP-55.9 must add explicit cancellation with deterministic cleanup and verify the real Drive path."
+    revisit_trigger: "During STEP-55.9 and before Data Bucket is used for operational Drive uploads."
     refs:
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.14-FINDINGS.md"
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
+      - "reports/2026-09-11-step-54-master-polish-spec.md"
     closed:
       date:
       reason:
@@ -502,16 +510,17 @@ risks:
     title: "UploadFilePage large-file OOM threshold (NR-005)"
     category: tech-debt
     severity: medium
-    owner: "TBD"
+    owner: "STEP-55.9"
     opened: "2026-08-27"
     source: "prompts/003-release-readiness-integration-scale/step-0045/mine-flow-STEP-45.8-FINDINGS.md"
     description: "STEP-46 finding NR-005 requires finding the practical large-file ceiling on device. STEP-48 deliberately leaves real Drive upload and ceiling testing out of scope by decision D2; the CF-078 50MB validation remains retained in application tests."
     impact: "App could OOM on lower-end devices if the 50MB limit is too high."
-    mitigation: "Retained and unit-tested 50MB limit; real Drive ceiling testing is explicitly deferred."
-    revisit_trigger: "When a future STEP explicitly authorizes real Drive upload and device ceiling testing."
+    mitigation: "The 50 MB pre-read limit and file-size feedback remain, but no low-memory Android ceiling test has established that the limit is safe."
+    revisit_trigger: "Before retaining the 50 MB production limit, test representative maximum-size files on the lowest supported Android memory profile in STEP-55.9 or 55.11."
     refs:
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.14-FINDINGS.md"
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
+      - "reports/2026-09-11-step-54-master-polish-spec.md"
     closed:
       date:
       reason:
@@ -608,20 +617,26 @@ risks:
 
   - id: RISK-0023
     status: open
-    title: "Accessibility (screen-reader) unverified"
+    title: "Material accessibility barriers and incomplete WCAG verification"
     category: tech-debt
-    severity: medium
-    owner: "TBD"
+    severity: high
+    owner: "STEP-55.11"
     opened: "2026-08-30"
     source: "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.13-FINDINGS.md"
-    description: "Valid screenshot-backed runtime design-review artifacts remain unavailable: the capture harness executed, but the committed PNG set is 1×1 placeholder output and the latest Android run uploaded no screenshots. Screen-reader behavior is also unverified because screenshots and this harness cannot prove it."
-    impact: "Visual review cannot be independently re-reviewed from valid artifacts, and accessibility gaps may remain in critical flows."
-    mitigation: "Keep the design-review harness and report limitations explicit; obtain real screenshot artifacts and manual or suitable automated screen-reader evidence in a follow-up."
-    revisit_trigger: "When a valid screenshot capture run and accessibility test method are available."
+    description: >
+      STEP-54 confirmed that desktop sidebar/header controls are absent from the
+      accessibility tree, Login field names are defective, the Web document
+      language conflicts with Indonesian content, and several controls are below
+      48dp. Contrast, reduced motion, text scaling, feature traversal, and the
+      authenticated Android shell remain unverified.
+    impact: "Assistive-technology and keyboard users may be unable to navigate the desktop app or identify critical controls."
+    mitigation: "Mobile five-tab navigation is correctly exposed. STEP-55 feature owners remediate their surfaces; STEP-55.11 owns the cross-platform WCAG release gate."
+    revisit_trigger: "Before production release; close only with passing desktop navigation/header, Login naming/language, targets, contrast, text scaling, reduced motion, and Android-shell evidence."
     refs:
       - "reports/2026-08-30-step-0048-runtime-design-review.md"
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.13-FINDINGS.md"
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
+      - "reports/2026-09-11-step-54-master-polish-spec.md"
     closed:
       date:
       reason:
@@ -631,7 +646,7 @@ risks:
     title: "Committed design-review PNGs are 1×1 placeholders"
     category: tech-debt
     severity: low
-    owner: "TBD"
+    owner: "STEP-55.11"
     opened: "2026-09-08"
     source: "reports/2026-08-30-step-0048-runtime-design-review.md"
     description: >
@@ -641,11 +656,12 @@ risks:
       in the docs tree. They must not be mistaken for visual evidence; they stay
       until a valid capture run replaces them, then should be cleaned up.
     impact: "Placeholder files could be misread as review artifacts by a future reader or agent."
-    mitigation: "RISK-0023 and the design-review report's retraction amendment explicitly flag them as invalid; no verdict rests on them."
-    revisit_trigger: "When a valid screenshot capture run produces real artifacts (replace or delete the placeholders), or when the design-review report is superseded."
+    mitigation: "STEP-54 produced valid non-placeholder captures, but the old STEP-48 placeholder files remain separately present and explicitly invalid."
+    revisit_trigger: "When STEP-54/55 runtime evidence is durably archived, replace or delete obsolete STEP-48 placeholders and close this row."
     refs:
       - "reports/2026-08-30-step-0048-runtime-design-review.md"
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
+      - "reports/2026-09-11-step-54-master-polish-spec.md"
     closed:
       date:
       reason:
@@ -664,6 +680,78 @@ risks:
     revisit_trigger: "Before production release; remediation required."
     refs:
       - "reports/security/2026-09-10-step-0052-s0-security-baseline-report.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0026
+    status: open
+    title: "Failed benchmark projection can persist sentinel coordinates"
+    category: data
+    severity: high
+    owner: "STEP-55.4"
+    opened: "2026-09-11"
+    source: "reports/2026-09-11-step-54-master-polish-spec.md"
+    description: "Benchmark validation permits failed projection, and persistence falls back to latitude/longitude 0.0, 0.0."
+    impact: "Invalid control-point coordinates can enter foundational geospatial data."
+    mitigation: "Block failed projection and audit existing benchmark records for unintended 0.0, 0.0 values."
+    revisit_trigger: "During STEP-55.4 and before production benchmark editing; close after validation, fallback removal, data review, and regression tests."
+    refs:
+      - "reports/2026-09-11-step-54-master-polish-spec.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0027
+    status: open
+    title: "Attendance records expose no offline synchronization state"
+    category: reliability
+    severity: high
+    owner: "STEP-55.5"
+    opened: "2026-09-11"
+    source: "reports/2026-09-11-step-54-master-polish-spec.md"
+    description: "Attendance records and roster presentation cannot distinguish synced, queued, or failed check-ins."
+    impact: "An unsynchronized field mark can appear saved, undermining accuracy and trust."
+    mitigation: "Expose record-level pending, synced, and failed states with retry/recovery behavior."
+    revisit_trigger: "During STEP-55.5 and before operational offline attendance use; close after persistence, presentation, retry, and offline-to-online tests."
+    refs:
+      - "reports/2026-09-11-step-54-master-polish-spec.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0028
+    status: open
+    title: "Inventory adjustments discard reason and immutable history"
+    category: data
+    severity: critical
+    owner: "STEP-55.8"
+    opened: "2026-09-11"
+    source: "reports/2026-09-11-step-54-master-polish-spec.md"
+    description: "The adjustment dialog captures a reason, but persistence stores only a clamped quantity and creates no immutable transaction."
+    impact: "Stock changes cannot be attributed, reconstructed, or reliably audited."
+    mitigation: "STEP-55.8 must atomically persist reason, signed delta, actor, timestamp, item ID, and idempotency metadata with the quantity update."
+    revisit_trigger: "Before production inventory adjustments; close after atomic persistence, readable history, authorization, idempotency, rollback, and concurrency tests."
+    refs:
+      - "reports/2026-09-11-step-54-master-polish-spec.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0029
+    status: open
+    title: "HTTP debug logging emits authorization-header values"
+    category: security
+    severity: high
+    owner: "STEP-55.11"
+    opened: "2026-09-11"
+    source: "reports/2026-09-11-step-54-master-polish-spec.md"
+    description: "An Android debug run emitted the Supabase anon key through apikey and Authorization headers; the same path could expose bearer tokens."
+    impact: "Credentials or session tokens could be retained in logs, support bundles, or runtime evidence."
+    mitigation: "The raw evidence was destroyed and the run halted. Redact sensitive headers and prevent verbose header logging in release builds."
+    revisit_trigger: "Before another authenticated Android evidence run and production release; close after redaction tests and clean runtime-log inspection."
+    refs:
+      - "reports/2026-09-11-step-54-master-polish-spec.md"
     closed:
       date:
       reason:
