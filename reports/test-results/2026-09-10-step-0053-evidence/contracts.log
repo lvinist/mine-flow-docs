@@ -1,0 +1,7 @@
+Running build hooks...Running build hooks...Supabase Contract Check
+-----------------------
+Contract artifact: supabase/types/database.ts
+Regeneration Command:
+  supabase gen types --lang typescript --linked > supabase/types/database.ts
+
+[OK] Contract verification passed.

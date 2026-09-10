@@ -1,0 +1,9 @@
+Compiling lib\main.dart for the Web...                          
+Wasm dry run succeeded. Consider building and testing your application with the `--wasm` flag. See docs for more info: https://docs.flutter.dev/platform-integration/web/wasm
+Use --no-wasm-dry-run to disable these warnings.
+Expected to find fonts for (packages/lucide_icons_flutter/Lucide, MaterialIcons, packages/forui_lucide/ForuiLucideIcons, packages/cupertino_icons/CupertinoIcons), but found (MaterialIcons, packages/lucide_icons_flutter/Lucide, packages/forui_lucide/ForuiLucideIcons). This usually means you are referring to font families in an IconData class but not including them in the assets section of your pubspec.yaml, are missing the package that would include them, or are missing "uses-material-design: true".
+Font asset "lucide.ttf" was tree-shaken, reducing it from 877160 to 35084 bytes (96.0% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+Font asset "MaterialIcons-Regular.otf" was tree-shaken, reducing it from 1645184 to 7944 bytes (99.5% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+Font asset "lucide.ttf" was tree-shaken, reducing it from 858636 to 6776 bytes (99.2% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+Compiling lib\main.dart for the Web...                            116.8s
+√ Built build\web

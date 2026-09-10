@@ -1,0 +1,11 @@
+flutter-version|exit=0|seconds=3
+flutter-doctor|exit=0|seconds=12
+pub-get|exit=0|seconds=4
+pub-outdated|exit=0|seconds=9
+format|exit=0|seconds=4
+contracts|exit=0|seconds=3
+l10n|exit=0|seconds=3
+analyze|exit=0|seconds=18
+tests|exit=1|seconds=124
+web-build|exit=0|seconds=121
+apk-build|exit=0|seconds=190

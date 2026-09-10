@@ -1,0 +1,616 @@
+00:00 +0: loading D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart
+00:00 +0: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:00 +1: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:00 +2: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:02 +3: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:02 +4: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:03 +5: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:03 +6: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:03 +7: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:03 +8: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:03 +9: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:03 +10: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:03 +11: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:03 +12: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:03 +13: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:03 +14: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:03 +15: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:03 +16: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:03 +17: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/app_shell_test.dart: AppShell responsive layout renders wide layout (FSidebar) at >= 800px width
+00:03 +18: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/router_test.dart: Router branch navigation starts on Dashboard branch (index 0)
+00:04 +19: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/router_test.dart: Router branch navigation starts on Dashboard branch (index 0)
+00:04 +20: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/router_test.dart: Router branch navigation starts on Dashboard branch (index 0)
+00:04 +21: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/router_test.dart: Router branch navigation starts on Dashboard branch (index 0)
+00:05 +22: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/router_test.dart: Router branch navigation starts on Dashboard branch (index 0)
+00:05 +23: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/router_test.dart: Router branch navigation starts on Dashboard branch (index 0)
+00:05 +24: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +25: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +25: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/services/pdf_service_test.dart: PdfService generatePdf returns non-empty bytes for attendance report with empty data
+Helvetica-Bold has no Unicode support see https://github.com/DavBfr/dart_pdf/wiki/Fonts-Management
+Helvetica has no Unicode support see https://github.com/DavBfr/dart_pdf/wiki/Fonts-Management
+Unable to find a font to draw "—" (U+2014) try to provide a TextStyle.fontFallback
+Unable to find a font to draw "—" (U+2014) try to provide a TextStyle.fontFallback
+00:06 +26: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +26: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/services/pdf_service_test.dart: PdfService generatePdf returns non-empty bytes for cut/fill report with empty data
+Helvetica-Bold has no Unicode support see https://github.com/DavBfr/dart_pdf/wiki/Fonts-Management
+Helvetica has no Unicode support see https://github.com/DavBfr/dart_pdf/wiki/Fonts-Management
+Unable to find a font to draw "—" (U+2014) try to provide a TextStyle.fontFallback
+Unable to find a font to draw "—" (U+2014) try to provide a TextStyle.fontFallback
+00:06 +27: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +27: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/services/pdf_service_test.dart: PdfService generatePdf returns non-empty bytes for inventory report with empty data
+Helvetica-Bold has no Unicode support see https://github.com/DavBfr/dart_pdf/wiki/Fonts-Management
+Helvetica has no Unicode support see https://github.com/DavBfr/dart_pdf/wiki/Fonts-Management
+Unable to find a font to draw "—" (U+2014) try to provide a TextStyle.fontFallback
+Unable to find a font to draw "—" (U+2014) try to provide a TextStyle.fontFallback
+00:06 +28: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +29: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +29: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/services/pdf_service_test.dart: PdfService generatePdf returns larger bytes when data is provided
+Helvetica-Bold has no Unicode support see https://github.com/DavBfr/dart_pdf/wiki/Fonts-Management
+Helvetica has no Unicode support see https://github.com/DavBfr/dart_pdf/wiki/Fonts-Management
+Unable to find a font to draw "—" (U+2014) try to provide a TextStyle.fontFallback
+Unable to find a font to draw "—" (U+2014) try to provide a TextStyle.fontFallback
+Helvetica-Bold has no Unicode support see https://github.com/DavBfr/dart_pdf/wiki/Fonts-Management
+Helvetica has no Unicode support see https://github.com/DavBfr/dart_pdf/wiki/Fonts-Management
+Unable to find a font to draw "—" (U+2014) try to provide a TextStyle.fontFallback
+Unable to find a font to draw "—" (U+2014) try to provide a TextStyle.fontFallback
+00:06 +30: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +31: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +32: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +33: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +34: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +35: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +36: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +37: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +38: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +39: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +40: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +41: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +42: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:06 +43: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:07 +44: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: tapping the hint text opens the option list (R-7)
+00:07 +45: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/router_test.dart: Router branch navigation navigates to Operations branch (index 2)
+00:07 +46: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/router_test.dart: Router branch navigation navigates to Operations branch (index 2)
+00:07 +47: D:/AppDev/mine_flow/Code/mine-flow-app/test/core/presentation/widgets/creatable_combobox_open_test.dart: selecting an option reports it to onChanged (R-7)
+00:07 +48: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/router_test.dart: Router branch navigation navigates to Teams branch (index 3)
+00:07 +49: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/datasources/benchmark_remote_datasource_test.dart: saveBenchmark — STEP-48.23 re-run R-2 sibling targets the non-PK unique constraint (site_id,bm_id), not just the PK
+00:07 +50: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/router_test.dart: Router branch navigation navigates to Settings branch (index 4)
+00:08 +51: D:/AppDev/mine_flow/Code/mine-flow-app/test/app/router_test.dart: Router branch navigation stateful branches maintain index after navigation round-trip
+00:08 +52: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/repositories/benchmark_repository_impl_test.dart: (setUpAll)
+00:08 +52: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/repositories/benchmark_repository_impl_test.dart: getBenchmarks returns list of benchmarks from local datasource
+00:08 +53: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/repositories/benchmark_repository_impl_test.dart: getBenchmarks filters by status when provided
+00:08 +54: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/repositories/benchmark_repository_impl_test.dart: getBenchmarks returns empty list when local datasource is empty
+00:08 +55: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/repositories/benchmark_repository_impl_test.dart: getBenchmarkById returns benchmark when found locally
+00:08 +56: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/repositories/benchmark_repository_impl_test.dart: getBenchmarkById returns null when not found locally
+00:08 +57: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/repositories/benchmark_repository_impl_test.dart: saveBenchmark saves locally and enqueues sync mutation
+00:08 +58: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/repositories/benchmark_repository_impl_test.dart: saveBenchmark syncs to remote immediately when online
+00:08 +59: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/repositories/benchmark_repository_impl_test.dart: deleteBenchmark soft-deletes by setting status to deleted when found locally
+00:08 +60: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/repositories/benchmark_repository_impl_test.dart: deleteBenchmark hard-deletes when not found locally
+00:08 +61: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/repositories/benchmark_repository_impl_test.dart: syncRemote processes queue when online
+00:08 +62: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/repositories/benchmark_repository_impl_test.dart: syncRemote does nothing when offline
+00:08 +63: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/repositories/benchmark_repository_impl_test.dart: (tearDownAll)
+00:10 +63: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/sync/benchmark_sync_registrar_test.dart: (setUpAll)
+00:10 +63: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/sync/benchmark_sync_registrar_test.dart: registerSyncHandlers registers the benchmarks entity handler
+00:10 +64: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/sync/benchmark_sync_registrar_test.dart: unregisterSyncHandlers unregisters the benchmarks entity handler
+00:10 +65: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/sync/benchmark_sync_registrar_test.dart: sync processing processes create action by saving benchmark via repository
+00:10 +66: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/sync/benchmark_sync_registrar_test.dart: sync processing processes update action by saving benchmark via repository
+00:10 +67: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/sync/benchmark_sync_registrar_test.dart: sync processing skips a queued update when the remote benchmark is newer
+00:10 +68: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/sync/benchmark_sync_registrar_test.dart: sync processing processes delete action by deleting benchmark via repository
+00:10 +69: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/sync/benchmark_sync_registrar_test.dart: (tearDownAll)
+00:10 +69: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/models/benchmark_model_test.dart: BenchmarkModel fromJson deserializes from Supabase JSON correctly
+00:10 +70: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/models/benchmark_model_test.dart: BenchmarkModel fromJson handles null geom field gracefully
+00:10 +71: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/models/benchmark_model_test.dart: BenchmarkModel toJson serializes to Supabase JSON correctly
+00:10 +72: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/models/benchmark_model_test.dart: BenchmarkModel toJson omits geom when null
+00:10 +73: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/models/benchmark_model_test.dart: BenchmarkModel Hive serialization toHiveJson uses camelCase keys
+00:10 +74: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/models/benchmark_model_test.dart: BenchmarkModel Hive serialization fromHiveJson deserializes camelCase JSON correctly
+00:10 +75: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/models/benchmark_model_test.dart: BenchmarkModel Domain conversion toDomain creates correct Benchmark entity
+00:10 +76: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/models/benchmark_model_test.dart: BenchmarkModel Domain conversion fromDomain creates correct model from entity
+00:10 +77: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/data/models/benchmark_model_test.dart: BenchmarkModel Domain conversion model <-> domain round-trip preserves all fields
+00:12 +78: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: (setUpAll)
+00:12 +78: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: BenchmarkBloc emits [Loading, ListLoaded] when LoadBenchmarks succeeds
+00:13 +79: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: BenchmarkBloc emits [Loading, Error] when LoadBenchmarks fails
+00:13 +80: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: BenchmarkBloc emits FormState with default values when CreateBenchmark is fired
+00:13 +81: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: BenchmarkBloc emits FormState with pre-filled values when EditBenchmark is fired
+00:13 +82: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: Form field events computes Lat/Lon when Northing changes
+00:13 +83: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: Form field events computes Lat/Lon when Easting changes
+00:13 +84: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: Form field events recomputes Lat/Lon when CRS changes
+00:13 +85: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: Form field events updates BM ID when FormBmIdChanged fires
+00:13 +86: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: Form field events returns Error when submitting with empty BM ID
+00:13 +87: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: Form field events calls saveBenchmark and emits Success when SubmitBenchmark fires
+00:13 +88: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: Form field events a new benchmark gets a real UUID id, never an empty string (STEP-48.26 R-5)
+00:13 +89: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: Form field events BenchmarkModel.toJson always emits a real site_id (STEP-48.26 R-5)
+00:13 +90: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: Delete and Refresh reloads benchmarks after DeleteBenchmark
+00:13 +91: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: Delete and Refresh emits error when DeleteBenchmark fails
+00:13 +92: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: Delete and Refresh loads benchmarks on RefreshBenchmarks
+00:13 +93: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/benchmark/presentation/benchmark_bloc_test.dart: (tearDownAll)
+00:14 +93: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/daily_log/data/sync/daily_log_sync_registrar_test.dart: (setUpAll)
+00:14 +93: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/daily_log/data/sync/daily_log_sync_registrar_test.dart: registerSyncHandlers registers the daily_logs entity handler
+00:14 +94: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/daily_log/data/sync/daily_log_sync_registrar_test.dart: unregisterSyncHandlers unregisters the daily_logs entity handler
+00:14 +95: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/daily_log/data/sync/daily_log_sync_registrar_test.dart: sync processing — LWW conflict contract (STEP-48.23 re-run R-1) skips the queued mutation when the remote row is strictly newer (remote wins — silent data loss guard)
+00:14 +96: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/daily_log/data/sync/daily_log_sync_registrar_test.dart: sync processing — LWW conflict contract (STEP-48.23 re-run R-1) pushes the queued mutation when the remote row is older (local wins — the drain must not stall)
+00:14 +97: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/daily_log/data/sync/daily_log_sync_registrar_test.dart: sync processing — LWW conflict contract (STEP-48.23 re-run R-1) pushes the queued mutation when the remote row carries no updated_at (pre-migration rows are never treated as newer)
+00:14 +98: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/daily_log/data/sync/daily_log_sync_registrar_test.dart: sync processing — LWW conflict contract (STEP-48.23 re-run R-1) fetches the remote row before deciding (conflict check is unconditional for update actions)
+00:14 +99: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/daily_log/data/sync/daily_log_sync_registrar_test.dart: (tearDownAll)
+00:16 +99: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/daily_log/presentation/daily_log_bloc_test.dart: (setUpAll)
+00:16 +99: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/daily_log/presentation/daily_log_bloc_test.dart: a mid-submit AutoSaveDraftEvent is dropped, not forwarded to the repository as a draft write (STEP-48.23 re-run 5 R-1)
+00:16 +100: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/daily_log/presentation/daily_log_bloc_test.dart: (tearDownAll)
+00:19 +100: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/daily_log/presentation/widgets/zone_picker_test.dart: ZonePicker shows error state when ZoneError emitted
+00:20 +101: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/daily_log/presentation/widgets/zone_picker_test.dart: ZonePicker renders CreatableCombobox with zone names when loaded
+00:20 +102: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/daily_log/presentation/widgets/zone_picker_test.dart: ZonePicker calls onZoneSelected when a zone is tapped
+00:21 +103: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/models/geospatial_file_model_test.dart: GeospatialFileModel Serialization toJson and toHiveJson serialize client timestamps as UTC
+00:21 +104: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/models/geospatial_file_model_test.dart: GeospatialFileModel Serialization fromDomain and toDomain should round-trip correctly
+00:21 +105: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/models/geospatial_file_model_test.dart: GeospatialFileModel Serialization toJson and fromJson should round-trip correctly (snake_case)
+00:21 +106: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/models/geospatial_file_model_test.dart: GeospatialFileModel Serialization toHiveJson and fromHiveJson should round-trip correctly (camelCase)
+00:21 +107: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/models/geospatial_file_model_test.dart: GeospatialFileModel Serialization JSON serialization should preserve snake_case field name mapping
+00:21 +108: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/models/geospatial_file_model_test.dart: GeospatialFileModel Serialization Hive JSON serialization should preserve camelCase field names
+00:21 +109: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/models/geospatial_file_model_test.dart: GeospatialFileModel Serialization should handle minimal record with only required fields
+00:21 +110: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/models/geospatial_file_model_test.dart: GeospatialFileModel Serialization fromJson should handle null optional fields gracefully
+00:21 +111: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/models/geospatial_file_model_test.dart: GeospatialFileModel Serialization Hive round-trip preserves null optional fields
+00:23 +112: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Save Operations saveFile should write to local cache and enqueue sync mutation when offline
+00:24 +113: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Save Operations saveFile should write to remote and not enqueue sync when online
+00:24 +114: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Save Operations saveFile should fall back to local cache + enqueue when remote fails while online
+00:24 +115: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Save Operations getFile should return file from local cache
+00:24 +116: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Save Operations getFile should return null for non-existent file
+00:25 +117: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Read Operations getFiles should return all files
+00:25 +118: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Read Operations getFiles should filter by zoneId
+00:25 +119: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Read Operations getFiles should filter by fileType
+00:25 +120: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Read Operations getFiles should filter by searchQuery
+00:25 +121: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Read Operations getFiles should filter by multiple criteria
+00:25 +122: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Read Operations getFiles should return empty list when no match
+00:25 +123: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Delete Operations deleteFile should remove from local cache and enqueue delete mutation when offline
+00:25 +124: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Delete Operations deleteFile should remove from local cache and remote when online
+00:25 +125: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Delete Operations deleteFile on non-existent ID should still enqueue delete
+00:25 +126: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Sync Operations syncPendingUploads should fetch from remote and update local cache
+00:25 +127: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Offline Fallback local cache serves read results when offline
+00:25 +128: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/sync/data_bucket_sync_registrar_test.dart: (setUpAll)
+00:25 +128: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Offline Fallback multiple offline saves are all enqueued correctly
+00:25 +129: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Offline Fallback multiple offline saves are all enqueued correctly
+00:25 +130: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Offline Fallback multiple offline saves are all enqueued correctly
+00:26 +131: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Offline Fallback multiple offline saves are all enqueued correctly
+00:26 +132: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Offline Fallback multiple offline saves are all enqueued correctly
+00:26 +133: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/data/repositories/data_bucket_repository_impl_test.dart: DataBucket Repository - Offline Fallback multiple offline saves are all enqueued correctly
+00:28 +134: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_bloc_test.dart: DataBucketBloc emits [DataBucketLoading, DataBucketLoaded] when LoadFiles succeeds
+00:28 +135: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_bloc_test.dart: DataBucketBloc emits [DataBucketLoading, DataBucketError] when LoadFiles fails
+00:28 +136: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_bloc_test.dart: DataBucketBloc filters files by search query
+00:28 +137: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_bloc_test.dart: DataBucketBloc filters files by zone
+00:28 +138: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_bloc_test.dart: DataBucketBloc filters files by file type
+00:28 +139: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_bloc_test.dart: DataBucketBloc handles DeleteFile and removes the file from list
+00:28 +140: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_bloc_test.dart: DataBucketBloc handles RefreshFiles and re-fetches from repository
+00:28 +141: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_bloc_test.dart: DataBucketBloc filteredFiles getter returns all files when no filters are active
+00:28 +142: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_bloc_test.dart: DataBucketBloc filteredFiles getter filters by search query
+00:28 +143: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_bloc_test.dart: DataBucketBloc filteredFiles getter filters by zone
+00:28 +144: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_bloc_test.dart: DataBucketBloc filteredFiles getter filters by file type
+00:28 +145: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_bloc_test.dart: DataBucketBloc filteredFiles getter combines search and zone filter
+00:28 +146: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_bloc_test.dart: DataBucketBloc filteredFiles getter returns empty when no files match
+00:30 +147: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_staleness_test.dart: DataBucketRepositoryImpl.watchFiles (R-4) emits the current cache immediately, then every change
+00:30 +148: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_staleness_test.dart: DataBucketRepositoryImpl.watchFiles (R-4) applies the site filter to streamed rows
+00:30 +149: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_staleness_test.dart: DataBucketBloc staleness (R-4) renders rows the background refresh brings in after LoadFiles
+00:30 +150: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_staleness_test.dart: DataBucketBloc staleness (R-4) a cache update preserves the active search filter
+00:30 +151: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_upload_cubit_test.dart: (setUpAll)
+00:30 +151: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_upload_cubit_test.dart: DataBucketUploadCubit starts in UploadIdle state
+00:30 +152: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_upload_cubit_test.dart: DataBucketUploadCubit emits [UploadUploading, UploadSuccess] on successful upload
+00:30 +153: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_upload_cubit_test.dart: DataBucketUploadCubit falls back to offline when Drive is unreachable
+00:30 +154: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_upload_cubit_test.dart: DataBucketUploadCubit emits UploadError on Drive upload exception
+00:30 +155: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_upload_cubit_test.dart: DataBucketUploadCubit reset() returns to UploadIdle
+00:30 +156: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/bloc/data_bucket_upload_cubit_test.dart: (tearDownAll)
+00:31 +156: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/pages/data_bucket_list_page_test.dart: DataBucketListPage Substep 38.1 Widget Tests renders Upload File FAB (report FAB removed in CF-029)
+00:33 +157: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/pages/data_bucket_list_page_test.dart: DataBucketListPage Substep 38.1 Widget Tests renders Upload File FAB (report FAB removed in CF-029)
+00:33 +158: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/pages/data_bucket_list_page_test.dart: DataBucketListPage Substep 38.1 Widget Tests renders Upload File FAB (report FAB removed in CF-029)
+00:33 +159: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/pages/data_bucket_list_page_test.dart: DataBucketListPage Substep 38.1 Widget Tests renders Upload File FAB (report FAB removed in CF-029)
+00:33 +160: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/pages/data_bucket_list_page_test.dart: DataBucketListPage Substep 38.1 Widget Tests renders Upload File FAB (report FAB removed in CF-029)
+00:33 +161: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/pages/data_bucket_list_page_test.dart: DataBucketListPage Substep 38.1 Widget Tests renders Upload File FAB (report FAB removed in CF-029)
+00:33 +162: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/pages/data_bucket_list_page_test.dart: DataBucketListPage Substep 38.1 Widget Tests renders Upload File FAB (report FAB removed in CF-029)
+00:33 +163: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/pages/file_detail_page_test.dart: FileDetailPage Widget Tests renders delete confirmation dialog with FButton and zero TextButton
+00:34 +164: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/pages/file_detail_page_test.dart: FileDetailPage Widget Tests renders delete confirmation dialog with FButton and zero TextButton
+00:34 +165: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/pages/notification_list_page_test.dart: NotificationListPage Widget Tests does not use raw TextButton for dismiss-all
+00:35 +166: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/pages/notification_list_page_test.dart: NotificationListPage Widget Tests does not use raw TextButton for dismiss-all
+00:35 +167: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/pages/notification_list_page_test.dart: NotificationListPage Widget Tests does not use raw TextButton for dismiss-all
+00:35 +168: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/pages/notification_list_page_test.dart: NotificationListPage Widget Tests does not use raw TextButton for dismiss-all
+00:35 +169: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/pages/notification_list_page_test.dart: NotificationListPage Widget Tests does not use raw TextButton for dismiss-all
+00:35 +170: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/pages/notification_list_page_test.dart: NotificationListPage Widget Tests does not use raw TextButton for dismiss-all
+00:35 +171: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/pages/notification_list_page_test.dart: NotificationListPage Widget Tests does not use raw TextButton for dismiss-all
+00:35 +172: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/pages/notification_list_page_test.dart: NotificationListPage Widget Tests does not use raw TextButton for dismiss-all
+00:35 +173: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/pages/notification_list_page_test.dart: NotificationListPage Widget Tests does not use raw TextButton for dismiss-all
+00:35 +174: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/pages/notification_list_page_test.dart: NotificationListPage Widget Tests does not use raw TextButton for dismiss-all
+00:39 +175: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/data_bucket/presentation/pages/upload_file_page_test.dart: Happy path: selects a valid 1MB file
+00:39 +176: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests does not use MaterialBanner or TextButton when displaying critical notification
+00:39 +177: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests does not use MaterialBanner or TextButton when displaying critical notification
+00:39 +178: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests does not use MaterialBanner or TextButton when displaying critical notification
+00:39 +179: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests does not use MaterialBanner or TextButton when displaying critical notification
+00:39 +180: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests does not use MaterialBanner or TextButton when displaying critical notification
+00:39 +181: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests does not use MaterialBanner or TextButton when displaying critical notification
+00:40 +182: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests does not use MaterialBanner or TextButton when displaying critical notification
+00:40 +183: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests does not use MaterialBanner or TextButton when displaying critical notification
+00:40 +184: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests does not use MaterialBanner or TextButton when displaying critical notification
+00:40 +185: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests does not use MaterialBanner or TextButton when displaying critical notification
+00:40 +186: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests does not use MaterialBanner or TextButton when displaying critical notification
+00:40 +187: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests does not use MaterialBanner or TextButton when displaying critical notification
+00:40 +188: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests does not use MaterialBanner or TextButton when displaying critical notification
+00:40 +189: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests does not use MaterialBanner or TextButton when displaying critical notification
+00:40 +190: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests does not use MaterialBanner or TextButton when displaying critical notification
+00:41 +191: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests triggers dismiss on Tutup FButton tap
+00:41 +192: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/notifications/presentation/widgets/notification_banner_test.dart: NotificationBanner Widget Tests renders SizedBox.shrink when no critical notifications present
+00:42 +193: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: (setUpAll)
+00:42 +193: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: renders without a Material ancestor for every report type (R-1/BH-019)
+00:42 +194: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: renders without a Material ancestor for every report type (R-1/BH-019)
+00:42 +195: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: renders without a Material ancestor for every report type (R-1/BH-019)
+00:42 +196: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: renders without a Material ancestor for every report type (R-1/BH-019)
+00:42 +197: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: renders without a Material ancestor for every report type (R-1/BH-019)
+00:42 +198: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: renders without a Material ancestor for every report type (R-1/BH-019)
+00:42 +199: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: renders without a Material ancestor for every report type (R-1/BH-019)
+00:43 +200: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: renders without a Material ancestor for every report type (R-1/BH-019)
+00:43 +201: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: renders without a Material ancestor for every report type (R-1/BH-019)
+00:43 +202: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: renders without a Material ancestor for every report type (R-1/BH-019)
+00:44 +203: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: renders without a Material ancestor for every report type (R-1/BH-019)
+00:44 +204: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: renders without a Material ancestor for every report type (R-1/BH-019)
+00:44 +205: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: renders without a Material ancestor for every report type (R-1/BH-019)
+00:44 +206: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/shared/list_card_overflow_sweep_test.dart: EquipmentCheckCard does not overflow on device 393x873 (R-2)
+00:44 +207: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: date-range options are selectable without a Material ancestor
+00:45 +208: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: date-range options are selectable without a Material ancestor
+00:45 +209: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: date-range options are selectable without a Material ancestor
+00:45 +210: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: date-range options are selectable without a Material ancestor
+00:45 +211: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/shared/list_card_overflow_sweep_test.dart: EquipmentCheckCard does not overflow on phone 400x800 (R-2)
+00:45 +212: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: the zone picker opens without a Material ancestor (R-1)
+00:45 +213: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: the zone picker opens without a Material ancestor (R-1)
+00:45 +214: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: the zone picker opens without a Material ancestor (R-1)
+00:45 +215: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: the zone picker opens without a Material ancestor (R-1)
+00:45 +216: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: selector is disabled while a report is generating (NR-001)
+00:45 +217: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/reporting/presentation/pages/report_config_page_test.dart: (tearDownAll)
+00:45 +217: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/timeline/presentation/pages/timeline_page_test.dart: summary badges wrap without overflow on a phone surface
+00:47 +218: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/timeline/presentation/widgets/milestone_card_test.dart: MilestoneCard does not use raw Material Card widget
+00:48 +219: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/timeline/presentation/widgets/milestone_card_test.dart: MilestoneCard renders milestone details correctly
+00:48 +220: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/timeline/presentation/widgets/milestone_card_test.dart: MilestoneCard triggers onTap callback when tapped
+00:50 +221: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/models_test.dart: CutFillModel Serialization fromDomain and toDomain should round-trip correctly
+00:50 +222: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/models_test.dart: CutFillModel Serialization toJson and fromJson should round-trip correctly
+00:50 +223: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/models_test.dart: CutFillModel Serialization toCoreModel and fromCoreModel should round-trip correctly
+00:50 +224: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/models_test.dart: CutFillModel Serialization should handle minimal record with only required fields
+00:50 +225: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/models_test.dart: CutFillModel Serialization JSON serialization should preserve field name mapping and emit only allowed keys
+00:50 +226: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/models_test.dart: LandClearingModel Serialization fromDomain and toDomain should round-trip correctly
+00:50 +227: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/models_test.dart: LandClearingModel Serialization toJson and fromJson should round-trip correctly
+00:50 +228: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/models_test.dart: LandClearingModel Serialization toCoreModel and fromCoreModel should round-trip correctly
+00:50 +229: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/models_test.dart: LandClearingModel Serialization JSON serialization should preserve area fields and emit only allowed keys
+00:50 +230: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/models_test.dart: InventoryItemModel Serialization fromDomain and toDomain should round-trip correctly
+00:50 +231: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/models_test.dart: InventoryItemModel Serialization toJson and fromJson should round-trip correctly
+00:50 +232: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/models_test.dart: InventoryItemModel Serialization toCoreModel and fromCoreModel should round-trip correctly
+00:50 +233: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/models_test.dart: InventoryItemModel Serialization JSON should only include valid schema keys and not legacy keys
+00:50 +234: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/models_test.dart: InventoryItemModel Serialization should handle minimal item with only required fields
+00:51 +235: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations saveCutFillRecord should write to local cache and enqueue sync mutation
+00:51 +236: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations getCutFillRecords should filter by zoneId
+00:51 +237: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations getCutFillRecordById should return specific record
+00:51 +238: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations getCutFillRecordById should return null for non-existent record
+00:51 +239: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations deleteCutFillRecord should soft delete and enqueue delete mutation
+00:51 +240: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/domain/entities_test.dart: CutFillRecord Domain Entity should calculate netVolume as bank-equivalent (BCM + LCM/1.25)
+00:51 +241: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations deleteCutFillRecord on non-existent should still enqueue delete
+00:51 +242: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/domain/entities_test.dart: CutFillRecord Domain Entity should support copyWith and keep immutability
+00:51 +243: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations syncRemote should fetch remote data and update local cache
+00:51 +244: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations syncRemote should fetch remote data and update local cache
+00:51 +245: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations syncRemote should fetch remote data and update local cache
+00:52 +246: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations syncRemote should fetch remote data and update local cache
+00:52 +247: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations syncRemote should fetch remote data and update local cache
+00:52 +248: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations syncRemote should fetch remote data and update local cache
+00:52 +249: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations syncRemote should fetch remote data and update local cache
+00:52 +250: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations syncRemote should fetch remote data and update local cache
+00:52 +251: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations syncRemote should fetch remote data and update local cache
+00:52 +252: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations syncRemote should fetch remote data and update local cache
+00:52 +253: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Cut/Fill Repository Operations syncRemote should fetch remote data and update local cache
+00:52 +254: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/domain/entities_test.dart: InventoryItem Domain Entity should evaluate isLowStock as false when no threshold is set
+00:52 +255: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/domain/entities_test.dart: InventoryItem Domain Entity should handle edge case where quantity equals threshold exactly
+00:52 +256: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Land Clearing Repository Operations saveLandClearingRecord should write to local cache and enqueue sync mutation
+00:52 +257: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Land Clearing Repository Operations saveLandClearingRecord should write to local cache and enqueue sync mutation
+00:52 +258: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Land Clearing Repository Operations getLandClearingRecords should filter by zoneId
+00:52 +259: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Land Clearing Repository Operations deleteLandClearingRecord should soft delete and enqueue delete mutation
+00:52 +260: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Inventory Repository Operations saveInventoryItem should write to local cache and enqueue sync mutation
+00:52 +261: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Inventory Repository Operations getInventoryItems should filter by category
+00:52 +262: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_bloc_test.dart: LoadCutFillRecordsEvent emits [CutFillLoading, CutFillRecordsLoaded] with aggregated totals when records loaded successfully
+00:52 +263: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_bloc_test.dart: LoadCutFillRecordsEvent emits [CutFillLoading, CutFillRecordsLoaded] with aggregated totals when records loaded successfully
+00:52 +264: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Inventory Repository Operations updateInventoryQuantity should not go below zero
+00:52 +265: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Inventory Repository Operations updateInventoryQuantity should not go below zero
+00:52 +266: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Inventory Repository Operations updateInventoryQuantity should not go below zero
+00:52 +267: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_bloc_test.dart: InitializeCutFillFormEvent emits [CutFillLoading, CutFillFormState] with existing record when editing
+00:52 +268: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Inventory Repository Operations deleteInventoryItem should soft delete and enqueue delete mutation
+00:52 +269: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Inventory Repository Operations deleteInventoryItem should soft delete and enqueue delete mutation
+00:52 +270: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Inventory Repository Operations deleteInventoryItem should soft delete and enqueue delete mutation
+00:52 +271: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_bloc_test.dart: SaveCutFillRecordEvent emits saved state when repository succeeds
+00:52 +272: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Sync Queue Integration mutations are enqueued in correct order for CRUD operations
+00:52 +273: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Sync Queue Integration mutations are enqueued in correct order for CRUD operations
+00:52 +274: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_bloc_test.dart: DeleteCutFillRecordEvent deletes record and reloads list when in loaded state
+00:52 +275: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Sync Queue Integration SyncQueueManager processes tracking mutations via entity handlers
+00:52 +276: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/data/repositories/tracking_repository_impl_test.dart: Sync Queue Integration SyncQueueManager processes tracking mutations via entity handlers
+00:53 +277: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:53 +278: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:53 +279: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:53 +280: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:53 +281: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +282: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +283: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +284: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +285: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +286: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +287: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +288: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +289: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +290: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +291: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +292: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +293: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +294: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +295: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +296: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +297: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:54 +298: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/cut_fill_form_screen_test.dart: renders Volume (BCM) and Volume (LCM) labels and no stepper buttons (CF-014)
+00:55 +299: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_dashboard_screen_test.dart: InventoryDashboardScreen Substep 38.1 Widget Tests renders Tambah Item and Laporan in FABs
+00:56 +300: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/inventory_item_entry_screen_test.dart: renders merged Jumlah & Satuan row with quantity input and unit dropdown
+00:59 +301: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_bloc_test.dart: (setUpAll)
+00:59 +301: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_bloc_test.dart: LoadLandClearingRecordsEvent emits [LandClearingLoading, LandClearingRecordsLoaded] with aggregated area totals
+00:59 +302: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_bloc_test.dart: LoadLandClearingRecordsEvent emits [LandClearingLoading, LandClearingError] when repository throws
+00:59 +303: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_bloc_test.dart: InitializeLandClearingFormEvent emits [LandClearingLoading, LandClearingFormState] with new blank record
+00:59 +304: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_bloc_test.dart: InitializeLandClearingFormEvent emits [LandClearingLoading, LandClearingFormState] with existing record when editing
+00:59 +305: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_bloc_test.dart: Land Clearing Form Field Changes updates plan area and marks unsaved changes
+00:59 +306: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_bloc_test.dart: SaveLandClearingRecordEvent emits saved state when repository succeeds
+00:59 +307: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_bloc_test.dart: SaveLandClearingRecordEvent emits error state when repository throws
+00:59 +308: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_bloc_test.dart: DeleteLandClearingRecordEvent deletes record and reloads list when in loaded state
+00:59 +309: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_bloc_test.dart: DeleteLandClearingRecordEvent emits error when delete throws
+00:59 +310: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_bloc_test.dart: (tearDownAll)
+01:01 +310: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_entry_screen_test.dart: (setUpAll)
+01:01 +310: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_entry_screen_test.dart: renders TabBar with Plan and Actual tabs, ZonePicker, and exactly one CreatableCombobox — CF-043
+01:02 +311: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_entry_screen_test.dart: renders TabBar with Plan and Actual tabs, ZonePicker, and exactly one CreatableCombobox — CF-043
+01:02 +312: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_entry_screen_test.dart: renders TabBar with Plan and Actual tabs, ZonePicker, and exactly one CreatableCombobox — CF-043
+01:02 +313: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_entry_screen_test.dart: renders TabBar with Plan and Actual tabs, ZonePicker, and exactly one CreatableCombobox — CF-043
+01:02 +314: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_entry_screen_test.dart: renders TabBar with Plan and Actual tabs, ZonePicker, and exactly one CreatableCombobox — CF-043
+01:02 +315: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_entry_screen_test.dart: renders TabBar with Plan and Actual tabs, ZonePicker, and exactly one CreatableCombobox — CF-043
+01:03 +316: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_entry_screen_test.dart: renders TabBar with Plan and Actual tabs, ZonePicker, and exactly one CreatableCombobox — CF-043
+01:03 +317: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_entry_screen_test.dart: renders TabBar with Plan and Actual tabs, ZonePicker, and exactly one CreatableCombobox — CF-043
+01:03 +318: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/tracking/presentation/land_clearing_entry_screen_test.dart: renders TabBar with Plan and Actual tabs, ZonePicker, and exactly one CreatableCombobox — CF-043
+01:03 +319: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/datasources/zone_local_datasource_test.dart: ZoneLocalDataSource should retrieve all zones
+01:03 +320: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/datasources/zone_local_datasource_test.dart: ZoneLocalDataSource should retrieve all zones
+01:03 +321: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/datasources/zone_local_datasource_test.dart: ZoneLocalDataSource should retrieve all zones
+01:03 +322: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/datasources/zone_local_datasource_test.dart: ZoneLocalDataSource should retrieve all zones
+01:04 +323: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/datasources/zone_local_datasource_test.dart: ZoneLocalDataSource should update an existing zone
+01:04 +324: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/datasources/zone_local_datasource_test.dart: ZoneLocalDataSource should delete a zone
+01:05 +325: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/datasources/zone_local_datasource_test.dart: ZoneLocalDataSource should save and retrieve a batch of zones
+01:05 +326: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/datasources/zone_local_datasource_test.dart: ZoneLocalDataSource should return empty list when no zones stored
+01:08 +327: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/repositories/zone_repository_impl_test.dart: ZoneRepository should store and retrieve a zone
+01:09 +328: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/repositories/zone_repository_impl_test.dart: ZoneRepository should return null for non-existent zone
+01:09 +329: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/repositories/zone_repository_impl_test.dart: ZoneRepository should retrieve all stored zones
+01:09 +330: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/repositories/zone_repository_impl_test.dart: ZoneRepository should soft-delete a zone and exclude from getZones
+01:09 +331: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/repositories/zone_repository_impl_test.dart: ZoneRepository should preserve soft-deleted zone in local box
+01:09 +332: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/repositories/zone_repository_impl_test.dart: ZoneRepository should enqueue sync mutation on save
+01:09 +333: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/repositories/zone_repository_impl_test.dart: ZoneRepository should enqueue sync mutation on delete
+01:09 +334: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/repositories/zone_repository_impl_test.dart: ZoneRepository should filter out soft-deleted zones from getZones
+01:09 +335: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/repositories/zone_repository_impl_test.dart: ZoneRepository should assign updatedAt on save when null
+01:09 +336: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/presentation/bloc/zone_cubit_test.dart: (setUpAll)
+01:09 +336: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/repositories/zone_repository_impl_test.dart: ZoneRepository should handle delete on non-existent zone without error
+01:09 +337: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/data/repositories/zone_repository_impl_test.dart: ZoneRepository should handle delete on non-existent zone without error
+01:09 +338: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/presentation/bloc/zone_cubit_test.dart: ZoneCubit loadZones emits [ZoneLoading, ZoneLoaded] when zones are loaded successfully
+01:09 +339: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/presentation/bloc/zone_cubit_test.dart: ZoneCubit loadZones emits [ZoneLoading, ZoneError] when repository throws
+01:09 +340: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/presentation/bloc/zone_cubit_test.dart: ZoneCubit loadZones ZoneLoaded contains the correct zones
+01:09 +341: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/presentation/bloc/zone_cubit_test.dart: ZoneCubit createZone creates a zone and reloads the list
+01:09 +342: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/presentation/bloc/zone_cubit_test.dart: ZoneCubit createZone returns null when not in ZoneLoaded state
+01:09 +343: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/presentation/bloc/zone_cubit_test.dart: ZoneCubit createZone emits ZoneError when save fails
+01:09 +344: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/presentation/bloc/zone_cubit_test.dart: ZoneCubit createZone never saves an empty siteId (STEP-48.26 R-5: uuid column)
+01:09 +345: D:/AppDev/mine_flow/Code/mine-flow-app/test/features/zone/presentation/bloc/zone_cubit_test.dart: (tearDownAll)
+01:09 +345: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/attendance_daily_log_sync_test.dart: (setUpAll)
+01:09 +345: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/attendance_daily_log_sync_test.dart: Attendance & Daily Log Offline Sync Integration Tests Attendance offline creation enqueues mutation and flushes when online
+01:10 +346: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/attendance_daily_log_sync_test.dart: Attendance & Daily Log Offline Sync Integration Tests Daily Log draft auto-save and submission offline queueing and sync
+01:10 +347: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/attendance_daily_log_sync_test.dart: Attendance & Daily Log Offline Sync Integration Tests Timestamp conflict resolution during offline queue sync processing
+01:10 +348: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/auth_repository_test.dart: signInWithEmailAndPassword returns UserEntity and saves session on successful sign-in
+01:10 +349: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/auth_repository_test.dart: signInWithEmailAndPassword throws ServerFailure when credentials are invalid
+01:10 +350: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/auth_repository_test.dart: signOut clears secure storage and revokes Supabase session
+01:10 +351: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/auth_repository_test.dart: createUser (Supervisor Edge Function) returns created UserEntity on HTTP 201 response
+01:10 +352: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/auth_repository_test.dart: createUser (Supervisor Edge Function) throws UnauthorizedFailure on HTTP 403 response
+01:10 +353: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/auth_repository_test.dart: getCurrentUser returns UserEntity when session exists
+01:10 +354: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/auth_repository_test.dart: getCurrentUser returns null when no active session or stored user data
+01:10 +355: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/auth_repository_test.dart: (tearDownAll)
+01:10 +355: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: (setUpAll)
+01:10 +355: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Equipment check offline creation enqueues mutation and flushes when online
+01:11 +356: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: parseAndroidLog REJECTS the all-skipped line (+0 ~17: All tests passed!)
+01:11 +357: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Timestamp conflict resolution (last-write-wins) for equipment check mutations
+01:11 +358: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Timestamp conflict resolution (last-write-wins) for equipment check mutations
+01:11 +359: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Timestamp conflict resolution (last-write-wins) for equipment check mutations
+01:11 +360: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Timestamp conflict resolution (last-write-wins) for equipment check mutations
+01:11 +361: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Timestamp conflict resolution (last-write-wins) for equipment check mutations
+01:11 +362: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Timestamp conflict resolution (last-write-wins) for equipment check mutations
+01:11 +362: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: parseAndroidLog parses the captured real Android log from the workspace root
+  Captured Android log not available
+01:11 +362 ~1: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Timestamp conflict resolution (last-write-wins) for equipment check mutations
+01:11 +363 ~1: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Timestamp conflict resolution (last-write-wins) for equipment check mutations
+01:11 +364 ~1: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Timestamp conflict resolution (last-write-wins) for equipment check mutations
+01:11 +365 ~1: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Timestamp conflict resolution (last-write-wins) for equipment check mutations
+01:11 +366 ~1: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Timestamp conflict resolution (last-write-wins) for equipment check mutations
+01:11 +367 ~1: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Timestamp conflict resolution (last-write-wins) for equipment check mutations
+01:11 +368 ~1: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Timestamp conflict resolution (last-write-wins) for equipment check mutations
+01:11 +369 ~1: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: parseAndroidLog (CI GithubReporter grammar, R-1) fallback: counts per-test icons when the summary is absent (tailed log)
+01:11 +370 ~1: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Equipment check offline soft delete enqueues delete action and syncs
+01:11 +370 ~1: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: parseAndroidLog (CI GithubReporter grammar, R-1) parses the captured false-fire log from CI run 34204817176
+  Captured CI log not available
+01:11 +370 ~2: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Equipment check offline soft delete enqueues delete action and syncs
+01:11 +371 ~2: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Equipment check offline soft delete enqueues delete action and syncs
+01:11 +372 ~2: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Equipment check offline soft delete enqueues delete action and syncs
+01:11 +373 ~2: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Equipment check offline soft delete enqueues delete action and syncs
+01:11 +374 ~2: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Equipment check offline soft delete enqueues delete action and syncs
+01:11 +375 ~2: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Equipment check offline soft delete enqueues delete action and syncs
+01:11 +375 ~2: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: parseWebLog (legacy logs, pre-marker) parses the captured real web aggregate from the workspace root
+  Captured web log not available
+01:11 +375 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/equipment_check_sync_test.dart: Equipment Check Offline Sync Integration Tests Equipment check offline soft delete enqueues delete action and syncs
+01:11 +376 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/integration/sync_queue_manager_test.dart: SyncQueueManager Integration Tests enqueues items while offline and defer execution
+01:11 +377 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:11 +378 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:12 +379 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:12 +380 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:12 +381 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:12 +382 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:12 +383 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:12 +384 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:13 +385 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:13 +386 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:13 +387 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:13 +388 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:13 +389 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:13 +390 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:13 +391 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:13 +392 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:13 +393 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:13 +394 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:14 +395 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:14 +396 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:14 +397 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:14 +398 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:14 +399 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:14 +400 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:14 +401 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:14 +402 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:14 +403 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:14 +404 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:14 +405 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:14 +406 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:16 +407 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:16 +408 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:16 +409 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:16 +410 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:16 +411 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:16 +412 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:16 +413 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:16 +414 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:16 +415 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:18 +416 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:18 +417 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:18 +418 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:18 +419 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:18 +420 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:18 +421 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:18 +422 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:18 +423 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:18 +424 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:18 +425 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:18 +426 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:18 +427 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:18 +428 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on the all-skipped Android line
+01:18 +429 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when contract artifact does not exist
+01:18 +429 ~3: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI PASSES (exit 0) on the captured real Android log tail
+  Captured Android log not available
+01:18 +429 ~4: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when contract artifact does not exist
+01:18 +429 ~4: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI PASSES (exit 0) on the CI false-fire log from run 34204817176
+  Captured CI log not available
+01:18 +429 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when contract artifact does not exist
+01:21 +430 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +431 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +432 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +433 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +434 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +435 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +436 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +437 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +438 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +439 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +440 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +441 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +442 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +443 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +444 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +445 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +446 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +447 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +448 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:21 +449 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:22 +450 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:22 +451 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:22 +452 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:22 +453 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:22 +454 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:22 +455 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:22 +456 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:23 +457 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:23 +458 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:23 +458 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/unit/hive_storage_test.dart: HiveService Initialization & Lifecycle should recover gracefully when opening a corrupted box file
+Recovering corrupted box.
+01:23 +459 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:23 +460 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:23 +461 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:23 +462 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:23 +463 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:23 +464 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:23 +465 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:23 +466 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:23 +467 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:23 +468 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:23 +469 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:23 +470 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:23 +471 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt presentation file has a hardcoded string
+01:24 +472 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on a synthetic all-skipped web aggregate
+01:24 +473 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on a synthetic all-skipped web aggregate
+01:25 +474 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on a synthetic all-skipped web aggregate
+01:25 +475 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on a synthetic all-skipped web aggregate
+01:25 +476 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on a synthetic all-skipped web aggregate
+01:25 +477 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on a synthetic all-skipped web aggregate
+01:25 +478 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on a synthetic all-skipped web aggregate
+01:26 +479 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on a synthetic all-skipped web aggregate
+01:26 +480 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on a synthetic all-skipped web aggregate
+01:27 +481 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on a synthetic all-skipped web aggregate
+01:27 +482 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on a synthetic all-skipped web aggregate
+01:28 +483 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI FAILS (exit 1) on a synthetic all-skipped web aggregate
+01:28 +484 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt file has a double-quoted hardcoded string
+01:31 +485 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt file has a double-quoted hardcoded string
+01:31 +486 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt file has a double-quoted hardcoded string
+01:31 +487 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt file has a double-quoted hardcoded string
+01:31 +488 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt file has a double-quoted hardcoded string
+01:31 +489 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt file has a double-quoted hardcoded string
+01:31 +490 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt file has a double-quoted hardcoded string
+01:31 +491 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt file has a double-quoted hardcoded string
+01:32 +492 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_l10n_baseline_test.dart: check_l10n_baseline guard fails when a non-exempt file has a double-quoted hardcoded string
+01:32 +493 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:32 +494 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:32 +495 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:32 +496 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:32 +497 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:32 +498 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:32 +499 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:32 +500 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:32 +501 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:32 +502 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:32 +503 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:32 +504 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:32 +505 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:33 +506 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:34 +507 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:34 +508 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:35 +509 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:35 +510 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:36 +511 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:36 +512 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard fails when uncommitted migration is staged but artifact not updated
+01:37 +513 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI PASSES (exit 0) on a marker-era web aggregate with execution
+01:37 +514 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI PASSES (exit 0) on a marker-era web aggregate with execution
+01:38 +515 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI PASSES (exit 0) on a marker-era web aggregate with execution
+01:38 +516 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI PASSES (exit 0) on a marker-era web aggregate with execution
+01:38 +517 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI PASSES (exit 0) on a marker-era web aggregate with execution
+01:38 +518 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI PASSES (exit 0) on a marker-era web aggregate with execution
+01:39 +519 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI PASSES (exit 0) on a marker-era web aggregate with execution
+01:39 +520 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI PASSES (exit 0) on a marker-era web aggregate with execution
+01:39 +521 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI PASSES (exit 0) on a marker-era web aggregate with execution
+01:39 +522 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI PASSES (exit 0) on a marker-era web aggregate with execution
+01:39 +523 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI PASSES (exit 0) on a marker-era web aggregate with execution
+01:40 +524 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_e2e_executed_test.dart: CLI exit codes (real subprocess) CLI PASSES (exit 0) on a marker-era web aggregate with execution
+01:40 +525 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:40 +526 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:40 +527 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:40 +528 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:40 +529 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:40 +530 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:40 +531 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:40 +532 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:41 +533 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:41 +534 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:41 +535 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:41 +536 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:41 +537 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:42 +538 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:42 +539 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:42 +540 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:42 +541 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:42 +542 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:42 +543 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:42 +544 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:43 +545 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/tool/check_supabase_contracts_test.dart: check_supabase_contracts guard passes when artifact exists and no migration change is made
+01:43 +546 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/widget/widgets/creatable_combobox_test.dart: CreatableCombobox clears text field after selecting an item
+01:43 +547 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/widget/widgets/creatable_combobox_test.dart: CreatableCombobox dropdown closes after selecting an item
+01:43 +548 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/widget/widgets/creatable_combobox_test.dart: CreatableCombobox selection-only (no onCreateNew) shows no Add new tile when query matches no existing item
+01:43 +549 ~5: D:/AppDev/mine_flow/Code/mine-flow-app/test/widget/widgets/creatable_combobox_test.dart: CreatableCombobox selection-only (no onCreateNew) keyboard Enter on a no-match query neither creates nor clears the field
+01:43 +550 ~5: All tests passed!

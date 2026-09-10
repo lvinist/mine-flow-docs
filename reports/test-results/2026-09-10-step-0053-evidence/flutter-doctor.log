@@ -1,0 +1,41 @@
+[√] Flutter (Channel stable, 3.47.1, on Microsoft Windows [Version 10.0.26200.9445], locale en-US) [555ms]
+    • Flutter version 3.47.1 on channel stable at D:\AppDev\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 6655482ec0 (3 weeks ago), 2026-08-19 10:07:23 -0700
+    • Engine revision 5d53178869
+    • Dart version 3.13.1
+    • DevTools version 2.60.0
+    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, enable-record-use, enable-swift-package-manager, omit-legacy-version-file, enable-lldb-debugging, enable-uiscene-migration
+
+[√] Windows Version (Windows 11 or higher, 25H2, 2009) [8.1s]
+
+[!] Android toolchain - develop for Android devices (Android SDK version 36.0.0) [7.5s]
+    • Android SDK at C:\Users\Alpxalpha\AppData\Local\Android\sdk
+    • Emulator version 35.5.10.0 (build_id 13402964) (CL:N/A)
+    • Platform android-37.0, build-tools 36.0.0
+    ! Multiple adb binaries found. This can cause conflicts and device detection issues:
+        - C:\Users\Alpxalpha\AppData\Local\Android\Sdk\platform-tools\adb.exe
+        - C:\Users\Alpxalpha\AppData\Local\Microsoft\WinGet\Packages\Genymobile.scrcpy_Microsoft.Winget.Source_8wekyb3d8bbwe\scrcpy-win64-v3.3.1\adb.exe
+    • Java binary at: C:\Program Files\Eclipse Adoptium\jdk-17.0.20.101-hotspot\bin\java
+      This JDK is specified in your Flutter configuration.
+      To change the current JDK, run: `flutter config --jdk-dir="path/to/jdk"`.
+    • Java version OpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)
+    ! Some Android licenses not accepted. To resolve this, run: flutter doctor --android-licenses
+
+[√] Chrome - develop for the web [25ms]
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[X] Visual Studio - develop Windows apps [22ms]
+    X Visual Studio not installed; this is necessary to develop Windows apps.
+      Download at https://visualstudio.microsoft.com/downloads/.
+      Please install the "Desktop development with C++" workload, including all of its default components
+
+[√] Connected device (3 available) [2.7s]
+    • Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.26200.9445]
+    • Chrome (web)      • chrome  • web-javascript • Google Chrome 152.0.7977.76
+    • Edge (web)        • edge    • web-javascript • Microsoft Edge 152.0.4191.66
+
+[√] Network resources [519ms]
+    • All expected network resources are available.
+
+! Doctor found issues in 2 categories.

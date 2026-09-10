@@ -1,0 +1,2 @@
+isolated|exit=0
+repeat-full|exit=0
