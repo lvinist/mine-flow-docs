@@ -166,7 +166,7 @@ risks:
       reason: "In-process route matrix, shell persistence, and auth redirects passed in STEP-48.26; true cold-start browser behavior remains separately open as RISK-0019."
 
   - id: RISK-0007
-    status: open
+    status: monitoring
     title: "Hive offline storage migrated to community fork hive_ce"
     category: dependency
     severity: medium
@@ -188,15 +188,20 @@ risks:
     refs:
       - "adr/ADR-0001-offline-storage-hive.md"
       - "reports/2026-08-13-flutter-dependency-ci-audit.md"
+      - "Upcoming Prompts/mine-flow-STEP-53.1-FINDINGS.md"
     closed:
       date:
       reason:
     # STEP-50.1 (2026-09-08): revisit trigger FIRED — last stable hive_ce release 2.19.3
     # was published 2026-02-03 (~7 months ago; pre-releases are not releases). Maintenance
     # health also rated moderate (single maintainer). Follow-up: STEP-53.
+    # STEP-53.1 (2026-09-10): upstream GitHub repo verified active (PR #314 merged 2026-08-26
+    # for Flutter 3.48 beta); 219-day pub.dev gap documented; Dart-4 upper bound ^3.4.0
+    # confirmed; zero advisories; 28 hive_ce import sites Clean-Architecture compliant.
+    # Transition to monitoring. Trigger unchanged (>6 months no pub.dev stable, or Dart 4 break).
 
   - id: RISK-0009
-    status: open
+    status: monitoring
     title: "Flutter 3.47 semantics regression #191095; forui pinned >=0.26 as mitigation"
     category: dependency
     severity: medium
@@ -211,22 +216,32 @@ risks:
       dropped the wrapper, plus a material-localizations scope workaround around
       the inventory-entry unit dropdown (forui 0.26 injects a shadowing
       Localizations fallback inside suffixBuilder). Upstream fix PR
-      flutter/flutter#191587 not merged as of 2026-08-25.
+      flutter/flutter#191587 merged to flutter master 2026-09-03; not yet in
+      any stable release as of 2026-09-10.
     impact: >
       Until upstream fixes it, any new text-field-in-merged-subtree UI must use
       forui 0.26 patterns; plain Material TextField tests are unaffected unless
       placed under MergeSemantics.
     mitigation: "forui ^0.26.0 pin; documented finder migration (EditableText); localizations-scope wrapper."
-    revisit_trigger: "When flutter/flutter#191587 merges and a fixed stable ships: retest, consider dropping workarounds."
+    revisit_trigger: >
+      Trigger A (primary): stable Flutter >=3.48 ships containing PR #191587 — retest and
+      consider dropping workarounds. Trigger B: forui removes material_ui Localizations
+      shadow from FTextField. Trigger C: new forui-backed text field or MergeSemantics
+      wrapper added to app — must follow RISK-0009 patterns until Trigger A fires.
     refs:
       - "https://github.com/flutter/flutter/issues/191095"
       - "reports/2026-08-13-flutter-dependency-ci-audit.md"
+      - "Upcoming Prompts/mine-flow-STEP-53.2-FINDINGS.md"
     closed:
       date:
       reason:
     # STEP-50.1 (2026-09-08): upstream PR flutter/flutter#191587 MERGED to flutter master
     # 2026-09-03, but no stable release containing it has shipped yet (local 3.47.1 is
     # 2026-08-19). Trigger half-fired; retest when the next stable lands. Follow-up: STEP-53.
+    # STEP-53.2 (2026-09-10): stable 3.47.2 (2026-08-27) predates fix merge; Flutter 3.48
+    # is beta-only; stable trigger NOT fired. All 3 mitigations confirmed (forui pin, 30+
+    # EditableText call sites, GlobalMaterialLocalizations scope wrapper). 16/16 focused
+    # tests passed. Transition to monitoring; retain all mitigations.
 
   - id: RISK-0008
     status: monitoring
@@ -520,7 +535,7 @@ risks:
       reason:
 
   - id: RISK-0020
-    status: open
+    status: monitoring
     title: "Transitive dependencies pinned behind by Flutter SDK"
     category: tech-debt
     severity: low
@@ -531,14 +546,26 @@ risks:
       During the major version sweep in STEP-47.1, several transitive packages (archive, qr,
       package_config, material_color_utilities, and analyzer/test family) remained on older versions
       because they are pinned by the Flutter SDK's own constraints. This is expected and harmless.
+      STEP-53.3 (2026-09-10) resolved all direct dependency drift (file_picker, flutter_secure_storage,
+      go_router, lucide_icons_flutter, build_runner, and their transitives). The remaining items in
+      `flutter pub outdated` are confirmed SDK-pinned: archive 4.0.9 (SDK constrains below 4.2.0),
+      package_config 2.2.0 (SDK constrains below 3.0.0), qr 3.0.2 (SDK), material_color_utilities
+      0.13.0 (SDK), _fe_analyzer_shared/analyzer/test family (SDK dev constraints).
     impact: "Minor version debt in transitive layer; no functional impact."
-    mitigation: "Wait for future Flutter SDK releases which will naturally bump these constraints."
+    mitigation: >
+      Direct dependency drift resolved in STEP-53.3. SDK-pinned residuals require a Flutter SDK
+      upgrade to resolve naturally.
     revisit_trigger: "When upgrading Flutter SDK in the future."
     refs:
       - "Upcoming Prompts/mine-flow-STEP-47.1-PROMPT.md"
+      - "Upcoming Prompts/mine-flow-STEP-53.3-FINDINGS.md"
     closed:
       date:
       reason:
+    # STEP-53.3 (2026-09-10): direct drift resolved (12 packages updated in lockfile within
+    # declared ^-range constraints). SDK-pinned residuals: archive, package_config, qr,
+    # material_color_utilities, _fe_analyzer_shared, analyzer, test family confirmed.
+    # Status updated to monitoring (direct drift no longer open).
 
   - id: RISK-0021
     status: monitoring
