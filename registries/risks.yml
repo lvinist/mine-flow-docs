@@ -334,7 +334,7 @@ risks:
       reason:
 
   - id: RISK-0013
-    status: open
+    status: monitoring
     title: "S0 baseline operations cluster: branch protection, secret scanning, Dependabot, monitoring"
     category: operations
     severity: medium
@@ -362,6 +362,7 @@ risks:
     revisit_trigger: "Before production release; before external contributors; at next S1 sweep."
     refs:
       - "reports/security/2026-08-26-step-0044-s0-security-baseline-report.md"
+      - "reports/security/2026-09-10-step-0052-s0-security-baseline-report.md"
     closed:
       date:
       reason:
@@ -540,7 +541,7 @@ risks:
       reason:
 
   - id: RISK-0021
-    status: open
+    status: monitoring
     title: "Partial RLS matrix and cross-role isolation unverified"
     category: security
     severity: medium
@@ -549,10 +550,11 @@ risks:
     source: "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.12-FINDINGS.md"
     description: "The crew leg of the RLS matrix is unrunnable because although the account exists, TEST_CREW_* secrets are missing from GitHub."
     impact: "Cross-role data isolation remains partially unverified."
-    mitigation: "Carried forward to a future STEP."
+    mitigation: "CI harness gap resolved in STEP-52.1. Tests are skipped in CI pending secret provisioning."
     revisit_trigger: "When TEST_CREW_EMAIL and TEST_CREW_PASSWORD are provisioned in GitHub repository secrets."
     refs:
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.12-FINDINGS.md"
+      - "reports/security/2026-09-10-step-0052-s0-security-baseline-report.md"
     closed:
       date:
       reason:
@@ -617,6 +619,24 @@ risks:
     refs:
       - "reports/2026-08-30-step-0048-runtime-design-review.md"
       - "prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.26-FINDINGS.md"
+    closed:
+      date:
+      reason:
+
+  - id: RISK-0025
+    status: open
+    title: "Privilege Escalation in public.users self-update policy"
+    category: security
+    severity: critical
+    owner: "TBD"
+    opened: "2026-09-10"
+    source: "reports/security/2026-09-10-step-0052-s0-security-baseline-report.md"
+    description: "The users_update_self RLS policy lacks column immutability constraints. A non-supervisor session can update their own row's role to 'supervisor', breaking all RLS role boundaries."
+    impact: "Total role-based access control compromise if exploited."
+    mitigation: "Pre-production finding; no real users yet."
+    revisit_trigger: "Before production release; remediation required."
+    refs:
+      - "reports/security/2026-09-10-step-0052-s0-security-baseline-report.md"
     closed:
       date:
       reason:

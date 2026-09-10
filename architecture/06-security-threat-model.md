@@ -1,8 +1,8 @@
 # Doc 06 — Security & Threat Model
 
-**Version:** v0.2.0
+**Version:** v0.3.0
 **Status:** Draft
-**Last updated:** 2026-08-26 (STEP-44)
+**Last updated:** 2026-09-10 (STEP-52)
 **Audience:** Developers, Architects, Project Managers
 
 > Defines the assets, trust boundaries, and minimum viable security mitigations for the mine-flow MVP.
@@ -72,3 +72,4 @@ The system data crosses lines of trust at these main boundaries:
 |---------|------|------|--------|
 | v0.1.0 | 2026-07-17 | STEP-1.6 | Initial draft |
 | v0.2.0 | 2026-08-26 | STEP-44 | S0 baseline verification complete: RLS audit clean (all 9 tables covered); account lifecycle confirmed correct; RISK-0011 (privacy notice), RISK-0012 (backup), RISK-0013 (ops cluster) added to risks register |
+| v0.3.0 | 2026-09-10 | STEP-52 | S0 baseline re-check complete: RLS audit expanded to 11 tables, privilege escalation finding recorded (FINDING-52.1-01 / RISK-0025); CI secrets gap closed. |
