@@ -5,7 +5,7 @@
 
 ## Related documents
 - architecture/15-native-app-architecture.md
-- Upcoming Prompts/mine-flow-STEP-39-PLAN.md
+- prompts/002-phase2/step-0039/mine-flow-STEP-39-PLAN.md
 
 ## Context
 During Phase 2 Tier 2, we needed to formalize the low-battery synchronization policy for the native app architecture. The app requires a robust offline capability and syncing mechanisms without unnecessarily draining field workers' batteries. A state table rule needs to be adopted to definitively control this behavior.

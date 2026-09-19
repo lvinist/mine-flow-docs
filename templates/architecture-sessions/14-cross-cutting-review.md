@@ -18,7 +18,7 @@ each other and fixes gaps or contradictions before coding begins. (This one's a 
 an interview.)
 
 Terminology: **Cross-Cutting Review** is the Session 1.14 process name; the
-`Upcoming Prompts/mine-flow-STEP-1-REVIEW.md` **review doc** is its summary artifact. This
+`prompts/001-mvp/step-0001/mine-flow-STEP-1-REVIEW.md` **review doc** is its summary artifact. This
 session does not produce a numbered architecture doc; it reconciles existing architecture docs,
 fills the architecture index, may write missing ADRs, and may carry open questions into the
 first implementation STEP.
@@ -79,7 +79,7 @@ between "we have a pile of docs" and "we have a coherent architecture."
 
 ## Output
 - A **review summary** — write it to the STEP-1 folder
-  (`Upcoming Prompts/mine-flow-STEP-1-REVIEW.md`): what was checked, findings, fixes
+  (`prompts/001-mvp/step-0001/mine-flow-STEP-1-REVIEW.md`): what was checked, findings, fixes
   applied, the disposition of every discovered conditional-session template, and any
   decisions still needed from the user.
 - **Apply the fixes** to the affected architecture docs (bump their Version Logs); write any

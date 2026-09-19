@@ -190,7 +190,7 @@ risks:
     refs:
       - "adr/ADR-0001-offline-storage-hive.md"
       - "reports/2026-08-13-flutter-dependency-ci-audit.md"
-      - "Upcoming Prompts/mine-flow-STEP-53.1-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0053/mine-flow-STEP-53.1-FINDINGS.md"
     closed:
       date:
       reason:
@@ -233,7 +233,7 @@ risks:
     refs:
       - "https://github.com/flutter/flutter/issues/191095"
       - "reports/2026-08-13-flutter-dependency-ci-audit.md"
-      - "Upcoming Prompts/mine-flow-STEP-53.2-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0053/mine-flow-STEP-53.2-FINDINGS.md"
     closed:
       date:
       reason:
@@ -270,7 +270,7 @@ risks:
     revisit_trigger: "Before any production release if there are existing users on v9 keys."
     refs:
       - "reports/2026-08-13-flutter-dependency-ci-audit.md"
-      - "Upcoming Prompts/mine-flow-STEP-47.1-PROMPT.md"
+      - "prompts/003-release-readiness-integration-scale/step-0047/mine-flow-STEP-47.1-PROMPT.md"
     closed:
       date:
       reason:
@@ -566,8 +566,8 @@ risks:
       upgrade to resolve naturally.
     revisit_trigger: "When upgrading Flutter SDK in the future."
     refs:
-      - "Upcoming Prompts/mine-flow-STEP-47.1-PROMPT.md"
-      - "Upcoming Prompts/mine-flow-STEP-53.3-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0047/mine-flow-STEP-47.1-PROMPT.md"
+      - "prompts/003-release-readiness-integration-scale/step-0053/mine-flow-STEP-53.3-FINDINGS.md"
     closed:
       date:
       reason:

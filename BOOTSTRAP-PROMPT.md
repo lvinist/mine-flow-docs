@@ -101,7 +101,7 @@ personal or regulated data appears. A skipped or deferred conditional must leave
 reason, so a future reader sees a decision rather than an accident. Keep the core sessions
 unless their own session instructions explicitly say to mark them `N/A` or `Deferred` (for
 example, the UI / Design System session when there is no styled UI). Write
-`Upcoming Prompts/mine-flow-STEP-1-PLAN.md` (from
+`prompts/001-mvp/step-0001/mine-flow-STEP-1-PLAN.md` (from
 `Code/mine-flow-docs/templates/step-plan-template.md`) listing the chosen sessions as substeps,
 the locked decisions, and the definition of done. **Wait for confirmation.**
 

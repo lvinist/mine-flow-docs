@@ -228,8 +228,8 @@ as substeps 48.28–48.30 (one branch, one close); the UI debt that belongs to S
 | F-2 CF-087 remainder (register re-scope, then per-feature sweep with widget tests), F-3 46.4 test debt, CF-043's one-shared-control half, the 5 remaining unreferenced `lib/` files | **STEP-51** | reserved `e2d2087`, PLAN authored |
 | `pub outdated` drift (§2) | next dependency-touching STEP | not a gate blocker |
 
-Prompts: `Upcoming Prompts/mine-flow-STEP-48.28-PROMPT.md`, `…-48.29-PROMPT.md`,
-`…-48.30-PROMPT.md`; plan `…-STEP-51-PLAN.md`.
+Prompts: `prompts/003-release-readiness-integration-scale/step-0048/mine-flow-STEP-48.28-PROMPT.md`, `…-48.29-PROMPT.md`,
+`…-48.30-PROMPT.md`; plan `prompts/003-release-readiness-integration-scale/step-0051/mine-flow-STEP-51-PLAN.md`.
 
 ## 8. Reproduction recipes
 
