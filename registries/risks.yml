@@ -756,3 +756,43 @@ risks:
       date:
       reason:
 
+  - id: RISK-0030
+    status: open
+    title: "Foreman INSERT into zones blocked by RLS, breaking daily-log zone creation E2E"
+    category: reliability
+    severity: high
+    owner: "TBD"
+    opened: "2026-09-25"
+    source: "reports/2026-09-11-step-54-master-polish-spec.md"
+    description: >
+      The Android daily_log journey (create structured daily log with zone
+      CreatableCombobox) fails at list-visibility because the foreman session's
+      INSERT into public.zones is refused by RLS (PostgrestException 42501, "new
+      row violates row-level security policy for table zones"). The queued
+      zones_update sync item never lands, so the subsequent daily_logs insert
+      violates daily_logs_zone_id_fkey (23503) and the created log never appears
+      in the list. Reproduced identically at c982c55, afead08, and d0f3bfc
+      (10x 42501, 4x 23503 per run) — pre-existing, independent of STEP-55.6's
+      daily-log UI fix (which fixed the web journey). The zones table is RLS-on
+      (migration 02) but has no policy granting foreman-role INSERT for
+      on-the-fly zone creation via the CreatableCombobox.
+    impact: >
+      Foremen cannot create a new zone inline while filing a daily log; the
+      daily_log Android E2E journey stays red and the create->submit->list loop
+      is broken for any zone not already present.
+    mitigation: >
+      Decide the intended zone-creation authorization: either grant foreman
+      INSERT on public.zones under an appropriate RLS policy (new migration), or
+      change the daily-log flow to select only pre-existing zones (no inline
+      creation for foremen). Not fixable inside STEP-55.6 (migration SQL is
+      immutable history there; this needs a new migration or a flow change).
+    revisit_trigger: >
+      Before production daily-log use and before closing the daily_log Android
+      E2E; close after the zones INSERT authorization is defined, a migration or
+      flow change lands, and the daily_log Android journey passes in CI.
+    refs:
+      - "reports/2026-09-11-step-54-master-polish-spec.md"
+      - "reports/security/2026-08-26-step-0044-s0-security-baseline-report.md"
+    closed:
+      date:
+      reason:
