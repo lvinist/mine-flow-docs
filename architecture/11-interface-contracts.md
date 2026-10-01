@@ -1,8 +1,8 @@
 # Doc 11 — Interface Contracts
 
-**Version:** v0.3.0
+**Version:** v0.3.1
 **Status:** Draft
-**Last updated:** 2026-09-08 (STEP-50.1)
+**Last updated:** 2026-09-25 (STEP-55.8 docs reconciliation)
 **Audience:** All contributors — this sets the rules for how boundaries are specified and kept in sync.
 
 > Defines how the interfaces between the app and its external services (Supabase, Google Drive) are specified, generated, and versioned.
@@ -90,7 +90,9 @@
 | 1 | Contract style (App/DB) | Code-generated typed interfaces | Eliminates manual contract writing; guarantees types match DB | Tightly couples app to DB schema |
 | 2 | Contract generation | `supabase gen types --lang typescript --linked` → committed `supabase/types/database.ts` (ADR-0019) | Only output the CLI still emits; diffable committed snapshot with a hardened CI guard | Dart models are hand-written mappers reconciled against the TS artifact, not generated |
 | 3 | Error handling | App Data layer maps raw exceptions to friendly messages | Keeps DB errors from leaking to users | Extra mapping boilerplate in Data layer |
-| 4 | Testing | Compile-time checks only in CI | Solo project using generated code doesn't need heavy API tests | Won't catch logical data mismatches, only structural ones |
+| 4 | Testing | Compile-time checks only in CI *(exception: the inventory ledger carries a server-side transactional contract — see note below)* | Solo project using generated code doesn't need heavy API tests | Won't catch logical data mismatches, only structural ones |
+
+> **Exception — inventory transactional contract (STEP-55.8).** Decision 4's "compile-time checks only" holds for ordinary CRUD, but the `adjust_inventory` RPC (migration `20260913000001`) carries runtime semantics the generated TS types cannot express: atomic quantity-update + ledger-insert, idempotency-key replay suppression, and `auth.uid() = actor_id` INSERT authorization (full contract in Doc 04 §1, *InventoryTransaction*). These require **behavioral** verification (rollback, same-key replay, concurrent adjustment, forged-actor rejection), which structural compile-time checks do not provide. That live verification is currently **Unverified** (no authorized remote run), tracked against STEP-55.8 — the schema and generated artifact already exist (`supabase/types/database.ts`: `inventory_transactions`, `adjust_inventory`).
 
 ## Open Questions
 
