@@ -1,8 +1,8 @@
 # Doc 04 — Data Model, Ownership & Retention
 
-**Version:** v0.1.9
+**Version:** v0.1.10
 **Status:** Draft <!-- Draft (v0.x) → MVP (v1.x) → Stable (v2.x); see METHOD.md §6 -->
-**Last updated:** 2026-09-25 (STEP-55.8 docs reconciliation)
+**Last updated:** 2026-10-06 (STEP-55 timestamp contract, local preparation)
 **Audience:** All contributors — this sets the entities, relationships, ownership, and retention rules.
 
 > Defines the core entities, who owns them, how they are stored, and rules for retention and data sensitivity.
@@ -26,6 +26,14 @@ The following are the core entities (nouns) and their relationships:
 
 _Identifiers:_ All entities use UUIDs (Universally Unique Identifiers) as primary keys to prevent conflicts during offline data creation.
 _Multi-tenancy:_ All operational entities include a `site_id` column to support Phase 2 multi-site capability, even though Phase 1 only provisions a single site.
+
+## Inventory timestamp decision — approved 2026-10-06, deployment pending
+
+Inventory-item `created_at` intentionally records client creation time, including offline drafts; it is not a trusted server audit timestamp. The client sends it through the sync payload and upsert, overriding the database default. This is owner-approved behavior, not a local-only value.
+
+For adjustment-ledger rows, migration `20261006000001_step_55_inventory_audit_timestamps.sql` is prepared and locally tested, **not deployed**. It adds non-null `occurred_at` (client event time) and `created_at_source` (`legacy_client` or `server`). Existing `created_at` values are preserved, copied to `occurred_at`, and marked `legacy_client`; no historical audit time is fabricated. Every new insert is stamped by a database trigger with server time and source `server`, even if a caller supplies a forged time/source. The existing RPC signature is retained: `p_created_at` becomes event time, preserving queued offline requests and the item updated_at/LWW behavior. The UI labels event, server-recorded and legacy-device time distinctly. Unknown provenance is rejected by the mapper; unmigrated responses are explicitly legacy. Existing newest-first created_at ordering is preserved, so historical client-clock inaccuracies remain visible rather than silently repaired.
+
+The deployed behavior described above remains client-timestamped until this migration receives separate deployment approval. Local verification and evidence: `reports/2026-10-06-step-0055-resume-verification.md`.
 
 ## 2. Ownership Table
 
@@ -92,3 +100,4 @@ _Audit Trail:_ All operational data supports soft deletion and edit tracking. Th
 | v0.1.7  | 2026-09-05 | STEP-48.23 | Recorded the daily-log client write-path status contract: the auto-draft save never demotes a row that has left `draft` (stored status `max(incoming, cached)` when the row is cached) and the form bloc drops auto-save events while a submit is in flight — closing the web autosave-vs-submit concurrency race that flipped `submitted` rows back to `draft` on the journey read-back |
 | v0.1.8  | 2026-09-12 | STEP-55.6 | Added the structured hazard assessment to DailyLog (hazard_state/severity/notes/action, migration 20260912000001) and the approval state machine: draft→submitted→approved only, supervisor-only approval with approved_by pinned to the authenticated user, approved rows immutable, foreman RLS scoped to own draft rows |
 | v0.1.9  | 2026-09-25 | STEP-55.8 | Documented the InventoryTransaction append-only ledger and the `adjust_inventory` RPC (migration 20260913000001) as an explicit exception to the generic LWW contract: atomic quantity-update + ledger-insert, idempotency-key replay guard, and `auth.uid() = actor_id` INSERT authorization. Recorded the known client-authored `created_at` caveat and that live transactional proof remains Unverified. (Docs reconciliation — no code change this edit.) |
+| v0.1.10 | 2026-10-06 | STEP-55 | Record owner-approved ledger event/audit separation, preserved labelled legacy timestamps, and client-authored item creation time. Migration locally prepared and tested; deployment pending. |

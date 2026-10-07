@@ -1,8 +1,8 @@
 # Doc 11 — Interface Contracts
 
-**Version:** v0.3.1
+**Version:** v0.3.2
 **Status:** Draft
-**Last updated:** 2026-09-25 (STEP-55.8 docs reconciliation)
+**Last updated:** 2026-10-06 (STEP-55 guard and timestamp preparation)
 **Audience:** All contributors — this sets the rules for how boundaries are specified and kept in sync.
 
 > Defines how the interfaces between the app and its external services (Supabase, Google Drive) are specified, generated, and versioned.
@@ -74,6 +74,10 @@
 - **Testing Rule:** Heavy contract testing is skipped due to the nature of the project.
 - **CI Gate:** The CI pipeline runs `dart run tool/check_supabase_contracts.dart` (contract & l10n guards run in the `test` job): when the database schema changes, the artifact must be regenerated or the build fails.
 
+The prepared guard supports an explicitly reviewed no-type-shape-change receipt at `supabase/types/no_shape_change.json` when real regeneration produces identical bytes. It binds the exact migration batch and before/after artifact Git blobs and records tool/source/review provenance; it is not a SQL-equivalence proof or a substitute for generation. Staged and working snapshots are checked separately; CI uses the full push range or PR merge-base and fails closed on unavailable history.
+
+The locally prepared inventory timestamp migration preserves the `adjust_inventory` argument names and types for queued clients. `p_created_at` remains the caller event timestamp; new ledger `created_at` becomes server-authored, with separate `occurred_at` and `created_at_source` returned by reads. Historical records remain explicitly legacy. See Doc 04 for the approved semantics. The generated artifact must be regenerated from an actually migrated database before this lane is published as complete; remote deployment remains owner-gated.
+
 ## 10. Ownership & Review
 
 - **Ownership:** The solo developer owns all contracts.
@@ -102,6 +106,7 @@ None.
 
 | Version | Date | STEP | Change |
 |---------|------|------|--------|
+| v0.3.2 | 2026-10-06 | STEP-55 | Document reviewed byte-identical typegen receipts and owner-approved backward-compatible ledger timestamp correction; local preparation, remote deployment pending. |
 | v0.3.0 | 2026-09-08 | STEP-50.1 | Contract of record corrected to the real artifact: `supabase/types/database.ts` TypeScript types via `supabase gen types --lang typescript --linked` (ADR-0019); removed the dead `gen types dart` / `lib/core/data/models/generated/` path the CLI no longer emits; boundary statuses Active; CI gate names the real guard |
 | v0.2.0 | 2026-08-03 | STEP-41 | Updated generated models path to `lib/core/data/models/generated/` and established CI guard |
 | v0.1.0 | 2026-07-18 | STEP-1.11 | Initial draft from Interface Contracts session |
