@@ -104,11 +104,14 @@ The reviewer found an artifact-only staging gap: `_checkBatch` returned before c
 
 ## RESIDUAL-3 adjudication — 2026-10-07
 
-RESIDUAL-3's harness defect (2/25 capture stalls) is **resolved**. Root cause was
-environmental, not product: the local driver used chromedriver 152 against Chrome 155
-(`SessionNotCreated` / session timeouts). With a version-matched chromedriver 155.0.8059.39
-on port 4444, a web capture run at head `1486826` produced **73/73 valid PNGs** (drive exit
-0), zero placeholder-sized files. Captures are archived at
+RESIDUAL-3's harness defect (2/25 capture stalls) is **resolved** by two causes acting at
+different times. The product-side cause was the capture viewport not being aligned to the
+breakpoints, fixed in `d6160f2` (which also added the hard daily-log close gate and
+`capture_viewport.dart` with its own unit test) — that commit is an ancestor of this head.
+The remaining blocker at this head was **environmental**: the local driver used chromedriver
+152 against Chrome 155 (`SessionNotCreated` / session timeouts). With a version-matched
+chromedriver 155.0.8059.39 on port 4444, a web capture run at head `1486826` produced
+**73/73 valid PNGs** (drive exit 0), zero placeholder-sized files. Captures are archived at
 `reports/design-review/step-0055/web/` with the dated index
 `2026-10-07-web-matrix-index.md` (per-cell names, sizes, SHA prefixes, locale-byte analysis).
 The earlier 2/25 stall is not reproduced at this head.
