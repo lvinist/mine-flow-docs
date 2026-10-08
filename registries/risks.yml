@@ -674,12 +674,23 @@ risks:
     owner: "TBD"
     opened: "2026-09-10"
     source: "reports/security/2026-09-10-step-0052-s0-security-baseline-report.md"
-    description: "The users_update_self RLS policy lacks column immutability constraints. A non-supervisor session can update their own row's role to 'supervisor', breaking all RLS role boundaries."
-    impact: "Total role-based access control compromise if exploited."
-    mitigation: "Pre-production finding; no real users yet."
-    revisit_trigger: "Before production release; remediation required."
+    description: >
+      The original users_update_self policy permitted protected-column updates.
+      The committed allow-list trigger is now present and enabled on staging;
+      production rollout and authorization evidence remain a release condition.
+    impact: "Total role-based access control compromise on a target without the guard."
+    mitigation: >
+      Migration 20261004000001 constrains ordinary self-updates to name and contact
+      fields while preserving supervisor/trusted-server administration. Read-only
+      staging verification on 2026-10-08 confirmed its enabled trigger and function.
+      Do not infer production deployment from the staging link or release workflow.
+    revisit_trigger: >
+      Before production release: identify the production target, apply and verify
+      the guard there under an approved deployment procedure, and retain real
+      authorization regression evidence. Owner requires production to remain blocked.
     refs:
       - "reports/security/2026-09-10-step-0052-s0-security-baseline-report.md"
+      - "reports/2026-10-08-step-0055-follow-up-correction.md"
     closed:
       date:
       reason:
