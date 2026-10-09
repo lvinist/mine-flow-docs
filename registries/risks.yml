@@ -802,17 +802,25 @@ risks:
       foreman INSERT policy on public.zones scoped via `WITH CHECK (site_id = current_user_site_id())`
       plus a `created_by` column with a server-side `BEFORE INSERT` trigger and foreman UPDATE
       scoped to own rows (`created_by = auth.uid()`). Design recorded in ADR-0020 (Accepted, 2026-10-10)
-      with Doc 06 §7 threat review. Migration ships in STEP-57.2 (owner-authorized staging apply, Q4);
-      this substep is docs-only — no SQL applied.
+      with Doc 06 §7 threat review. Migration `20261010000001_step_57_foreman_zones_insert.sql`
+      applied to staging (owner Q4 authorized) at app commit fc4b984; live role-matrix verified
+      (foreman INSERT 201 with trigger-set created_by; supervisor-row PATCH 204-but-0-rows deny;
+      crew/anon denied; supervisor unchanged); RLS journey tests +2 passed; database.ts regenerated;
+      contract guard exit 0; daily_log journey GREEN locally on both Web (result:true, e2e_executed
+      marker verified) and Android (+1 All tests passed) at head fc4b984. Staging throwaway rows
+      cleaned; seed 6e60b2e2 intact. CI gate PARKED per owner Q5 — close requires full-green CI at
+      the merged head after owner-approved push.
     revisit_trigger: >
-      Before production daily-log use and before closing the daily_log Android
-      E2E; close after the foreman zone-INSERT policy lands (STEP-57.2), the daily_log
-      Android journey passes in CI, and RISK-0031 (residual unmoderated-creation risk)
+      Close after the owner-approved push of the merged head + a full-green CI run at the
+      merged head. RISK-0030 stays open (CI gate parked) until the daily_log Android journey
+      passes in CI on the pushed branch and RISK-0031 (residual unmoderated-creation risk)
       is accepted or mitigated.
     refs:
       - "reports/2026-09-11-step-54-master-polish-spec.md"
       - "reports/security/2026-08-26-step-0044-s0-security-baseline-report.md"
       - "adr/ADR-0020-foreman-zone-insert-policy.md"
+      - "prompts/003-release-readiness-integration-scale/step-0057/mine-flow-STEP-57.2-FINDINGS.md"
+      - "prompts/003-release-readiness-integration-scale/step-0057/mine-flow-STEP-57.3-FINDINGS.md"
     closed:
       date:
       reason:
