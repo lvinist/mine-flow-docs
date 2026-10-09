@@ -792,11 +792,16 @@ risks:
       daily_log Android E2E journey stays red and the create->submit->list loop
       is broken for any zone not already present.
     mitigation: >
-      Decide the intended zone-creation authorization: either grant foreman
-      INSERT on public.zones under an appropriate RLS policy (new migration), or
-      change the daily-log flow to select only pre-existing zones (no inline
-      creation for foremen). Not fixable inside STEP-55.6 (migration SQL is
-      immutable history there; this needs a new migration or a flow change).
+      Approach A delivered: idempotent staging zone seed (migration
+      20261008000001_step_56_staging_zone_seed.sql at app commit be682b7) with
+      fixed UUID 6e60b2e2-0000-4000-8000-000000005656 and site_id
+      f47ac10b-58cc-4372-a567-0e02b2c3d479, staging live-verified 2026-10-10
+      (row created_at 2026-10-07T21:54:53Z). Decision pending for approach B:
+      either foreman INSERT on public.zones under an appropriate RLS policy
+      (new migration), or change the daily-log flow to select only pre-existing
+      zones (no inline creation for foremen). Not fixable inside STEP-55.6
+      (migration SQL is immutable history there; this needs a new migration or
+      a flow change).
     revisit_trigger: >
       Before production daily-log use and before closing the daily_log Android
       E2E; close after the zones INSERT authorization is defined, a migration or
