@@ -28,7 +28,7 @@ Most of these are produced by the **architecture sessions** during STEP-1
 | 03 | [Architecture Overview](03-architecture-overview.md) | v0.1.0 | Draft |
 | 04 | [Data Model](04-data-model.md) | v0.1.10 | Draft |
 | 05 | [Scaling & Performance](05-scaling-performance.md) | v0.1.0 | Draft |
-| 06 | [Security & Threat Model](06-security-threat-model.md) | v0.3.0 | Draft |
+| 06 | [Security & Threat Model](06-security-threat-model.md) | v0.4.0 | Draft |
 | 07 | [UI / Design System](07-ui-design-system.md) | v0.5.0 | Draft |
 | 08 | [Infrastructure & Deployment](08-infrastructure-deployment.md) | v0.2.1 | Active |
 | 09 | [Environments](09-environments.md) | v0.5.0 | Active |
@@ -40,6 +40,7 @@ Most of these are produced by the **architecture sessions** during STEP-1
 | 16 | [Identity & Auth](16-identity-auth.md) | v0.1.1 | Draft |
 | 17 | [Privacy & Compliance](17-privacy-compliance.md) | v0.1.0 | Draft |
 
-<!-- Reconciled against the docs on disk at STEP-50.1 (2026-09-08 check-in): all 16 docs
-     present, versions/statuses match each doc's own header. Each doc's own header remains
-     authoritative; re-run the comparison at the next check-in. -->
+<!-- Reconciled against the docs on disk at STEP-58.1 (2026-10-10) with the STEP-57.1
+     Doc 06 v0.4.0 bump (threat review for foreman zone-insert policy, ADR-0020): all 16 docs
+     present, versions/statuses match each doc's own Version Log newest row. Each doc's own
+     Version Log remains authoritative; re-run the comparison at the next check-in. -->
