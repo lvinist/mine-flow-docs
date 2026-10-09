@@ -696,19 +696,39 @@ risks:
       reason:
 
   - id: RISK-0026
-    status: open
+    status: monitoring
     title: "Failed benchmark projection can persist sentinel coordinates"
     category: data
     severity: high
     owner: "STEP-55.4"
     opened: "2026-09-11"
     source: "reports/2026-09-11-step-54-master-polish-spec.md"
-    description: "Benchmark validation permits failed projection, and persistence falls back to latitude/longitude 0.0, 0.0."
+    description: >-
+      RISK-0026 was partially addressed in STEP-55.4 (commit dea5c58, in app HEAD
+      fc4b984 history): `_onSubmitBenchmark` now rejects any submission where
+      computed latitude/longitude is null due to projection failure (bloomBloc.dart
+      line 607-610), and `_computeLatLon` rejects Infinity/NaN/out-of-range
+      results by returning null. No fallback to 0.0, 0.0 coordinates remains in the
+      persistence path. Regression tests verify the rejection (crs_utils_test.dart
+      9 tests + benchmark_bloc_test.dart rejection tests, 78/78 passed per
+      STEP-55.4 findings). However, the data-review criterion (audit existing
+      benchmark records for unintended 0.0, 0.0 values) has not been evidenced on
+      disk — it requires staging/production database access which is not available
+      in this read-only sweep.
     impact: "Invalid control-point coordinates can enter foundational geospatial data."
-    mitigation: "Block failed projection and audit existing benchmark records for unintended 0.0, 0.0 values."
-    revisit_trigger: "During STEP-55.4 and before production benchmark editing; close after validation, fallback removal, data review, and regression tests."
+    mitigation: >-
+      Partially delivered. Projection validation + fallback removal + regression
+      tests complete (commit dea5c58). Data review of existing benchmark records for
+      unintended 0.0, 0.0 sentinel values remains outstanding — requires staging DB
+      query access.
+    revisit_trigger: >-
+      Close after the remaining data-review criterion is satisfied (query existing
+      benchmark records for unintended 0.0, 0.0 values) — requires staging database
+      access. All other criteria (validation, fallback removal, regression tests)
+      are met per STEP-55.4 evidence.
     refs:
       - "reports/2026-09-11-step-54-master-polish-spec.md"
+      - "prompts/003-release-readiness-integration-scale/step-0055/mine-flow-STEP-55.4-FINDINGS.md"
     closed:
       date:
       reason:
