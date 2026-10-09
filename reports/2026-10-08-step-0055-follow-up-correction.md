@@ -83,8 +83,31 @@ The true root cause was the shared `AppResponsiveSheet.onPopInvokedWithResult` *
 | `dart format` on all touched files | clean |
 | EOL audit | all touched files match HEAD convention (router.dart stays CRLF, others LF); the prior session's l10n CRLF reflow (pure EOL churn, `git diff -w` empty) was normalized back — l10n files are byte-identical to HEAD |
 
+### CI outcome at the pushed lane (2026-10-08)
+
+Run `37788785550` (head `b74f341`, event push): foundation `Lint, analyze & test` **failure** — 893 passed / 1 failed (`benchmark_navigation_test.dart`, pre-B4 contract pinning the orphan-dialog defect); all downstream jobs skipped by `needs:`. The single failing test was corrected (see Known gaps update below) with the full unit suite re-verified locally before the follow-up push.
+
+Run `37791551560` (head `667922a`, event push): foundation green (894 passed), APK green, web E2E **green**; Android E2E **failure** — the equipment journey died with the `flutter/flutter#189902` semantics storm (`!child.attached` at semantics.dart:3013 + `node.built` at object.dart:5732) in the post-submit pop window.
+
+### Root cause isolation of the Android semantics storm (2026-10-09)
+
+Local emulator bisect (Pixel_6a, `emulator-5554`, one journey per commit):
+
+| Config | Journey | Android journey |
+|---|---|---|
+| `714c912` (restoration) | old | ✅ green |
+| `2bacca9` (filter retry) | old | ✅ green |
+| `0dbe3b3` (opaque flip) | old | ❌ storm at form push |
+| `667922a` + opaque revert | old (green control) | ✅ green |
+| `667922a` + opaque revert | new (b74f341) | ❌ storm at pop window |
+| `667922a` + opaque revert + 20-frame settling loop restored | new | ✅ **green** |
+
+Two independent triggers of the same framework defect (flutter/flutter#189902, open): (1) the `0dbe3b3` `opaque: true` flip tripped it at the form push; (2) `b74f341`'s removal of the post-pop 20-frame settling loop tripped it in the pop window. The storm follows route-transition semantics rebuilds on the live-test binding; **product code is exonerated** — pop-guard (`dad81c6`) and restoration (`27e5c5c`) ran green in every controlled cell.
+
+Fix at `db4466b`: revert `opaque: true` (route is transparent + explicit transparent barrier, as at green baseline `6e0b2e2`) and restore the 20-frame exit-transition settling loop with a flutter#189902 cross-reference comment. Verified green twice locally on the emulator (full B4 asserts intact: form-gone poll, `AppDirtyDismissDialog findsNothing`, single-tap filter panel). CI run at `db4466b` pending; watcher armed.
+
 ### Known gaps (retained, not claimed)
 
-- Android/web E2E for the equipment journey and the attendance restoration behavior is **Unverified** until commit/push and a CI run at the new head; nothing has been committed or pushed in this continuation.
-- The other 15 hand-rolled `CustomTransitionPage`s in `router.dart` still lack `restorationId`; out of this lane's scope (only the attendance route was owner-authorized) — flagged for the owner as a follow-up sweep.
+- ~~Android/web E2E for the equipment journey and the attendance restoration behavior is **Unverified** until commit/push and a CI run at the new head~~ → **Update (2026-10-10):** lane committed and pushed as `dad81c6` (pop guard) → `27e5c5c` (attendance restoration + 17-page restorationId sweep) → `b74f341` (journey cleanup) → `db4466b` (opaque revert + storm fix). Docs `179cb10`; prompts `ab5e573`. Web E2E green at `667922a` (CI run `37791551560`); Android journey green locally on the emulator at `db4466b` (2026-10-09, twice — control + fixed journey). CI at `db4466b` is the remaining evidence debt; a background watcher reports the verdict. The semantics storm is a **known open framework defect** (flutter/flutter#189902) — if it ever fires again on other journeys, treat it as a framework bug, not a product regression: the workaround (fixed-cadence settling across route exit transitions in journey tests) is documented in the journey file.
+- The other ~~15~~ hand-rolled `CustomTransitionPage`s in `router.dart` ~~still lack `restorationId`~~ → **fixed in the same push** (`27e5c5c`): all 17 sites now set `restorationId: state.pageKey.value`.
 - Seeded-zone round-trip (STEP-56 lane), RISK-0025 production rollout, and production migration remain open per the owner dispositions above.
