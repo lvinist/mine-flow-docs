@@ -792,23 +792,64 @@ risks:
       daily_log Android E2E journey stays red and the create->submit->list loop
       is broken for any zone not already present.
     mitigation: >
-      Approach A delivered: idempotent staging zone seed (migration
+      Approach A (delivered): idempotent staging zone seed (migration
       20261008000001_step_56_staging_zone_seed.sql at app commit be682b7) with
       fixed UUID 6e60b2e2-0000-4000-8000-000000005656 and site_id
       f47ac10b-58cc-4372-a567-0e02b2c3d479, staging live-verified 2026-10-10
-      (row created_at 2026-10-07T21:54:53Z). Decision pending for approach B:
-      either foreman INSERT on public.zones under an appropriate RLS policy
-      (new migration), or change the daily-log flow to select only pre-existing
-      zones (no inline creation for foremen). Not fixable inside STEP-55.6
-      (migration SQL is immutable history there; this needs a new migration or
-      a flow change).
+      (row created_at 2026-10-07T21:54:53Z).
+
+      Approach B (owner-accepted 2026-10-10, §Owner decisions in `.step56-60-overnight-orchestration-state.md`):
+      foreman INSERT policy on public.zones scoped via `WITH CHECK (site_id = current_user_site_id())`
+      plus a `created_by` column with a server-side `BEFORE INSERT` trigger and foreman UPDATE
+      scoped to own rows (`created_by = auth.uid()`). Design recorded in ADR-0020 (Accepted, 2026-10-10)
+      with Doc 06 §7 threat review. Migration ships in STEP-57.2 (owner-authorized staging apply, Q4);
+      this substep is docs-only — no SQL applied.
     revisit_trigger: >
       Before production daily-log use and before closing the daily_log Android
-      E2E; close after the zones INSERT authorization is defined, a migration or
-      flow change lands, and the daily_log Android journey passes in CI.
+      E2E; close after the foreman zone-INSERT policy lands (STEP-57.2), the daily_log
+      Android journey passes in CI, and RISK-0031 (residual unmoderated-creation risk)
+      is accepted or mitigated.
     refs:
       - "reports/2026-09-11-step-54-master-polish-spec.md"
       - "reports/security/2026-08-26-step-0044-s0-security-baseline-report.md"
+      - "adr/ADR-0020-foreman-zone-insert-policy.md"
+    closed:
+      date:
+      reason:
+  - id: RISK-0031
+    status: open
+    title: "Foreman-created zones unmoderated at creation"
+    category: security
+    severity: medium
+    owner: "TBD"
+    opened: "2026-10-10"
+    source: "adr/ADR-0020-foreman-zone-insert-policy.md"
+    description: >
+      With the foreman zone-INSERT policy (ADR-0020, STEP-57.2), foremen can create
+      new zones inline during daily-log, cut/fill, land-clearing, and benchmark
+      entry. The policy is site-scoped (WITH CHECK site_id = current_user_site_id())
+      and created_by is set server-side by a BEFORE INSERT trigger, but there is no
+      name-category uniqueness or moderation gate at creation. A foreman can create
+      arbitrary zones within their site, including zones with duplicate names or
+      placeholder categories (category is NULL on inline creates).
+    impact: >
+      Unmoderated zone creation can lead to zone-table bloat, picker clutter, and
+      ambiguity in reports that reference zones by name. A foreman could also create
+      zones with misleading names that supervisors must audit later.
+    mitigation: >
+      Site-scoping and created_by unspoofability neutralize cross-site injection and
+      creator forgery (see ADR-0020 §Q1/Q2). For MVP this is accepted; supervisors
+      retain FOR ALL visibility (supervisor_zones_all policy) to audit zones. Approach
+      A (idempotent staging seed) remains the known-good zone for E2E test
+      determinism.
+    revisit_trigger: >
+      Before closing the daily_log Android E2E in CI and before production daily-log
+      use; close after a supervisor zone-review/moderation UX is implemented and
+      verified, or a creation-rate / name-dedup control lands.
+    refs:
+      - "adr/ADR-0020-foreman-zone-insert-policy.md"
+      - "registries/risks.yml"
+      - "Code/mine-flow-app/supabase/migrations/20261008000001_step_56_staging_zone_seed.sql"
     closed:
       date:
       reason:
