@@ -5,7 +5,7 @@ Bridge script for the Impeccable UI workflow.
 .DESCRIPTION
 This script reads Code/mine-flow-docs/architecture/07-ui-design-system.md and
 extracts the design and product rules (e.g., ForUI direction, Tokens, components).
-It then writes this extracted content into DESIGN.md and PRODUCT.md at the workspace root
+It then writes this extracted content into Code\mine-flow-docs\reports\bridge\DESIGN.md and Code\mine-flow-docs\reports\bridge\PRODUCT.md in the docs hub
 to keep the Impeccable context synchronized with the canonical architecture docs, preventing drift.
 #>
 
@@ -21,8 +21,8 @@ if (-not (Test-Path $designDocPath)) {
 Write-Host "Reading canonical design system from Code\mine-flow-docs\architecture\07-ui-design-system.md..."
 $content = Get-Content $designDocPath -Raw
 
-$designOutput = Join-Path $workspaceRoot "DESIGN.md"
-$productOutput = Join-Path $workspaceRoot "PRODUCT.md"
+$designOutput = Join-Path $workspaceRoot "Code\mine-flow-docs\reports\bridge\DESIGN.md"
+$productOutput = Join-Path $workspaceRoot "Code\mine-flow-docs\reports\bridge\PRODUCT.md"
 
 Write-Host "Generating DESIGN.md..."
 $designContent = @"
@@ -44,5 +44,5 @@ $content
 "@
 Set-Content -Path $productOutput -Value $productContent -Encoding UTF8
 
-Write-Host "Successfully generated DESIGN.md and PRODUCT.md at the workspace root."
+Write-Host "Successfully generated DESIGN.md and PRODUCT.md in Code\mine-flow-docs\reports\bridge\.."
 Write-Host "Impeccable is now ready to run with the latest architectural context."
