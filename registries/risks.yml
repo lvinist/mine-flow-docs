@@ -201,6 +201,11 @@ risks:
     # for Flutter 3.48 beta); 219-day pub.dev gap documented; Dart-4 upper bound ^3.4.0
     # confirmed; zero advisories; 28 hive_ce import sites Clean-Architecture compliant.
     # Transition to monitoring. Trigger unchanged (>6 months no pub.dev stable, or Dart 4 break).
+    # STEP-60.1 (2026-10-10): trigger RESOLVED — hive_ce released 2.20.0 (2026-09-12),
+    # 2.20.1 (2026-09-27), 2.20.2 (2026-10-06) within 27 days. Active maintenance restored.
+    # Lockfile bumped to 2.20.2 (within ^2.19.3), hive_ce_flutter to 2.4.0 (within ^2.3.4).
+    # Zero advisories on 2.20.2; API unchanged (drop-in). revisit_trigger: if hive_ce
+    # goes >6 months without a release again, or Dart 4 breaks compatibility.
 
   - id: RISK-0009
     status: monitoring
@@ -244,6 +249,10 @@ risks:
     # is beta-only; stable trigger NOT fired. All 3 mitigations confirmed (forui pin, 30+
     # EditableText call sites, GlobalMaterialLocalizations scope wrapper). 16/16 focused
     # tests passed. Transition to monitoring; retain all mitigations.
+    # STEP-60.1 (2026-10-10): re-checked live via Flutter releases JSON. Latest stable
+    # is 3.47.7 (2026-10-08). The >=3.48 trigger has NOT fired. forui pin (^0.26.0) is
+    # KEPT — latest 0.27.4 is out of constraint (pre-1.0 minor = breaking). All mitigations
+    # remain active. 973/5/0 full suite green after lockfile upgrades.
 
   - id: RISK-0008
     status: monitoring
@@ -575,6 +584,10 @@ risks:
     # declared ^-range constraints). SDK-pinned residuals: archive, package_config, qr,
     # material_color_utilities, _fe_analyzer_shared, analyzer, test family confirmed.
     # Status updated to monitoring (direct drift no longer open).
+    # STEP-60.1 (2026-10-10): re-scanned. Same 19 package upgrades applied (hive_ce 2.20.2,
+    # go_router 18.0.2, flutter_secure_storage 11.2.0, etc.). No new direct drift;
+    # SDK-pinned residuals unchanged. Status: monitoring. revisit_trigger: when
+    # upgrading Flutter SDK in the future (Flutter stable is 3.47.7 as of 2026-10-10).
 
   - id: RISK-0021
     status: monitoring
