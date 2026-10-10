@@ -1,0 +1,24 @@
+# Reviewer Progress Log
+
+- [x] Independent requirements analysis:
+  - R1: Battery icon fill color priority (Charging Green #34C759 with bolt -> Discharging <20% Red #FF3B30 -> Discharging >=20% saver active Orange #FF9500 -> Discharging >=20% normal Green #34C759). Bolt glyph only on charging.
+  - R2: Energy Saver quick toggle tile matching QuickToggleTile design language (similar to Dark Mode). Accurately read and toggle Windows energy saver state.
+  - R3: Power profile overlay scheme selector (Best power efficiency, Balanced, Best performance) with active checkmark.
+  - R4: Divider and "Power settings" link button opening `ms-settings:powersleep`.
+  - R5: Staging files in scratch directory and safe apply batch script.
+- [x] Code inspection and vulnerability attack:
+  - Identified Defect 1: In `GetBatteryInfo()`, `powerStatus.SystemStatusFlag == 1` was unconditionally overwritten to `false` when HKCU `PowerSavingMode` was `0`.
+  - Identified Defect 2: In `SetEnergySaverState()`, toggle was only modifying registry without altering Windows kernel power scheme threshold (`ESBATTTHRESHOLD`), meaning `SYSTEM_POWER_STATUS::SystemStatusFlag` did not update.
+  - Identified Defect 3: In `apply_topbar_battery_update.bat`, `SOURCE_FILE` with `@id windhawk-topbar-fork` was copied into `windhawk-topbar.wh.cpp`, causing mod metadata ID corruption.
+  - Identified Defect 4: In `apply_topbar_battery_update.bat`, unescaped `&`, `<`, `>` in echo banner caused command parser syntax errors (`'State' is not recognized...`, `The system cannot find the file specified`).
+- [x] Implement fixes:
+  - Fixed `GetBatteryInfo()` in `scratch/modified-windhawk-topbar-fork.wh.cpp` to preserve active `SystemStatusFlag == 1`.
+  - Enhanced `SetEnergySaverState()` to dynamically adjust `ESBATTTHRESHOLD` in the active Windows power scheme and activate it.
+  - Generated `scratch/modified-windhawk-topbar.wh.cpp` preserving `@id windhawk-topbar` and `@name TopBar for Windows`.
+  - Fixed `apply_topbar_battery_update.bat` to correctly map fork source to fork target and upstream source to upstream target, and escaped batch shell metacharacters (`^&`, `^<`, `^>`).
+  - Expanded `scratch/verify_battery_logic.cpp` with 5 comprehensive test suites covering all edge cases, priority preservation, power overlay schemes, threshold setting, and metadata integrity.
+- [x] Deep Verification:
+  - Clang++ syntax check on `scratch/modified-windhawk-topbar-fork.wh.cpp`: exited code 0, 0 errors, 0 warnings.
+  - Clang++ syntax check on `scratch/modified-windhawk-topbar.wh.cpp`: exited code 0, 0 errors, 0 warnings.
+  - Compiled and executed `scratch/verify_battery_logic.exe`: 5/5 test suites passed (100% green).
+  - Dry-run validation of `apply_topbar_battery_update.bat`: no command syntax errors.
