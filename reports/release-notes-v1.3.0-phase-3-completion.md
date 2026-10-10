@@ -71,32 +71,32 @@
 - Foreman on-the-fly zone creation fails on staging (RISK-0030): the daily-log Android journey
   stays red when creating a zone inline. Assigned to STEP-57.
 - Privacy-copy placeholder pending legal/product approval (55.10).
-- OS restoration beyond attendance pending (STEP-59).
 - RISK-0025: Privilege escalation in the users self-update policy — guard is present and
   enabled on staging; production rollout and authorization evidence remain a release condition
   (production deployment stays blocked).
-- RISK-0030: Foreman INSERT into zones blocked by RLS — see the mitigation and revisit trigger
-  in the risk register.
-- Seeded-zone round-trip (STEP-56 lane), RISK-0025 production rollout, and production migration
-  remain open per owner dispositions.
+- Seeded-zone round-trip (STEP-56 lane) and production migration remain open per owner dispositions.
 
 ## Documentation
 
 - This release note records the completed Phase 3 milestone.
 - Phase README, STEP-index, close addendum, and CI run records are referenced below; user-facing
-  doc reconciliation is planned as STEP-56.2 work.
+  doc reconciliation completed via STEP-56.2 and this review (STEP-61) tightened the record.
 
 ## References
 
-- **Released version/tag:** v1.3.0 (Phase 3 Completion); released tag "none yet — draft pending
-  owner approval"
+- **Released version/tag:** v1.3.0 (GitHub release on mine-flow-app, tagged at `c4f4030`)
+- **Released tag:** `v1.3.0` at `c4f40302153f992871965a7926eb321182ea0c4c` (annotated git tag, pushed)
 - **Deployed to:** staging only
 - **Phase README:** `prompts/003-release-readiness-integration-scale/README.md`
-- **STEP-index:** `prompts/STEP-index.md` rows STEP-41..STEP-55
+- **STEP-index:** `prompts/STEP-index.md` rows STEP-41..STEP-60
 - **Close addendum:** `reports/2026-10-08-step-0055.11-close-addendum.md` and the follow-up
   correction `reports/2026-10-08-step-0055-follow-up-correction.md`
 - **CI run:** [`37949922909`](https://github.com/lvinist/mine-flow-app/actions/runs/37949922909)
   at `db4466b`
-- **Related STEPs:** STEP-41 through STEP-55
+- **Batch close CI runs:** STEP-57 [`38030561898`](https://github.com/lvinist/mine-flow-app/actions/runs/38030561898)
+  at `63deed7`; STEP-59 [`38049230677`](https://github.com/lvinist/mine-flow-app/actions/runs/38049230677)
+  at `4c74e87`; STEP-60 [`38058477936`](https://github.com/lvinist/mine-flow-app/actions/runs/38058477936)
+  at `c4f4030`
+- **Related STEPs:** STEP-41 through STEP-60
 - **Architecture / ADRs:** `architecture/02-phasing-roadmap.md`; `architecture/07-ui-design-system.md`;
   ADR-0008 (Impeccable Bridge and UI Design Tokens); ADR-0019 (TS contract of record)

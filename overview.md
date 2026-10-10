@@ -66,9 +66,9 @@ structured way to find what was acquired when and where.
 
 ## What it does NOT do (for now)
 - **Automated data imports** — no GPS, drone survey, or equipment telemetry integration in
-  the MVP. All data is manually entered. (Phase 2: integrate with survey tools.)
+  the MVP. All data is manually entered. (Phase 3: integrate with survey tools.)
 - **Multi-site support** — the MVP serves a single mine site. The architecture should be
-  designed so multi-site is addable later without a rewrite. (Phase 2.)
+  designed so multi-site is addable later without a rewrite. (Phase 3.)
 - **Advanced analytics / BI** — no predictive analytics, trend forecasting, or BI-style
   dashboards beyond basic reports. (Future.)
 - **External / public access** — this is an internal tool; no public-facing features.
