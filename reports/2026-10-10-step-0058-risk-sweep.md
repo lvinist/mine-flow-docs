@@ -192,3 +192,18 @@ are from the pre-existing 58.1 commit (`d260736`), not from this sweep.
 2. **RISK-0030 — CI gate (owner Q5):** The row's own close criterion requires the
    daily_log Android journey to pass in CI on the pushed branch. This is explicitly
    parked per owner Q5. RISK-0030 stays `open` until CI runs green.
+
+
+
+---
+
+## Parent-side addendum (2026-10-10, ~07:20): RISK-0026 data review completed and row CLOSED
+
+The sweep parked RISK-0026's data-review criterion as "requires staging DB access".
+The access existed (the same authenticated REST surface used all night): the parent
+enumerated all 124 benchmark rows on staging and found **0 sentinel (0.0, 0.0) rows
+and 0 null-coordinate rows**. With validation + fallback removal + regression tests
+(commit dea5c58, 78/78) already verified by the sweep, **all four close criteria are
+met**; RISK-0026 flipped monitoring → closed at docs commit `2a901e9` (evidence
+recorded in the register row itself). Owner authorized evidence-cited closes
+(2026-10-10 ~03:00, Q2); this close is fully disk-verified, no judgment call.
