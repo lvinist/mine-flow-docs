@@ -788,7 +788,7 @@ risks:
       reason:
 
   - id: RISK-0030
-    status: open
+    status: closed
     title: "Foreman INSERT into zones blocked by RLS, breaking daily-log zone creation E2E"
     category: reliability
     severity: high
@@ -831,10 +831,10 @@ risks:
       cleaned; seed 6e60b2e2 intact. CI gate PARKED per owner Q5 — close requires full-green CI at
       the merged head after owner-approved push.
     revisit_trigger: >
-      Close after the owner-approved push of the merged head + a full-green CI run at the
-      merged head. RISK-0030 stays open (CI gate parked) until the daily_log Android journey
-      passes in CI on the pushed branch and RISK-0031 (residual unmoderated-creation risk)
-      is accepted or mitigated.
+      Met 2026-10-10: CI run 38030561898 ALL-GREEN at merged head 63deed7
+      (lint/test, APK smoke, E2E Web 16/16, E2E Android incl. the daily_log
+      journey — all success; production correctly skipped). No remaining
+      conditions; RISK-0031 carries the accepted residual.
     refs:
       - "reports/2026-09-11-step-54-master-polish-spec.md"
       - "reports/security/2026-08-26-step-0044-s0-security-baseline-report.md"
@@ -842,8 +842,14 @@ risks:
       - "prompts/003-release-readiness-integration-scale/step-0057/mine-flow-STEP-57.2-FINDINGS.md"
       - "prompts/003-release-readiness-integration-scale/step-0057/mine-flow-STEP-57.3-FINDINGS.md"
     closed:
-      date:
-      reason:
+      date: "2026-10-10"
+      reason: >-
+        All close criteria met: foreman zone-INSERT authorization defined and
+        implemented (ADR-0020; migration 20261010000001_step_57_foreman_zones_insert.sql),
+        applied to staging and live-verified (role matrix incl. own-rows UPDATE deny),
+        and the daily_log Android journey passes in CI — run 38030561898 ALL-GREEN
+        at merged head 63deed7 (2026-10-10). RISK-0031 records the accepted residual
+        (unmoderated creation); production rollout remains a RISK-0025 release condition.
   - id: RISK-0031
     status: open
     title: "Foreman-created zones unmoderated at creation"
