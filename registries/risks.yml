@@ -696,7 +696,7 @@ risks:
       reason:
 
   - id: RISK-0026
-    status: monitoring
+    status: closed
     title: "Failed benchmark projection can persist sentinel coordinates"
     category: data
     severity: high
@@ -711,27 +711,27 @@ risks:
       results by returning null. No fallback to 0.0, 0.0 coordinates remains in the
       persistence path. Regression tests verify the rejection (crs_utils_test.dart
       9 tests + benchmark_bloc_test.dart rejection tests, 78/78 passed per
-      STEP-55.4 findings). However, the data-review criterion (audit existing
-      benchmark records for unintended 0.0, 0.0 values) has not been evidenced on
-      disk — it requires staging/production database access which is not available
-      in this read-only sweep.
+      STEP-55.4 findings). The data-review criterion is now satisfied: a parent-side staging audit
+      (2026-10-10, authenticated REST) enumerated all 124 benchmark rows and found
+      0 sentinel (0.0, 0.0) rows and 0 null-coordinate rows. All four close
+      criteria are met.
     impact: "Invalid control-point coordinates can enter foundational geospatial data."
     mitigation: >-
-      Partially delivered. Projection validation + fallback removal + regression
-      tests complete (commit dea5c58). Data review of existing benchmark records for
-      unintended 0.0, 0.0 sentinel values remains outstanding — requires staging DB
-      query access.
+      Fully delivered: projection validation, fallback removal, and regression
+      tests (commit dea5c58), plus the data review — staging audit 2026-10-10:
+      124/124 benchmark rows have no (0.0, 0.0) sentinel and no null coordinates.
     revisit_trigger: >-
-      Close after the remaining data-review criterion is satisfied (query existing
-      benchmark records for unintended 0.0, 0.0 values) — requires staging database
-      access. All other criteria (validation, fallback removal, regression tests)
-      are met per STEP-55.4 evidence.
+      Data-review criterion satisfied 2026-10-10 (staging audit: 124 rows, 0
+      sentinels, 0 nulls). All four close criteria met — no remaining conditions.
     refs:
       - "reports/2026-09-11-step-54-master-polish-spec.md"
       - "prompts/003-release-readiness-integration-scale/step-0055/mine-flow-STEP-55.4-FINDINGS.md"
     closed:
-      date:
-      reason:
+      date: "2026-10-10"
+      reason: >-
+        All four criteria met: projection validation, fallback removal, and regression
+        tests (commit dea5c58, 78/78), plus the data review (parent-side staging audit
+        2026-10-10: 124/124 benchmark rows, 0 sentinel (0.0,0.0), 0 null coordinates).
 
   - id: RISK-0027
     status: open
